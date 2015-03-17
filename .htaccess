@@ -1,0 +1,36 @@
+
+AddType font/ttf .ttf 
+AddType font/eot .eot 
+AddType font/otf .otf 
+AddType font/woff .woff 
+<FilesMatch "\.(ttf|otf|eot|woff)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+</FilesMatch>
+
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wordpressbootcamp/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /wordpressbootcamp/index.php [L]
+
+#LMS
+RewriteRule ^favicon.ico$ favicon.ico [L]
+RewriteRule ^lms/?$										/lms/index.php? [L]
+RewriteRule ^lms/recuperar-senha?$						/index.php?categoria=site&module=lms&do=recuperarSenha&%{QUERY_STRING} [L]
+RewriteRule ^lms/([^/]+)/([^/]+)/([^/]+)/?$				/lms/index.php?categoria=$1&module=$2&do=$3&%{QUERY_STRING} [L]
+RewriteRule ^lms/([^/]+)/([^/]+)/([^/]+)/([0-9]+)/?$	/lms/index.php?categoria=$1&module=$2&do=$3&id=$4&%{QUERY_STRING} [L]
+
+#Portal
+RewriteRule ^([^lms][^/]+)/([^/]+)/([^/]+)/?$					/index.php?categoria=site&module=$1&do=$2&id=$3&%{QUERY_STRING} 
+RewriteRule ^([^lms][^/]+)/([^/]+)/?$							/index.php?categoria=site&module=$1&do=$2&%{QUERY_STRING} 
+RewriteRule ^([^lms][^/]+)/?$									/index.php?categoria=site&module=$1&do=index&%{QUERY_STRING} 
+RewriteRule ^/?$										/index.php?categoria=site&module=home&do=index&%{QUERY_STRING} 
+
+
+</IfModule>

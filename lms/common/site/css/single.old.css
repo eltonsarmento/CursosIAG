@@ -1,0 +1,865 @@
+/* SINGLE */
+
+.container .single-header {
+
+    background:#222;
+    width:100%;
+    height:auto;
+    margin:-30px auto 20px auto;
+
+}
+
+.container .single-header .single-title {
+
+    width:948px;
+    height:auto;
+    padding:30px 0;
+    margin:0 auto;
+
+}
+
+.container .single-header .single-title h1 img {
+
+    float: left;
+    margin-left: 20px;
+
+}
+
+.container .single-header .single-title h1 {
+
+    padding:0;
+    margin:0;
+    text-align:center;
+    font-family: 'bariol_regularregular';
+    font-size:30px;
+    color:#fff;
+
+}
+
+.container .single-header .single-menu {
+
+    width:948px;
+    height:auto;
+    padding:0 0 30px 0;
+    margin:0 auto;
+
+}
+
+.container .single-header .single-menu nav {
+
+    width:580px;
+    height:20px;
+    margin:0 auto;
+
+}
+
+.container .single-header .single-menu nav ul {
+
+    list-style-type:none;
+    margin:0;
+    padding:0;
+
+}
+
+.container .single-header .single-menu nav ul li {
+
+    margin:0 5px;
+    padding:4px 0;
+    float:left;
+
+}
+
+.assinature-featured {
+
+    background:#e25143;
+    border-radius:4px;
+    padding:4px 8px !important;
+
+}
+
+.container .single-header .single-menu nav ul li a {
+
+    font-size:16px;
+    font-family: 'bariol_regularregular';
+    color:#fff;
+    margin:0 5px;
+    float:left;
+
+}
+
+.container .single-header .single-course-info {
+
+    width:948px;
+    height:261px;
+    margin:0 auto 30px auto;
+
+}
+
+.container .single-header .single-course-info .single-course-info-video {
+
+    background:#222;
+    width:464px;
+    height:261px;
+    float:left;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price {
+
+    background:#222;
+    width:464px;
+    height:261px;
+    float:right;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price .price {
+
+    width:464px;
+    height:82px;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price span {
+
+    width:232px;
+    color:#fff;
+    float:left;
+    margin:0;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price span strong {
+
+    font-family: 'bariol_boldbold';
+    font-size:45px;
+    margin:0;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price span small {
+
+    font-family: 'bariol_regularregular';
+    font-size:18px;
+    float:left;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price button {
+
+    width:232px;
+    height:80px;
+    font-size:18px;
+    margin:0;
+    float:right;   
+
+}
+
+.container .single-header .single-course-info .single-course-info-price .button-disable-single {
+
+    background:#82cb6b;
+    width:232px;
+    height:50px;
+    padding:16px 0;
+    font-family: 'bariol_boldbold';
+    font-size:18px;
+    color:#fff;
+    border-radius:4px;
+    text-align:center;
+    display:none;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price .button-disable-single p {
+
+   margin:0;
+   padding:0;
+   font-family: 'bariol_regularregular';
+
+}
+
+.container .single-header .single-course-info .single-course-info-price .option {
+
+    width:auto;
+    margin:20px 0 0 0;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price .option h1 {
+
+    font-family: 'bariol_boldbold';
+    color:#fff;
+    font-size:20px;
+    font-weight:300;
+    text-align:center;
+    padding:0;
+    margin:0 0 20px 0;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price .option .form-control {
+
+    width:464px;
+    margin:0 0 5px 0;
+    float:left;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price .option label {
+
+    width:80px;
+    font-family: 'bariol_regularregular';
+    font-size:18px;
+    color:#fff;
+    float:left;
+    text-align:right;
+    margin:10px 0 0 0;
+
+}
+
+.container .single-header .single-course-info .single-course-info-price .option select {
+
+    width:360px;
+    float:right;
+    padding:10px;
+    border-radius:4px;
+    border:0;
+
+}
+
+.container .single-content {
+    
+    width:948px;
+    height:auto;
+    margin:0 auto;
+    
+}
+
+.container .single-content .course-info {
+
+    width:948px;
+    height:auto;
+    margin:0 auto 20px auto;
+
+}
+
+.container .single-content .course-info .info {
+
+    background:#e25143;
+    width:187px;
+    height:55px;
+    border:1px solid #e25143;
+    margin:0 10px 0 0;
+    padding:20px;
+    float:left;
+    border-radius:4px;
+
+}
+
+.container .single-content .course-info .info:last-child {
+
+    margin:0;
+
+}
+
+.container .single-content .course-info .info figure {
+
+    width:60px;
+    margin:0 10px 0 0;
+    float:left;
+
+}
+
+.container .single-content .course-info .info h1 {
+
+    margin:-2px 0 0 0;
+    padding:0;
+    color:#fff;
+    font-size:18px;
+}
+
+.container .single-content .course-info .info p {
+
+    margin:0;
+    padding:0;
+    color:#fff;
+
+}
+
+.container .single-content .course-lesson {
+    
+    width:948px;
+    height:auto;
+    margin:0 auto;
+    
+}
+
+.container .single-content .course-lesson .lessons {
+    
+    width:664px;
+    height:auto;
+    float:right;
+    
+}
+
+.container .single-content .course-lesson .lessons .lessons-title {
+    
+    background:#f0f0f0;
+    width:622px;
+    height:50px;
+    padding:15px 20px;
+    border:1px solid #ccc;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    
+}
+
+.container .single-content .course-lesson .lessons .lessons-title h1 {
+
+    margin:0;
+    padding:0;
+    font-family:'bariol_boldbold';
+    font-weight:300;
+    font-size:30px;
+    line-height:30px;
+}
+
+.container .single-content .course-lesson .lessons .lessons-title p {
+
+    margin:0;
+    padding:0;
+    font-family:'bariol_regularregular';
+    font-size:14px;
+}
+
+.container .single-content .course-lesson .lessons .lessons-title .switch {
+    
+    position:relative;
+    top:-33px;
+    float:right !important;
+    
+}
+
+.container .single-content .course-lesson .lessons .lessons-title .switch a {
+
+    background:#e25143;
+    width:22px;
+    height:22px;
+    border-radius:100%;
+    text-align:center;
+    position:relative;
+    font-family: 'Arial';
+    font-size:14px;
+    color:#fff;
+    float:left;
+    line-height:22px;
+    margin:2px 0 0 5px;
+
+}
+
+.container .single-content .course-lesson .lessons .lessons-content {
+    
+    background:#fff;
+    width:622px;
+    height:auto;
+    padding:10px 20px 20px 20px;
+    border:1px solid #ccc;
+    border-top:0;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    
+}
+
+.container .single-content .course-lesson .lessons .lessons-content article {
+    
+    width:622px;
+    height:auto;
+    margin:10px 0 0 0;
+    
+}
+
+.container .single-content .course-lesson .lessons .lessons-content article h1 {
+    
+    padding:0;
+    margin:0 0 10px 0;
+    font-family:'bariol_regularregular';
+    font-size:20px;
+    color:#999;
+    
+}
+
+.container .single-content .course-lesson .lessons .lessons-content article h1 .switch {
+    
+    float:right !important;
+    
+}
+
+.container .single-content .course-lesson .lessons .lessons-content article h1 .switch a {
+
+    background:#e25143;
+    width:22px;
+    height:22px;
+    border-radius:100%;
+    text-align:center;
+    position:relative;
+    font-family: 'Arial';
+    font-size:14px;
+    color:#fff;
+    float:left;
+    line-height:22px;
+    margin:2px 0 0 5px;
+
+}
+
+.container .single-content .course-lesson .lessons .lessons-content article ul {
+    
+    padding:0;
+    margin:0;
+ 
+}
+
+.container .single-content .course-lesson .lessons .lessons-content article ul li {
+    
+    font-family:'bariol_regularregular';
+    font-size:14px;
+    color:#222;
+    margin:0 0 8px 14px;
+ 
+}
+
+.container .single-content .course-lesson .lessons .lessons-content article ul li span {
+    
+    background:#f0f0f0;
+    border:1px solid #ccc;
+    float:right;
+    border-radius:4px;
+    text-align:center;
+    font-size:12px;
+    padding:3px 6px;
+ 
+}
+
+.container .single-content .course-lesson .lessons .lessons-content article ul li a i {
+    
+    width:13px;
+    margin:2px 0 0 -14px;
+    visibility:hidden;
+    float:left;
+ 
+}
+
+.container .single-content .course-lesson .lessons .lessons-content article ul li a {
+    
+    font-family:'bariol_regularregular';
+    font-size:14px;
+    color:#e25143;
+    
+}
+
+.container .single-content .course-lesson .lessons .lessons-content article ul li a:hover i {
+    
+    visibility:visible;
+
+}
+
+.container .single-content .course-lesson .course-sidebar {
+    
+    width:262px;
+    float:left;
+    
+}
+
+.container .single-content .course-lesson .course-sidebar h1 {
+    
+    margin:0 0 20px 0;
+    padding:0;
+    font-family:'bariol_boldbold';
+    font-weight:300;
+    font-size:30px;
+    color:#999;
+    
+}
+
+.container .single-content .course-lesson .course-sidebar .course-sidebar-info {
+
+    width:260px;
+    background:#ce4235;
+    border-radius:4px;
+    margin:0 0 20px 0;
+    border-top: none;
+
+}
+
+.container .single-content .course-lesson .course-sidebar .course-sidebar-info h1 {
+    
+    background: #e25143;
+    font-family:'bariol_boldbold';
+    font-weight:300;
+    font-size:18px;
+    color:#ffffff;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    padding: 20px
+    
+}
+
+.container .single-content .course-lesson .course-sidebar .course-sidebar-info:nth-child(3) h1 {
+    
+    background: #5fd9aa;
+    
+}
+
+.container .single-content .course-lesson .course-sidebar .course-sidebar-info:nth-child(3) {
+    background: #51c095; 
+}
+
+.container .single-content .course-lesson .course-sidebar .course-sidebar-info:nth-child(4) h1 {
+    
+    background: #5f9ed9;
+    
+}
+
+.container .single-content .course-lesson .course-sidebar .course-sidebar-info:nth-child(4) {
+    background: #4b83b7; 
+}
+
+.container .single-content .course-lesson .course-sidebar .course-sidebar-info:nth-child(5) h1 {
+    
+    background: #69a53c;
+    
+}
+
+.container .single-content .course-lesson .course-sidebar .course-sidebar-info:nth-child(5) {
+    background: #5b8d36; 
+}
+
+.container .single-content .course-lesson .course-sidebar .content-course-sidebar-info {
+
+    padding: 0 20px 10px 20px;
+    color: #ffffff;
+
+}
+
+.container .single-teacher {
+    
+    background:#e25143;
+    width:100%;
+    height:auto;
+    padding:30px 0;
+    margin:0 auto;
+    
+}
+
+.container .single-teacher .single-teacher-content {
+    
+    width:948px;
+    height:auto;
+    margin:0 auto;
+    
+}
+
+.container .single-teacher .single-teacher-content h1 {
+    
+    margin:0 0 20px 0;
+    padding:0;
+    font-family:'bariol_boldbold';
+    font-weight:300;
+    font-size:30px;
+    color:#fff;
+    
+}
+
+.container .single-teacher .single-teacher-content .teacher-info {
+    
+    width:948px;
+    height:auto;
+    margin:0 auto;
+    
+}
+
+.container .single-teacher .single-teacher-content .teacher-info figure {
+    
+    width:100px;
+    height:100px;
+    border-radius:100%;
+    position:relative;
+    float:left;
+    overflow:hidden;
+
+}
+
+.container .single-teacher .single-teacher-content .teacher-info figure img {
+    
+    position:relative;
+    float:left;
+    
+}
+
+.container .single-teacher .single-teacher-content .teacher-info p {
+    
+    width:828px;
+    font-family:'bariol_regularregular';
+    font-size:16px;
+    color:#fff;
+    float:right;
+    
+}
+
+.container .single-testimonials {
+    
+    width:100%;
+    height:auto;
+    padding:30px 0;
+    margin:0 auto;
+    
+}
+
+.container .single-testimonials .single-testimonials-content {
+    
+    width:948px;
+    height:auto;
+    margin:0 auto;
+    
+}
+
+.container .single-testimonials .single-testimonials-content h1 {
+    
+    margin:0 0 20px 0;
+    padding:0;
+    font-family:'bariol_boldbold';
+    font-weight:300;
+    font-size:30px;
+    color:#999;
+    
+}
+
+.container .single-testimonials .single-testimonials-content .testimonials {
+    
+    width:948px;
+    height:auto;
+    margin:0 auto;
+    
+}
+
+.container .single-testimonials .single-testimonials-content .testimonials article {
+    
+    width:464px;
+    height:160px;
+    margin:0 0 20px 0;
+    float:left;
+    
+}
+
+.container .single-testimonials .single-testimonials-content .testimonials article:nth-child(2n) {
+    
+    float:right;
+    
+}
+
+.container .single-testimonials .single-testimonials-content .testimonials article figure {
+    
+    width:100px;
+    height:100px;
+    border-radius:100%;
+    position:relative;
+    float:left;
+    overflow:hidden;
+    
+}
+
+.container .single-testimonials .single-testimonials-content .testimonials article figure img {
+    
+    position:relative;
+    float:left;
+    
+}
+
+.container .single-testimonials .single-testimonials-content .testimonials article h1 {
+    
+    font-family: 'bariol_boldbold';
+    font-size:20px;
+    color:#222;
+    position:relative;
+    top:0;
+    left:20px;
+    margin:0;
+    padding:0;
+    float:left;
+    transition:all 0.1s linear;
+    text-transform:capitalize;
+    
+}
+
+.container .single-testimonials .single-testimonials-content .testimonials article p {
+    
+    width:344px;
+    font-family:'bariol_regularregular';
+    font-size:16px;
+    color:#666;
+    float:right;
+
+ }
+
+ .alert-testimonials {
+    background: #f0f0f0;
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding: 10px 0;
+    border:1px solid #cccccc;
+    color: #666;
+    border-radius: 4px; 
+ }
+
+.container .single-footer {
+
+    background:#222;
+    width:100%;
+    height:auto;
+    padding:30px 0;
+    margin:0 auto -10px auto;
+
+}
+
+.container .single-footer .single-footer-price {
+
+    width:948px;
+    height:auto;
+    margin:0 auto;
+    text-align:center;
+
+}
+
+.container .single-footer .single-footer-price span {
+
+    width:auto;
+    color:#fff;
+    float:left;
+
+}
+
+.container .single-footer .single-footer-price span strong {
+
+    font-family: 'bariol_boldbold';
+    font-size:45px;
+
+}
+
+.container .single-footer .single-footer-price span small {
+
+    font-family: 'bariol_regularregular';
+    font-size:18px;
+    margin:30px 0 0 10px;
+    float:left;
+
+}
+
+.container .single-footer .single-footer-price button {
+
+    width:280px;
+    height:59px;
+    font-size:18px;
+    margin:0;
+    float:right;
+
+}
+
+.container .single-footer .single-footer-price .button-disable-single {
+
+    background:#82cb6b;
+    width:280px;
+    height:49px;
+    font-size:18px;
+    margin:0;
+    float:right;
+    font-family: 'bariol_boldbold';
+    font-size:18px;
+    color:#fff;
+    border-radius:4px;
+    padding:5px 0;
+
+}
+
+.container .single-footer .single-footer-price .button-disable-single p {
+
+   margin:0;
+   padding:0;
+   font-family: 'bariol_regularregular';
+
+}
+
+.container .assinature {
+
+    background:#e25143;
+    width:100%;
+    height:auto;
+    padding:0;
+    margin:10px auto -10px auto;
+
+}
+
+.container .assinature .assinature-content {
+
+    width:948px;
+    height:auto;
+    margin:0 auto;
+
+}
+
+.container .assinature .assinature-content h1 {
+
+    width:454px;
+    font-family: 'bariol_regularregular';
+    color:#fff;
+    font-size:45px;
+    margin:0;
+    padding:30px 0 40px 0;
+    line-height:45px;
+    border-right:1px solid #c3483c;
+    float:left;
+
+}
+
+.container .assinature .assinature-content h1 strong {
+
+    font-family: 'bariol_boldbold';
+    font-size:55px;
+    font-weight:300;
+
+}
+
+.container .assinature .assinature-content p {
+
+    width:473px;
+    font-family: 'bariol_regularregular';
+    color:#fff;
+    font-size:19px;
+    margin:69.5px 0;
+    padding:0;
+    float:right;
+
+}
+
+.container .related-cursos {
+
+    margin:0 auto;
+
+}
+
+.container .related-cursos h1 {
+
+    font-family:'bariol_boldbold';
+    font-weight:300;
+    font-size:35px;
+    color:#999;
+    margin:30px 0;
+
+}
+
+.related-cursos article:last-child {
+
+    margin:0 0 0 20px !important;
+
+}
+
+/* END SINGLE */

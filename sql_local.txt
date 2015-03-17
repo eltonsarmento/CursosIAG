@@ -1,0 +1,23 @@
+# 12/03/2015
+# adição dos campos novos para planos
+ALTER TABLE `iag`.`planos` ADD COLUMN `cursos_qtd_mes` TINYINT(2) UNSIGNED NULL AFTER `codigoPlanoPagarme`, ADD COLUMN `cursos_acesso_carreiras` TINYINT(1) UNSIGNED NULL AFTER `cursos_qtd_mes`, ADD COLUMN `cursos_tipo_acessos` TINYINT(1) UNSIGNED NULL COMMENT '1 - apenas na proxima renovação, 2 - acesso a todos os cursos' AFTER `cursos_acesso_carreiras`; 
+
+Plano Starter
+3 cursos por mês (3 matrículas/compras de cursos pagos)
+Não tem acesso às carreiras (regra já existe)
+Novos cursos só após a próxima renovação (assim que contratar uma assinatura, só terá acesso aos cursos já publicados no site até aquela data)
+
+Plano Plus
+5 cursos por mês
+Não tem acesso às carreiras
+Novos cursos só após a próxima renovação
+
+Plano Pro
+7 cursos por mês
+Não tem acesso às carreiras
+Acesso liberado aos novos cursos
+
+Plano Premium
+Sem limite de cursos
+Tem acesso às carreiras
+Acesso liberado aos novos cursos

@@ -1,0 +1,118 @@
+
+* {
+
+	margin: 0;
+	padding: 0;
+
+}
+
+body {
+
+	font-family: 'bariol_regularregular';
+	margin: 0;
+	padding: 0;
+
+}
+
+table {
+
+	margin: 0;
+	padding: 0;
+
+}
+
+tr {
+
+	margin: 0;
+	padding: 0;
+
+}
+
+td {
+
+	margin: 0;
+	padding: 0;
+
+}
+
+#dados-certificado h1 {
+
+	font-size: 18px;
+	font-weight: 700;
+
+}
+
+#dados-certificado p {
+
+	font-size: 14px;
+
+}
+
+#dados-certificado {
+
+	width: 220px;
+	height: auto;
+	margin: 440px 20px 20px 20px;
+	color: #fff;
+
+}
+
+#logo {
+
+	width: 211px;
+	height: 54px;
+	margin: 0px auto 0 auto;
+
+}
+
+#title h1 {
+
+	font-family: 'bariol_boldbold';
+	font-weight: 300;
+	font-size: 60px;
+	padding: 60px 0;
+	text-align: center;
+	
+}
+
+#dados-aluno {
+
+	text-align: center;
+
+}
+
+#dados-aluno p {
+
+	font-size: 18px;
+	margin: 10px 0;
+	text-transform: uppercase;
+
+}
+
+#dados-aluno p strong {
+
+	font-family: 'bariol_boldbold';
+	font-weight: 300;
+	font-size: 22px;
+
+}
+
+#date {
+
+	font-family: 'bariol_boldbold';
+	font-weight: 300;
+	font-size: 22px;
+	margin: 80px 0 0 0;
+	float: left;
+
+}
+
+
+#assinatura {
+
+	width: 187px;
+	height: 111px;
+	margin: 30px 0 0 0;
+	float: right;
+
+}

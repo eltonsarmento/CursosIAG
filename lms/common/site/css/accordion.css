@@ -1,0 +1,99 @@
+.page-faq {
+
+    width:906px;
+    height:auto;
+
+}
+
+.page-faq h3:hover {
+
+	cursor:pointer;
+	border-color:#999 !important;
+
+}
+
+.page-faq h3:focus {
+
+	outline:none;
+
+}
+
+.page-faq h3 {
+
+	background:#f0f0f0;
+    font-family:'bariol_boldbold';
+    font-size:18px;
+    margin:10px 0 0 0;
+    padding:20px 20px 0 20px;
+    border:2px solid #ccc;
+    border-bottom:0;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    transition:all 0.2s linear;
+    
+}
+
+.page-faq .questions-faq {
+
+	background:#f0f0f0;
+    width:862px;
+    height:auto !important;
+    margin:0 0 10px 0;
+    padding:0 20px 20px 20px;
+    border:2px solid #ccc;
+    border-top:0;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    
+}
+
+
+.page-faq .questions-faq p {
+
+    font-family:'Arial', sans-serif;
+    font-size:14px;
+    margin:0;
+    padding:10px 0 0 0;
+    
+}
+
+.text-help {
+
+    font-family:'bariol_boldbold';
+    margin:20px 0 10px 0;
+    
+}
+
+.text-help strong {
+
+    color:#e25143;
+    
+}
+
+.page-faq .ui-corner-all {
+
+	padding:20px !important;
+	border-bottom:2px solid #ccc !important;
+	border-bottom-left-radius:4px !important;
+    border-bottom-right-radius:4px !important;
+
+}
+
+.page-faq h3.ui-state-active:hover {
+
+	border-color:#e25143 !important;
+
+}
+
+.page-faq .ui-state-active {
+
+	color:#e25143 !important;
+	border-color:#e25143 !important;
+
+}
+
+.page-faq .ui-accordion-content-active {
+
+	border-color:#e25143 !important;
+    
+}
