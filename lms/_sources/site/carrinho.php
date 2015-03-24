@@ -52,7 +52,6 @@ class Carrinho {
 		//Se for valor fixo, tem que pegar o valor total dos itens que usará cupom, para dividir o desconto igual entre os itens.
 		if ($cupom['id'] && $cupom['tipo_desconto'] == 1) {
 			$totalComDesconto = 0; //Total do preço dos itens que usam desconto
-			
 			foreach ($carrinho as $key => $item) 
 				if ($item['tipo'] == 'curso') {
 					if ($this->checkCupomCurso($cupom, $item['id'])) 
@@ -65,7 +64,6 @@ class Carrinho {
 			if ($item['tipo'] == 'curso') {
 				//Preco 
 				if ($cupom['id']) {
-
 					if ($this->checkCupomCurso($cupom, $item['id'])) {
 						$valorDesconto = 0;
 						
@@ -78,8 +76,6 @@ class Carrinho {
 						$item['valorTotal']-= $valorDesconto;
 					}
 				}
-
-
 				$total += $item['valorTotal'];
 
 				$produto['produto'] 	= $item['curso'];
@@ -246,7 +242,7 @@ class Carrinho {
 		if ($this->system->session->getItem('session_logged_in') && $this->system->session->getItem('session_nivel') == 4) {
 			session_write_close();
 			//header('Location: ' . $this->system->getUrlSite() . 'carrinho/verificaCompra/');
-     			echo "<script type='text/javascript'>window.location.href='" . $this->system->getUrlSite(). "carrinho/verificaCompra'</script>";
+     		echo "<script type='text/javascript'>window.location.href='" . $this->system->getUrlSite(). "carrinho/verificaCompra'</script>";
 			exit();
 		}
 
@@ -255,7 +251,6 @@ class Carrinho {
 			$this->system->session->deleteItem('msg_success');			
 			$this->system->view->assign('msg_success', $msg_success);	
 		}
-		
 		
 		$enviar = $this->system->input['enviar'];
 		$email = $this->system->input['email'];
@@ -279,7 +274,6 @@ class Carrinho {
 				//$this->system->session->addItem('manter_logado', $dados->id, true);
 				setcookie("cookie_cod_usuario", $dados->id, 0, '/', '.cursosiag.com.br'); 
 				 
-		       	
 		       	if ($this->system->planos->verificaAssinaturaAtiva(' and usuario_id = ' . $this->system->session->getItem('session_cod_usuario'))) {
 		       		session_write_close();
 		        	//header('Location: ' . $this->system->getUrlSite() . 'carrinho/ver/');
@@ -320,7 +314,7 @@ class Carrinho {
 						break;
 					}
 					if ($this->system->planos->verificaAssinaturaAtiva(' and usuario_id = ' . $this->system->session->getItem('session_cod_usuario')) && $curso == true) {
-						$msg_error = 'Você possui um plano. Para trocar/assinar um novo curso em sua assinatura você deve selecionar apenas um curso';		
+						$msg_error = 'Você possui um plano. Para trocar/assinar um novo curso em sua assinatura você deve selecionar apenas um curso';
 						break;
 					}
 					if ($this->system->curso->verificaCursoAtivo($this->system->session->getItem('session_cod_usuario'), $produto['id'])) {
@@ -355,7 +349,6 @@ class Carrinho {
 						$msg_error = 'Já existe uma compra aberta com ' . $produto['plano'] . '. Se não deseja finaliza-la, você poderá cancela-la em seu painel LMS.';		
 						break;
 					}
-
 					$plano = true;	
 				}
 			}
@@ -371,14 +364,12 @@ class Carrinho {
 		if ($vendaID) {
 			$this->system->vendas->deletar($vendaID);
 		}
-		
 
 		//adquirir novo curso na assinatura
 		if ($this->system->planos->verificaAssinaturaAtiva(' and usuario_id = ' . $this->system->session->getItem('session_cod_usuario')) && $curso == true) {
 			$this->doConcluirCursoAssinatura();
 			exit();
-		} 
-
+		}
 
 		//Realizar venda
 		$carrinho = $this->system->session->getItem('carrinho_produtos');
@@ -399,17 +390,13 @@ class Carrinho {
 				}
 		}
 
-
-
 		foreach ($carrinho as $key => $item) {
 			if ($item['tipo'] == 'curso') {
 				$valorSemDesconto = $item['valorTotal'];
 				$valorDesconto = 0;
 				$cupomID = 0;
 
-
 				if ($cupom['id']) {
-
 					if ($this->checkCupomCurso($cupom, $item['id'])) {
 						$cupomID = $cupom['id'];
 						//Fixo
@@ -422,8 +409,6 @@ class Carrinho {
 						$item['valorTotal']-= $valorDesconto;
 					}
 				}
-
-
 
 				$total += $item['valorTotal'];
 				$cursoComprado['id'] 				= $item['id'];
@@ -543,7 +528,6 @@ class Carrinho {
 					}
 				}
 				$detalhesProdutos .='-------------------------------------------------------';
-				 
 			}
 			if ($item['tipo'] == 'plano') {
 				$plano 					= true;
@@ -556,10 +540,8 @@ class Carrinho {
 				$produto['id'] 			= $item['id'];	
 				$detalhesProdutos .= "ID : ".$item['id'] . "  - Plano : ".$item['plano'];
 			}
-
 			$produtos[$key] = $produto;
 		}
-
 		$this->system->session->addItem('detalhesProdutos',$detalhesProdutos);
 
 		$pagarme = $this->system->configuracoesgerais->getPagarme();
@@ -571,6 +553,7 @@ class Carrinho {
 		$this->system->view->assign('msg_error', $msg_error);	
 		$this->system->view->assign('cupom', $cupom);	
 		$this->system->site->topo($this->tituloPagina);
+
 		if ($plano)
 			$this->system->view->display('site/pagamento_assinatura.tpl');
 		else
@@ -673,11 +656,7 @@ class Carrinho {
 		$parcelas 		 = $this->system->input['pagarme']['installments'];	
 		$card_hash 		 = $this->system->input['pagarme']['card_hash'];
 		$enviado		 = $this->system->input['enviado'];
-		if($enviado){
-		
-		
-		
-	
+		if ($enviado) {
 			$this->system->load->model('pagamento_model');	
 			
 			$valor = number_format($this->system->session->getItem('carrinho_total'),2,'','');
@@ -752,39 +731,89 @@ class Carrinho {
 		}	
 	}
 	// =============================================================
-	private function doConcluirCursoAssinatura(){
+	private function doConcluirCursoAssinatura() {
 		$carrinho = $this->system->session->getItem('carrinho_produtos');
 		$produto = current($carrinho);
 		$usuarioID = $this->system->session->getItem('session_cod_usuario');
 		$assinaturaAtual = $this->system->planos->getPlanoAluno('and usuario_id = ' . $usuarioID);
 
 		if ($assinaturaAtual['id']) {
+			// so vai funcionar para novas assinaturas feitas apartir de 25/03/2015
+			if ($assinaturaAtual['data_cadastro'] > '2015-03-25') {
+				$compra_liberada = false;
+				// nova checagem, agora verifica a nova configuraçao do plano para ver se o usuario tem ainda limite mensal para a compra do curso
+				$plano = $this->system->planos->getPlano($assinaturaAtual['plano_id']);
 
-			$curso['id'] = $produto['id'];
-			$curso['suporte'] = 1;
-			$curso['certificado'] = 0;
-			//adiciona novo curso
-			$id = $this->system->curso->cadastrarCursoAluno($curso, $usuarioID, $assinaturaAtual['data_expiracao']);
-			//remove curso anterior
-			$this->system->curso->deleteCursoAluno($assinaturaAtual['curso_id']);
+				// se o "cursos_tipo_acessos" for 1 verifica se o aluno pode comprar cursos novos de acordo com a data de sua assinatura
+				// verifica a data de lancamento do curso, pois so pode comprar cursos com a data menor que a da assinatura
+				if ($plano['cursos_tipo_acessos'] == 1) { // novos cursos so apos a proxima renovacao
+					$data_assinatura = $assinaturaAtual['data_cadastro'];
+					$data_curso = $produto['data_cadastro'];
+					if ($data_curso > $data_assinatura) {
+						$this->system->session->addItem('msg_error', 'Seu plano nao permite a compra de cursos lancamentos, so na proxima renovacao de assinatura');
+						echo '<script type="text/javascript">window.location = "' . $this->system->getUrlSite() . 'carrinho/ver"</script>';
+						die;
+					} else {
+						$compra_liberada = true;
+					}
+				} else {
+					$compra_liberada = true;
+				}
 
-			$this->system->planos->alterarCurso($assinaturaAtual['id'], $id);
+				// se o campo "cursos_qtd_mes" entao a compra de cursos deste plano ´e limitado mensalmente
+				if ((int)$plano['cursos_qtd_mes']) {
+					$qtd_cursos_no_plano = (int)$plano['cursos_qtd_mes'];
 
-			//email
-			$this->system->load->model('email_model');
-			$this->system->email_model->iniciarCurso($usuarioID, $curso['id'], date('d/m/Y', strtotime($assinaturaAtual['data_expiracao'])));
+					// pega qts de cursos que o usuario ja comprou neste mes
+					$qts_usuario_no_mes = $this->system->planos->getTotalCursosMesAluno($usuarioID, date('Y-m'));
 
-			session_write_close();
-			//header('Location: ' . $this->system->getUrlSite() . 'carrinho/confirmacao');
-     			echo "<script type='text/javascript'>window.location.href='" . $this->system->getUrlSite(). "carrinho/confirmacao'</script>";
-			exit();
+					// se a qtd que o usuario comprou for menor que a estipulada no plano, ele pode continuar a compra, senao ´e barrado e volta para o carrinho
+					if ($qts_usuario_no_mes < $qtd_cursos_no_plano) {
+						// libera a compra do curso ç
+						$compra_liberada = true;
+
+						// insere na tabela a nova compra deste mes
+						$this->system->planos->cadastrarNovaCompraCursoPlanoAluno($usuarioID, $produto['id'], date('Y-m-d'));
+					} else {
+						// retorna para o carrinho informando o erro da compra, limite atingido
+						$this->system->session->addItem('msg_error', 'Atingido o limite de compra do plano para este mes');
+						echo '<script type="text/javascript">window.location = "' . $this->system->getUrlSite() . 'carrinho/ver"</script>';
+						die;
+					}
+				}
+				//print_r($produto);
+				//print_r($assinaturaAtual);
+				//print_r($plano);
+				//die;
+			} else
+				$compra_liberada = true;
+
+			if ($compra_liberada) {
+				$curso['id'] = $produto['id'];
+				$curso['suporte'] = 1;
+				$curso['certificado'] = 0;
+				//adiciona novo curso
+				$id = $this->system->curso->cadastrarCursoAluno($curso, $usuarioID, $assinaturaAtual['data_expiracao']);
+				//remove curso anterior
+				$this->system->curso->deleteCursoAluno($assinaturaAtual['curso_id']);
+
+				$this->system->planos->alterarCurso($assinaturaAtual['id'], $id);
+
+				//email
+				$this->system->load->model('email_model');
+				$this->system->email_model->iniciarCurso($usuarioID, $curso['id'], date('d/m/Y', strtotime($assinaturaAtual['data_expiracao'])));
+
+				session_write_close();
+				//header('Location: ' . $this->system->getUrlSite() . 'carrinho/confirmacao');
+	     		echo "<script type='text/javascript'>window.location.href='" . $this->system->getUrlSite(). "carrinho/confirmacao'</script>";
+				die;
+			}
 		}
 	}
 	// =============================================================
 	protected function doAssinar() {
 		$enviar = $this->system->input['enviar'];		
 		if ($enviar) {
-
 			$erro = array();
 			$this->system->load->model('pagarme_model');
 
@@ -796,7 +825,6 @@ class Carrinho {
 			if (!$this->system->pagarme_model->validarPeriodo($plano['meses'])) $erro[] = 'Periodo de plano inválido.';			
 
 			if (count($erro) == 0) {
-				
 				$this->system->pagarme_model->setNomeCliente($this->system->session->getItem('session_nome'));
 				$this->system->pagarme_model->setEmailCliente($this->system->session->getItem('session_email'));
 				$this->system->pagarme_model->setReferencia($this->system->session->getItem('venda_numero_pagarme'));
@@ -806,7 +834,6 @@ class Carrinho {
 				$this->system->pagarme_model->setRedirectURL($this->system->getUrlSite() . 'carrinho/confirmacao');
 				$this->system->pagarme_model->setCardHash($card_hash);	
 				$this->system->pagarme_model->setFormaPagamento($metodoPagamento);	
-
 
 				try {
 					$retorno = $this->system->pagarme_model->gerarSolicitacaoPagarmeAssinatura();
@@ -821,19 +848,13 @@ class Carrinho {
 							$this->system->session->addItem('boletoURL',$retorno['conteudo']->current_transaction->boleto_url);
 							$this->system->session->addItem('boletoBarcode',$retorno['conteudo']->current_transaction->boleto_barcode);
 						}
-
-						echo "<script type='text/javascript'>window.location.href='" . $this->system->getUrlSite(). "carrinho/enviaAssinatura'</script>";
-												
+						echo "<script type='text/javascript'>window.location.href='" . $this->system->getUrlSite(). "carrinho/enviaAssinatura'</script>";							
 					}else{
 						echo '<script type="text/javascript">alert("Houve uma falha na solicitação. \n' . $retorno['conteudo'] . '")</script>';		
 					}
-
 				} catch (Exception $e) {
 					echo '<script type="text/javascript">alert("Houve uma falha na solicitação. \n' . $e->getMessage() . '")</script>';	
 				}
-				
-
-				
 			} else {
 				echo '<script type="text/javascript">alert("Houve uma falha na solicitação. \n' . implode('\n', $erro) . '")</script>';
 			}
@@ -845,17 +866,12 @@ class Carrinho {
 		$this->system->load->model('pagseguro_model');
 
 		if ($enviar) {
-
 			$erro = array();
 			$carrinho = $this->system->session->getItem('carrinho_produtos');
 			$plano = current($carrinho);
 			if (!$this->system->pagseguro_model->validarPeriodo($plano['meses'])) $erro[] = 'Periodo de plano inválido.';
 
-
 			if (count($erro) == 0) {
-
-
-			
 				$this->system->pagseguro_model->setNomeCliente($this->system->session->getItem('session_nome'));
 				$this->system->pagseguro_model->setEmailCliente($this->system->session->getItem('session_email'));
 				$this->system->pagseguro_model->setReferencia($this->system->session->getItem('venda_corrente'));
@@ -864,9 +880,7 @@ class Carrinho {
 				$this->system->pagseguro_model->setRedirectURL($this->system->getUrlSite() . 'carrinho/confirmacao');
 				
 				try {
-					
 					$url = $this->system->pagseguro_model->gerarSolicitacaoPagSeguro();
-
 					$this->system->vendas->atualizar($this->system->session->getItem('venda_corrente'), array('forma_pagamento' => 1));
 					
 					if ($url) {
@@ -874,13 +888,9 @@ class Carrinho {
 						echo "<script> $('#popUp').show(); </script>";
 						// echo "<script type='text/javascript'>window.open('" . $url . "', '_blank');</script>";
 					}
-
 				} catch (Exception $e) {
 					echo '<script type="text/javascript">alert("Houve uma falha na solicitação. \n' . $e->getMessage() . '")</script>';	
 				}
-				
-
-				
 			} else {
 				echo '<script type="text/javascript">alert("Houve uma falha na solicitação. \n' . implode('\n', $erro) . '")</script>';
 			}
@@ -888,7 +898,6 @@ class Carrinho {
 	}
 	// ==============================================================
 	protected function doConfirmacao() {	
-
 		$boletoURL 	   = $this->system->session->getItem('boletoURL');
 		$boletoBarcode = $this->system->session->getItem('boletoBarcode');
 
@@ -934,17 +943,15 @@ class Carrinho {
 			$this->system->session->deleteItem('venda_corrente');	
 			$this->system->session->deleteItem('venda_numero');	
 		}
-		$this->system->session->addItem('msg_error', 'Venda cancelada');	
+		$this->system->session->addItem('msg_error', 'Venda cancelada');
 		$this->redirecionarCarrinho();		
 	}
 	// ==============================================================
 	private function redirecionarCarrinho() {	
 		session_write_close();	
-//		header('Location: ' . $this->system->getUrlSite() . 'carrinho/ver');
-		echo '	<script type="text/javascript">
-			window.location = "' . $this->system->getUrlSite() . 'carrinho/ver"
-		</script> ';
-		exit();
+		//header('Location: ' . $this->system->getUrlSite() . 'carrinho/ver');
+		echo '<script type="text/javascript">window.location = "' . $this->system->getUrlSite() . 'carrinho/ver"</script>';
+		die;
 	}
 	// ===============================================================
 	private function checkCupomCurso($cupom, $cursoID) {
@@ -960,5 +967,3 @@ class Carrinho {
 	}
 }
 // ===================================================================
-
-

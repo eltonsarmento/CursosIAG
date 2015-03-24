@@ -138,10 +138,10 @@ class Planos {
             $retorno['msg'][] = "O campo Tipo de Plano precisa ser selecionado.";
 
         // formato novo de planos
-    	if ($this->system->input['cursos_tipo_acessos'] == 1 && intval($this->system->input['cursos_qtd_mes']) == 0) 
-            $retorno['msg'][] = "O campo Quantidade de Cursos do Plano está vázio e deve ser númerico maior que zero.";
-        else
-        	$this->system->input['cursos_qtd_mes'] = intval($this->system->input['cursos_qtd_mes']);
+    	//if ($this->system->input['cursos_tipo_acessos'] == 1 && intval($this->system->input['cursos_qtd_mes']) == 0) 
+        //    $retorno['msg'][] = "O campo Quantidade de Cursos do Plano está vázio e deve ser númerico maior que zero.";
+        //else
+        //	$this->system->input['cursos_qtd_mes'] = intval($this->system->input['cursos_qtd_mes']);
 
         //imagem 
 		if (!is_uploaded_file($_FILES['imagem_arquivo']['tmp_name']) && !$this->system->input['id']) {

@@ -28,6 +28,7 @@
                 <!-- RESULTADO -->
                 <table class="table table-bordered">
                     <thead>
+                        <th>ID</th>
                         <th>Aluno</th>
                         <th>E-mail</th>
                         <th class="center">CEP</th>
@@ -50,6 +51,7 @@
                             <input type="hidden" id="cidade_{$k}" value="{$aluno.cidade}"/>
                             <input type="hidden" id="estado_{$k}" value="{$aluno.estado}"/>
                             <!-- FIM DADOS MODAL -->
+                            <td>{$aluno.id}</td>
                             <td>{$aluno.nome}</td>
                             <td>{$aluno.email}</td>
                             <td>{$aluno.cep}</td>
@@ -81,15 +83,6 @@
                 <!-- PAGINAÇÂO -->
                 {$paginacao}
                 <!--FIM PAGINAÇÃO -->
-                
-                <div class="footer">
-                    <div class="footer-left">
-                        <span>&copy; {date('Y')}. Cursos IAG.</span>
-                    </div>
-                    <div class="footer-right">
-                        <span>Uma plataforma: <a href="http://www.iteacher.com.br/" title="iTeacher" target="_blank"><img src="http://www.iteacher.com.br/market/common/siteTemp/imgs/logo-iteacher.png" style="vertical-align:top;" width="70" class="img-responsive"></a></span>
-                    </div>
-                </div><!--footer-->
             
             </div><!--maincontentinner-->
         </div><!--maincontent-->

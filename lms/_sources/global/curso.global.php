@@ -12,6 +12,13 @@ class CursoGlobal {
 		$this->system->load->dao('quiz');
 		$this->system->load->dao('categorias');
 		$this->system->load->dao('professores');
+		$this->system->load->dao('aulas');		
+		$this->system->load->dao('certificados');
+		$this->system->load->dao('quiz');
+		$this->system->load->dao('duvidas');
+		$this->system->load->dao('configuracoesgerais');
+		$this->system->load->model('email_model');
+		$this->system->load->model('certificados_model');
 	}
 	// ===============================================================
 	public function autoRun() {
@@ -239,12 +246,6 @@ class CursoGlobal {
 		}
 		$this->doListar();
 	}
-	//===============================================================
-    protected function doImportar() {
-        $this->system->admin->topo($this->system->func->posicoesMenusGlobais('curso'));
-		$this->system->view->display('global/cursos_importar.tpl');
-        $this->system->admin->rodape();
-    }
 	//===============================================================
 	protected function doSalvarServidor() {
 		$curso_id = $this->system->input['curso_id'];

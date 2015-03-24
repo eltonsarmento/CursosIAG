@@ -9,7 +9,6 @@ class CursoDAO {
 	}
 	// ===============================================================
 	public function cadastrar($input) {
-		
 		$this->system->sql->insert('cursos', array(
 			'curso'						=> $input['curso'],
 			'tags'						=> $input['tags'],
@@ -51,14 +50,11 @@ class CursoDAO {
 
 		if ($input['cursos'])
 			foreach($input['cursos'] as $curso)
-				$this->system->sql->insert('cursos_relacionados', array('curso_principal_id' => $id, 'curso_relacionado_id' => $curso));	
-
-
+				$this->system->sql->insert('cursos_relacionados', array('curso_principal_id' => $id, 'curso_relacionado_id' => $curso));
         return $id;
 	}
 	// ===============================================================
 	public function atualizar($input) {
-		
 		$query = $this->system->sql->select('professor_id', 'cursos', "excluido='0' and id = '" .  $input['id'] . "'");
 		$professor = end($this->system->sql->fetchrowset($query));
 
@@ -150,7 +146,7 @@ class CursoDAO {
 		return $categorias;
 	}
 	// ===============================================================
-	public function getCategoriaCarreiraByCurso ($id) {
+	public function getCategoriaCarreiraByCurso($id) {
 		$query = $this->system->sql->select('count(1) carreira', 'cursos_categorias', "curso_id='" . $id . "' and categoria_id = 19");
 		$categoriaCarreira =  end($this->system->sql->fetchrowset($query));
 		return $categoriaCarreira;

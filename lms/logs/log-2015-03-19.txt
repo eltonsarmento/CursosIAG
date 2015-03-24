@@ -1,0 +1,8 @@
+{"logado":"Sim","usuario":"45","nivel":"4","data":"2015-03-19 15:13:20","sessao":"q9kucpeh2l5t5769vlfd1j4bg3","host":"localiag.com","ip":"192.168.25.23"}
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-03-19 15:18:56","sessao":"e8g2csmo12dec9qf1nbv97j813","host":"localiag.com","ip":"192.168.25.23"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-19 15:53:26","sessao":"g1apae45d6pvbqvqbnaq9cqdq0","host":"localiag.com","ip":"192.168.25.12"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-19 15:53:33","sessao":"g1apae45d6pvbqvqbnaq9cqdq0","host":"localiag.com","ip":"192.168.25.12"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-19 15:53:47","sessao":"g1apae45d6pvbqvqbnaq9cqdq0","host":"localiag.com","ip":"192.168.25.12"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-19 15:54:33","sessao":"g1apae45d6pvbqvqbnaq9cqdq0","host":"localiag.com","ip":"192.168.25.12"}
+{"logado":"Sim","usuario":"45","nivel":"4","data":"2015-03-19 15:54:59","sessao":"bjget6p5loc2ft8a8nr4fkdbr6","host":"localiag.com","ip":"192.168.25.23"}
+{"logado":"Sim","usuario":"45","nivel":"4","data":"2015-03-19 16:36:12","sessao":"bjget6p5loc2ft8a8nr4fkdbr6","host":"localiag.com","ip":"192.168.25.23"}

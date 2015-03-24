@@ -136,5 +136,20 @@ class PlanosDAO {
 		$venda = end($this->system->sql->fetchrowset($this->system->sql->select('codePagarme', 'vendas', "id IN (SELECT assinatura_id FROM planos_alunos WHERE id = '" . $assinaturaID . "')")));	
 		return ($venda['codePagarme'] ? $venda['codePagarme'] : null);
 	}
+	// ===============================================================
+	public function getTotalCursosMesAluno($usuario_id, $mes) {
+		$query = $this->system->sql->select('COUNT(1)', 'planos_alunos_compras', "usuario_id = '" . $usuario_id . "' AND data_compra LIKE '" . $mes . "-%'");
+		return (int)$this->system->sql->querycountunit($query);
+	}
+	// ===============================================================
+	public function cadastrarNovaCompraCursoPlanoAluno($usuario_id, $curso_id, $data_compra) {
+		$this->system->sql->insert('planos_alunos_compras', array(
+				'usuario_id' 	=> $usuario_id,
+				'curso_id' 		=> $curso_id,
+				'data_compra' 	=> $data_compra
+		));
+		return true;
+	}
+	// ===============================================================
 }
 // ===================================================================

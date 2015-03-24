@@ -55,8 +55,8 @@
                                         </span>
                                     </p>
 
-                                    <p id="cursos_qtd_mes" style="display:none;">
-                                        <label>Quantidade de Cursos por Mês*</label>
+                                    <p id="cursos_qtd_mes">
+                                        <label>Quantidade de Cursos por Mês</label>
                                         <span class="field"><input type="text" id="cursos_qtd_mes" class="input-xlarge inteiro" name="cursos_qtd_mes" value="{$plano.cursos_qtd_mes}"/></span>
                                     </p>
 
@@ -131,13 +131,13 @@
 </script>
 <script type="text/javascript">
 jQuery(document).ready(function(){
-     jQuery('.cursos_tipo_acessos').on('click', function() {
+    /* jQuery('.cursos_tipo_acessos').on('click', function() {
         if (jQuery('.cursos_tipo_acessos:checked').val() == 1) {
             jQuery('#cursos_qtd_mes').show(300);
         } else {
             jQuery('#cursos_qtd_mes').hide(300);
         }
-    });
+    });*/
     //Mensagem
     {/literal}
     {if $msg_alert} jAlert('{$msg_alert}'); {/if}
