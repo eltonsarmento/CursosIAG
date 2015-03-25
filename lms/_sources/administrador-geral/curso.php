@@ -20,10 +20,12 @@ class Curso extends CursoGlobal {
 	}
 	// ===============================================================
 	private function doMeusCursos() {		
-		
-		$id = intval($this->system->input['id']);
+		$this->system->load->dao('alunos');
+		print_r($this->system->input['email']);
+		$email = $this->system->input['email'];
+		$usuario = $this->system->alunos->getUsuarioByEmail($email);
 
-		$cursos = $this->system->curso->getCursosByAluno($id, $palavra);		
+		$cursos = $this->system->curso->getCursosByAluno($usuario['id'], $palavra);		
 		$concluidos = array();
 		$andamento = array();
 

@@ -57,10 +57,10 @@
 
                                     <p id="cursos_qtd_mes">
                                         <label>Quantidade de Cursos por Mês</label>
-                                        <span class="field"><input type="text" id="cursos_qtd_mes" class="input-xlarge inteiro" name="cursos_qtd_mes" value="{$plano.cursos_qtd_mes}"/></span>
+                                        <span class="field"><input type="text" id="cursos_qtd_mes" class="input-xlarge inteiro" name="cursos_qtd_mes" value="{$plano.cursos_qtd_mes}"/><br />*Se o campo acima estiver vazio o sistema irá considerar sem limite de compra de cursos</span>
                                     </p>
 
-                                    <p>
+                                    <!-- <p>
                                         <label>Acesso a Carreiras*</label>
                                         <span class="field">
                                             <select class="uniformselect" name="cursos_acesso_carreiras">
@@ -68,7 +68,7 @@
                                                 <option value="0" {if $plano.cursos_acesso_carreiras == 0} selected {/if}>Não</option>
                                             </select>
                                         </span>
-                                    </p>
+                                    </p> -->
 
                                     <p>
                                         <label>Descrição do Plano*</label>

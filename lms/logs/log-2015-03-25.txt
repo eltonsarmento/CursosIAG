@@ -1,0 +1,5 @@
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-03-25 16:38:35","sessao":"h8kob55q08irbe1gtdk42dshu2","host":"localiag.com","ip":"192.168.25.23"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-25 16:42:44","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-25 16:42:49","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-25 16:42:53","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-03-25 16:43:36","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}

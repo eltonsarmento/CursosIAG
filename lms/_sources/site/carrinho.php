@@ -132,12 +132,9 @@ class Carrinho {
 	}
 	// ==============================================================
 	protected function doAdicionarCurso() {
-
 		$this->system->load->dao('configuracoesgerais');
 		$suporteConfig = $this->system->configuracoesgerais->getProdutosSuporte();
-
 		$certificadoConfig = $this->system->configuracoesgerais->getProdutosCertificados();
-
 
 		$curso_id = $this->system->input['id'];
 		$certificado = $this->system->input['certificado'];
@@ -159,7 +156,6 @@ class Carrinho {
 		} else {
 			$produto['certificado'] = 0;
 		}
-		
 		//suporte
 		if ($suporteConfig['produtos_suporte_tipo'] != 0 && $produto['suporte'] != 0 ) { // 0 = não tem
 			$produto['suporte']	= (isset($suporte)? $suporte : 1);
@@ -179,8 +175,6 @@ class Carrinho {
 		$produtos = $this->system->session->getItem('carrinho_produtos');
 		$produtos[] = $produto;
 		$this->system->session->addItem('carrinho_produtos', $produtos);
-	
-		
 		$this->redirecionarCarrinho();
 	}
 	// ==============================================================
@@ -255,6 +249,7 @@ class Carrinho {
 		$enviar = $this->system->input['enviar'];
 		$email = $this->system->input['email'];
 		$senha = $this->system->input['senha'];
+
 		if ($enviar) {
 			$this->system->load->dao('login');
 		    $dados = $this->system->login->getLoginDao($email, $senha);
@@ -650,8 +645,7 @@ class Carrinho {
 		}	
 	}
 	// ==============================================================
-	protected function doConcluirPagarme() {		
-		
+	protected function doConcluirPagarme() {
 		$metodoPagamento = $this->system->input['pagarme']['payment_method'];
 		$parcelas 		 = $this->system->input['pagarme']['installments'];	
 		$card_hash 		 = $this->system->input['pagarme']['card_hash'];
@@ -739,7 +733,7 @@ class Carrinho {
 
 		if ($assinaturaAtual['id']) {
 			// so vai funcionar para novas assinaturas feitas apartir de 25/03/2015
-			if ($assinaturaAtual['data_cadastro'] > '2015-03-25') {
+			if ($assinaturaAtual['data_cadastro'] >= '2015-03-25') {
 				$compra_liberada = false;
 				// nova checagem, agora verifica a nova configuraçao do plano para ver se o usuario tem ainda limite mensal para a compra do curso
 				$plano = $this->system->planos->getPlano($assinaturaAtual['plano_id']);
@@ -750,7 +744,7 @@ class Carrinho {
 					$data_assinatura = $assinaturaAtual['data_cadastro'];
 					$data_curso = $produto['data_cadastro'];
 					if ($data_curso > $data_assinatura) {
-						$this->system->session->addItem('msg_error', 'Seu plano nao permite a compra de cursos lancamentos, so na proxima renovacao de assinatura');
+						$this->system->session->addItem('msg_error', 'Seu plano não permite a compra de cursos recém lançados, só na próxima renovação de assinatura');
 						echo '<script type="text/javascript">window.location = "' . $this->system->getUrlSite() . 'carrinho/ver"</script>';
 						die;
 					} else {
@@ -769,14 +763,14 @@ class Carrinho {
 
 					// se a qtd que o usuario comprou for menor que a estipulada no plano, ele pode continuar a compra, senao ´e barrado e volta para o carrinho
 					if ($qts_usuario_no_mes < $qtd_cursos_no_plano) {
-						// libera a compra do curso ç
+						// libera a compra do curso ç~ao´e´e´
 						$compra_liberada = true;
 
 						// insere na tabela a nova compra deste mes
 						$this->system->planos->cadastrarNovaCompraCursoPlanoAluno($usuarioID, $produto['id'], date('Y-m-d'));
 					} else {
 						// retorna para o carrinho informando o erro da compra, limite atingido
-						$this->system->session->addItem('msg_error', 'Atingido o limite de compra do plano para este mes');
+						$this->system->session->addItem('msg_error', 'Atingido o limite de compra do plano para este mês');
 						echo '<script type="text/javascript">window.location = "' . $this->system->getUrlSite() . 'carrinho/ver"</script>';
 						die;
 					}

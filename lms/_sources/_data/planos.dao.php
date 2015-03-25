@@ -18,7 +18,7 @@ class PlanosDAO {
         	'status'					=> $input['status'],
         	'codigoPlanoPagarme'		=> $input['codigoPlanoPagarme'],
         	'cursos_qtd_mes'			=> $input['cursos_qtd_mes'],
-        	'cursos_acesso_carreiras'	=> $input['cursos_acesso_carreiras'],
+        	//'cursos_acesso_carreiras'	=> $input['cursos_acesso_carreiras'],
         	'cursos_tipo_acessos'		=> $input['cursos_tipo_acessos'],
         	'imagem_arquivo' 			=> "",
         	'excluido'					=> 0
@@ -35,7 +35,7 @@ class PlanosDAO {
         	'status'					=> $input['status'],
         	'codigoPlanoPagarme'		=> $input['codigoPlanoPagarme'],
         	'cursos_qtd_mes'			=> $input['cursos_qtd_mes'],
-        	'cursos_acesso_carreiras'	=> $input['cursos_acesso_carreiras'],
+        	//'cursos_acesso_carreiras'	=> $input['cursos_acesso_carreiras'],
         	'cursos_tipo_acessos'		=> $input['cursos_tipo_acessos'],
         	'excluido'					=> 0
         ),	"id='" . $input['id'] . "'");

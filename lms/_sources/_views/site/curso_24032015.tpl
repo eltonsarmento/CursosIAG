@@ -449,13 +449,7 @@ function abrirVideo(video) {
             link: "{$url_site}"
             {literal}
         },
-		{/literal}
-		{if $curso.url == 'carreira-web-design' || $curso.url == 'carreira-youtuber'}
-        file: video,
-		{else}
-		file: buscarVideo(video),
-		{/if}
-		{literal}
+        file: buscarVideo(video),
         width: 770,
         height: 400
         

@@ -5,7 +5,7 @@ class Planos {
 	private $system = null;
 	private $redir = '';
 	private $limit = '';
-	private $producao = false;
+	private $producao = true;
 	// ===============================================================
 	public function __construct(&$system) {
 		$this->system = $system;
