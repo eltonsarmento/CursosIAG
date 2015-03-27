@@ -9,6 +9,7 @@ class Cursos {
 		$this->system = $system;
 		$this->system->load->dao('curso');
 		$this->system->load->dao('aulas');
+		$this->system->load->dao('planos');
 		$this->system->load->dao('professores');
 		$this->system->load->dao('certificados');
 		$this->system->load->dao('quiz');
@@ -48,6 +49,14 @@ class Cursos {
 		$certificado = $this->system->configuracoesgerais->getProdutosCertificados();
 
 		foreach ($cursos as $curso) {
+			// tipo venda						
+			if($curso['plano_id'] != '' && $curso['plano_id'] != 0){
+				$plano = $this->system->planos->getPlano($curso['plano_id']);	
+				$curso['tipo_venda'] = 'Plano '.$plano['plano'];
+			}else{
+				$curso['tipo_venda'] = 'Avulso';
+			}
+				
 			//ultima aula
 			
 			$ultimaAula = $this->system->aulas->getAula($curso['ultima_aula']);

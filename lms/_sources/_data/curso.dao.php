@@ -297,6 +297,34 @@ class CursoDAO {
 		
 		return $cursos;
 	}
+	// ===============================================================
+	public function getCursosByAlunoAdmin($usuario_id, $palavra = '', $limit = '') {
+		$cursos = array();
+		$query = $this->system->sql->select('*', 'cursos_alunos', "usuario_id= '" . $usuario_id . "' " . ($palavra? "and curso_id in (SELECT id from cursos where curso like '%" . $palavra . "%' )" : ''), $limit, 'curso_id desc');
+		$resultado = $this->system->sql->fetchrowset($query);
+
+		foreach ($resultado as $valor) {
+			
+			$query = $this->system->sql->select('curso, qt_capitulos, professor_id, destaque_arquivo, certificado as curso_certificado ', 'cursos', "excluido='0' and id= '" . $valor['curso_id'] . "'");
+			$curso =  end($this->system->sql->fetchrowset($query));
+			if ($curso['curso']) {
+				//aulas assistidas
+				$query = $this->system->sql->select('count(aula_id) as aulas_assistidas', 'cursos_alunos_aulas', "aluno_id = '" .  $usuario_id. "' and rel_curso_id = '" .  $valor['id'] . "' and concluida=1");
+				$resultado = end($this->system->sql->fetchrowset($query));
+				$curso['aulas_assistidas'] = $resultado['aulas_assistidas'];
+				
+				//total aulas
+				$query = $this->system->sql->select('count(aula_id) as aulas_total', 'cursos_aulas', "excluido = '0' and curso_id = '" .  $valor['curso_id'] . "'");
+				$resultado = end($this->system->sql->fetchrowset($query));
+				$curso['aulas_total'] = $resultado['aulas_total'];
+
+				$curso = array_merge($curso, $valor);
+				$cursos[] = $curso;
+			}
+		}
+		
+		return $cursos;
+	}
 	// ==============================================================
 	public function checarCursoAtivo($relacionamento, $usuario_id) {
 		$query = $this->system->sql->select('id', 'cursos_alunos', "excluido='0' and expira >= '" . date('Y-m-d') . "' and usuario_id = '" . $usuario_id . "' and id = '" . $relacionamento . "'", 1);
@@ -329,14 +357,14 @@ class CursoDAO {
 		return $cursos;
 	}
 	//===============================================================
-	public function cadastrarCursoAluno($curso, $usuario_id, $expiracao) {
-		$this->system->sql->insert('cursos_alunos', array('usuario_id' => $usuario_id, 'curso_id' => $curso['id'], 'expira' => $expiracao, 'certificado_emitido' => 0, 'suporte' => $curso['suporte'], 'certificado' => $curso['certificado'], 'excluido' => 0));
+	public function cadastrarCursoAluno($curso, $usuario_id, $expiracao,$plano_id) {
+		$this->system->sql->insert('cursos_alunos', array('usuario_id' => $usuario_id, 'plano_id' => $plano_id, 'curso_id' => $curso['id'], 'expira' => $expiracao, 'certificado_emitido' => 0, 'suporte' => $curso['suporte'], 'certificado' => $curso['certificado'], 'excluido' => 0));
 		return $this->system->sql->nextid();
 	}
 	//===============================================================
-	public function cadastrarCursosAluno($cursos, $usuario_id, $expiracao) {
+	public function cadastrarCursosAluno($cursos, $usuario_id, $expiracao,$plano_id) {
 		foreach($cursos as $curso)
-			$this->cadastrarCursoAluno($curso, $usuario_id, $expiracao);
+			$this->cadastrarCursoAluno($curso, $usuario_id, $expiracao,$plano_id);
 		return true;
 	}
 	// ==============================================================

@@ -130,15 +130,6 @@
                         </div><!--widgetbox-->
                         {/foreach}
                 </div><!--row-->
-                
-                <div class="footer">
-                    <div class="footer-left">
-                        <span>&copy; {date('Y')}. Cursos IAG.</span>
-                    </div>
-                    <div class="footer-right">
-                        <span>Uma plataforma: <a href="http://www.iteacher.com.br/" title="iTeacher" target="_blank"><img src="http://www.iteacher.com.br/market/common/siteTemp/imgs/logo-iteacher.png" style="vertical-align:top;" width="70" class="img-responsive"></a></span>
-                    </div>
-                </div><!--footer-->
             
             </div><!--maincontentinner-->
         </div><!--maincontent-->

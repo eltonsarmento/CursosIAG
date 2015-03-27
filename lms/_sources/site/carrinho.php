@@ -705,8 +705,8 @@ class Carrinho {
 			$this->system->load->model('email_model');
 
 			foreach ($produtos as $produto)  {
-				if ($produto['tipo'] == 'curso') {
-					$this->system->curso->cadastrarCursosAluno(array($produto), $this->system->session->getItem('session_cod_usuario'), date('Y-m-d', mktime(0, 0, 0, date('m'), date('d'), (date('Y') + 2))));
+				if ($produto['tipo'] == 'curso') {									
+					$this->system->curso->cadastrarCursosAluno(array($produto), $this->system->session->getItem('session_cod_usuario'), date('Y-m-d', mktime(0, 0, 0, date('m'), date('d'), (date('Y') + 2))),0);
 					$this->system->email_model->vendaCursoProfessor($produto['id'], $numero);
 				}
 				// if ($produto['tipo'] == 'plano') {
@@ -787,7 +787,7 @@ class Carrinho {
 				$curso['suporte'] = 1;
 				$curso['certificado'] = 0;
 				//adiciona novo curso
-				$id = $this->system->curso->cadastrarCursoAluno($curso, $usuarioID, $assinaturaAtual['data_expiracao']);
+				$id = $this->system->curso->cadastrarCursoAluno($curso, $usuarioID, $assinaturaAtual['data_expiracao'],$assinaturaAtual['planp_id']);
 				//remove curso anterior
 				$this->system->curso->deleteCursoAluno($assinaturaAtual['curso_id']);
 

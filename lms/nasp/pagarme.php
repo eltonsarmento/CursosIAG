@@ -149,7 +149,7 @@ if ($_POST['fingerprint']) {
 				//Adicionar curso
 				$cursos = $system->vendas->getCursosVenda($venda['id']);
 				$dataExpiracao = date('Y-m-d H:i:s', mktime(23, 59, 59, date('m'), date('d'), (date('Y') + 2)));
-				$system->curso->cadastrarCursosAluno($cursos, $venda['aluno_id'], $dataExpiracao);
+				$system->curso->cadastrarCursosAluno($cursos, $venda['aluno_id'], $dataExpiracao,0);
 
 				$system->vendas->atualizar($venda['id'], array('data_expiracao' => $dataExpiracao));
 				

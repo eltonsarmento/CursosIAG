@@ -19,13 +19,13 @@ class Curso extends CursoGlobal {
 		}
 	}
 	// ===============================================================
-	private function doMeusCursos() {		
+	private function doMeusCursos() {				
 		$this->system->load->dao('alunos');
-		print_r($this->system->input['email']);
-		$email = $this->system->input['email'];
-		$usuario = $this->system->alunos->getUsuarioByEmail($email);
+		$this->system->load->dao('planos');
 
-		$cursos = $this->system->curso->getCursosByAluno($usuario['id'], $palavra);		
+		$aluno = $this->system->alunos->getUsuarioByEmail($this->system->input['email']);
+
+		$cursos = $this->system->curso->getCursosByAlunoAdmin($aluno['id'], $palavra);		
 		$concluidos = array();
 		$andamento = array();
 
@@ -33,7 +33,14 @@ class Curso extends CursoGlobal {
 
 		foreach ($cursos as $curso) {
 			//ultima aula
-			
+			// tipo venda						
+			if($curso['plano_id'] != '' && $curso['plano_id'] != 0){
+				$plano = $this->system->planos->getPlano($curso['plano_id']);	
+				$curso['tipo_venda'] = 'Plano '.$plano['plano'];
+			}else{
+				$curso['tipo_venda'] = 'Avulso';
+			}
+
 			$ultimaAula = $this->system->aulas->getAula($curso['ultima_aula']);
 
 			if ($ultimaAula['aula_id']) $curso['aula'] = $ultimaAula['nome'];
@@ -55,8 +62,7 @@ class Curso extends CursoGlobal {
 			else 
 				$andamento[] = $curso;
 
-			$this->system->load->dao('alunos');
-			$aluno = $this->system->alunos->getAluno($id);
+			
 		}
 
 		

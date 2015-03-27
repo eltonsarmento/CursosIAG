@@ -3,3 +3,14 @@
 {"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-25 16:42:49","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
 {"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-25 16:42:53","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
 {"logado":"Sim","usuario":"6","nivel":"1","data":"2015-03-25 16:43:36","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-25 17:11:26","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
+{"logado":"Sim","usuario":"5458","nivel":"4","data":"2015-03-25 17:11:30","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-03-25 17:11:36","sessao":"h8kob55q08irbe1gtdk42dshu2","host":"localiag.com","ip":"192.168.25.23"}
+{"logado":"Sim","usuario":"45","nivel":"4","data":"2015-03-25 17:16:48","sessao":"h8kob55q08irbe1gtdk42dshu2","host":"localiag.com","ip":"192.168.25.23"}
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-03-25 17:24:01","sessao":"15pnjr3bngqlcnqh8ftn3ao6m2","host":"localiag.com","ip":"192.168.25.23"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-25 17:31:47","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-25 17:31:50","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
+{"link":"\/lms\/common\/css\/flexslider.css","logado":"Nao","usuario":null,"data":"2015-03-25 17:31:55","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
+{"link":"\/lms\/aluno\/login\/logout","logado":"Nao","usuario":null,"data":"2015-03-25 17:32:07","sessao":"h8kob55q08irbe1gtdk42dshu2","host":"localiag.com","ip":"192.168.25.23"}
+{"logado":"Sim","usuario":"5458","nivel":"4","data":"2015-03-25 17:33:42","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-03-25 17:35:05","sessao":"31gib7ljuo0h5f7stjh39oi0c4","host":"localiag.com","ip":"192.168.25.12"}

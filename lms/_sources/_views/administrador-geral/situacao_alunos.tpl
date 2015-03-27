@@ -14,16 +14,16 @@
             <div class="pagetitle">
                 <h5>Painel do Aluno</h5>
                 {if $nome_aluno != ''}
-                    <h1>Cursos do Aluno: {$nome_aluno}</h1>
+                    <h1>Cursos do Aluno: <strong>{$nome_aluno}</strong></h1>
                 {else}
                     <h1>Consultar Cursos de Alunos</h1>
                 {/if}
             </div>
 
             <form action="/lms/administrador-geral/curso/cursos-alunos" method="post" class="right searchbar">
-                <label>Informe o Id do aluno:</label>                
+                <label>Informe o Email do aluno:</label>                
 
-                <input type="text" name="id" placeholder="Digite sua busca...">
+                <input type="text" name="email" placeholder="Digite sua busca...">
 
                 <button class="btn btn-primary">Buscar</button>
 
@@ -55,7 +55,8 @@
                                                     <i class="iconfa-bar-chart"></i> Concluído: <strong>{$curso.porcentagem}%</strong> | 
                                                     <i class="iconfa-signin"></i> Último Acesso: {if $curso.ultimo_acesso != '0000-00-00'} <strong>{$curso.ultimo_acesso|date_format:"%d/%m/%Y"}</strong> {/if}<br> 
                                                     <i class="iconfa-signin"></i> Última Aula: {if $curso.aula} <strong>{$curso.aula}</strong> {/if}
-                                                    <a href="{$url_site}lms/aluno/cursos/verCurso/{$curso.id}" class="btn btn-warning margintop18 right"><i class="iconfa-repeat"></i> Retomar Curso</a>
+                                                    <a href="#" disabled="true" class="btn btn-sucsess 
+                                                    margintop18 right">Tipo da Venda:  <strong>{$curso.tipo_venda}</strong></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -84,12 +85,9 @@
                                                     <i class="iconfa-film"></i> {$curso.aulas_total} Aulas | 
                                                     <i class="iconfa-bar-chart"></i> Concluído: <strong class="label label-success">100%</strong>  | 
                                                     <i class="iconfa-signin"></i> Último Acesso: {if $curso.ultimo_acesso != '0000-00-00'} <strong>{$curso.ultimo_acesso|date_format:"%d/%m/%Y"}</strong> {/if}<br/>
-
-                                                    <a href="{$url_site}lms/aluno/cursos/verCurso/{$curso.id}" class="btn btn-inverse margintop18"><i class="iconfa-arrow-right"></i> Assistir Aulas</a>
-                                                    {if $curso.curso_certificado && $certificado}
-                                                    <a href="{$url_site}lms/aluno/certificados/solicitar-certificado/{$curso.id}" class="btn btn-success margintop18"><i class="iconfa-ok"></i> Solicitar Certificado</a>
-                                                    {/if}
-                                                    <a href="#myModal" onclick="setarDados({$curso.id})" data-toggle="modal" class="btn btn-info margintop18"><i class="iconfa-comment"></i> Escrever Depoimento</a>
+                                                    <br>
+                                                    <a href="#" disabled="true" class="btn btn-default 
+                                                    ">Tipo da Venda:  <strong>{$curso.tipo_venda}</strong></a>
                                                 </div>
                                             </div>
                                         </div>
