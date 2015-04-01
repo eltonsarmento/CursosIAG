@@ -670,7 +670,7 @@ class Carrinho {
 			$this->system->pagamento_model->setFormaPagamento($metodoPagamento);
 
 			$retorno = $this->system->pagamento_model->iniciaPagamentoPagarme();
-	
+
 			if ($retorno['status']) {
 
 				if(!empty($retorno['conteudo']->boleto_url)){
@@ -831,6 +831,7 @@ class Carrinho {
 
 				try {
 					$retorno = $this->system->pagarme_model->gerarSolicitacaoPagarmeAssinatura();
+					
 					if ($retorno['pago']) {						
 						$id_transacao_pagarme = $retorno['conteudo']->current_transaction->id;
 						$id_assinatura_pagarme = $retorno['conteudo']->id;

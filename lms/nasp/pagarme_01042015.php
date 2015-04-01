@@ -33,7 +33,7 @@ if ($_POST['fingerprint']) {
 		if (!empty($transaction['id'])) {
 			$fields['code'] 			  = $transaction['id'];
 			$fields['venda_id'] 		  = $transaction['venda_id'];
-			$fields['status'] 			  = 0;//($transaction['status'] == 'paid' ? 1 : 0);
+			$fields['status'] 			  = 0; //($transaction['status'] == 'paid' ? 1 : 0);
 			$fields['data']				  = substr($transaction['data'], 0, 10) . ' 00:00';
 			$fields['ultima_atualizacao'] = substr($transaction['ultima_atualizacao'], 0, 10);
 			$fields['total'] 			  = $transaction['total'];
@@ -41,20 +41,15 @@ if ($_POST['fingerprint']) {
 			$fields['taxas']              = $transaction['transacao_custo'];//$transaction['taxas'] = as taxas da operação
 			//$fields['custo']              = $transaction['transacao_custo'];			
 			
-			$transacao = $system->pagarme->getTransacao($transaction['id']);						
-			//mail("eltonsarmento@hotmail.com","passo 1","transaction_id ". $transaction['id'] . print_r($transacao));
+			$transacao = $system->pagarme->getTransacao($transaction['id']);			
 			//Cadastra no banco
-			if ($transacao['venda_id']) 
+			if ($transacao['venda_id'])
 			 	$system->pagarme->atualizar($fields);
-			else {			 	
-				$system->pagarme->cadastrar($fields);
-				$campos = array(			 		
-					'valor_taxas' 		=> $fields['taxas'],
-					'valor_total'		=> $fields['total_liquido'],
-				);				
-				$system->vendas->atualizar(intval($fields['venda_id']), $campos);
+			else {
+			 	$system->pagarme->cadastrar($fields);
+				$transacao = $system->pagarme->getTransacao($fields['code']);				
 
-				$transacao = $system->pagarme->getTransacao($transaction['id']);
+				$system->vendas->atualizar(intval($fields['venda_id']), $campos);
 			}
 		}
 
@@ -74,8 +69,7 @@ if ($_POST['fingerprint']) {
 
 
 			//Aprovado
-			//if ($transaction->getStatus()->getValue() == 3) {		
-			if ($transaction['status'] == 'paid') {
+			if ($transaction['status'] == 'paid' && $transacao['status'] != 1) {
 
 				$venda = $system->vendas->getVenda(intval($fields['venda_id']));
 				$plano = $system->vendas->getPlanoVenda($venda['id']);
@@ -132,14 +126,14 @@ if ($_POST['fingerprint']) {
 					//Aluno
 					$system->email_model->assinaturaRenovadaAluno($assinatura['usuario_id'], $plano['nome']);
 
-				 }
-				 $system->pagarme->atualizar(array('status' => 1, 'ultima_atualizacao' => date('Y-m-d H:i:s'), 'code' => $fields['code']));
+				}
+				$system->pagarme->atualizar(array('status' => 3, $fields['ultima_atualizacao'], code => $venda['id']));
 			}
 		}
 		// Cursos //
 		elseif($system->vendas->tipoVenda(intval($fields['venda_id'])) == 1) { //Cursos
-			//if ($transaction->getStatus()->getValue() == 3 && $transacao['status'] != 3 ) {
-			if ($transaction['status'] == 'paid' && $transacao['status'] != 1 ) {
+			if ($transaction['status'] == 'paid' && $transacao['status'] != 1) {
+
 				$venda = $system->vendas->getVenda(intval($fields['venda_id']));
 				$system->vendas->alterarPagamento($venda['id'], 1);
 				
@@ -148,29 +142,29 @@ if ($_POST['fingerprint']) {
 				$dataExpiracao = date('Y-m-d H:i:s', mktime(23, 59, 59, date('m'), date('d'), (date('Y') + 2)));
 				$system->curso->cadastrarCursosAluno($cursos, $venda['aluno_id'], $dataExpiracao,0);
 
-				$system->vendas->atualizar($venda['id'], array('data_expiracao' => $dataExpiracao));				
-											
-				
-				$system->pagarme->atualizar(array('status' => 1, 'ultima_atualizacao' => date('Y-m-d H:i:s'), 'code' => $fields['code']));
+				$system->vendas->atualizar($venda['id'], array('data_expiracao' => $dataExpiracao));
 				
 
-				//Professor
-				foreach ($cursos as $curso)
-					$system->email_model->vendaCursoProfessor($curso['id'], $venda['numero']);		
+				//Emails
 				//Administrativo
 				$system->email_model->alteradoStatusVendaAdministrativo($venda['numero']);
 				
 				//Aluno
 				$system->email_model->vendaAprovadaAluno($venda['aluno_id'], $venda['numero'], date('d/m/Y', strtotime($dataExpiracao)));
+
+				//Professor
+				foreach ($cursos as $curso)
+					$system->email_model->vendaCursoProfessor($curso['id'], $venda['numero']);
+
+				$system->pagarme->atualizar(array('status' => 1, 'ultima_atualizacao' => $fields['ultima_atualizacao'], 'code' => $fields['code']));
 			}
-		}	
+		}
 	
 	//}if(PagarMe::validateFingerprint($_POST['id'], $_POST['fingerprint'])) {		 	
 		
-}else{ // Primeira ocorrencia de assinatua. somente quando o cliente compra que é submetido para um form.php  e direciona para cá.
+} else { // Primeira ocorrencia de assinatua. somente quando o cliente compra que é submetido para um form.php  e direciona para cá.
 
 		$pagarme = $system->configuracoesgerais->getPagarme();
-
 		Pagarme::setApiKey($pagarme['pagarme_key_api']);
 		
 		$id_transacao_assinatura = $_POST['id_assinatura_pagarme'];//$system->session->getItem('id_assinatura_pagarme');
@@ -193,7 +187,7 @@ if ($_POST['fingerprint']) {
 			$transacao = $system->pagarme->getTransacao($transaction['id']);
 			
 			//Cadastra no banco
-			if ($transacao['venda_id']) 
+			if ($transacao['venda_id'])
 			 	$system->pagarme->atualizar($fields);
 			else {
 			 	$system->pagarme->cadastrar($fields);
@@ -219,15 +213,14 @@ if ($_POST['fingerprint']) {
 
 
 			//Aprovado
-			//if ($transaction->getStatus()->getValue() == 3) {
-			if ($transaction['status'] == 'paid') {
+			if ($transaction['status'] == 'paid' && $transacao['status'] != 1) {
 
 				$venda = $system->vendas->getVenda(intval($fields['venda_id']));
 				$plano = $system->vendas->getPlanoVenda($venda['id']);
 				
 				//Nova Assinatura
 				//if ($transacao['status'] != 3 || $venda['status'] == 0) { 
-				if ($venda['status'] == 0 || $venda['status'] == 2) { 
+				if ($venda['status'] == 0 || $venda['status'] == 2) {
 				 	$system->vendas->alterarPagamento($venda['id'], 1);
 				
 					//Adicionar Plano
@@ -276,13 +269,13 @@ if ($_POST['fingerprint']) {
 
 					//Aluno
 					$system->email_model->assinaturaRenovadaAluno($assinatura['usuario_id'], $plano['nome']);
-				 }
-				 $system->pagarme->atualizar(array('status' => 1, 'ultima_atualizacao' => date('Y-m-d H:i:s'), 'code' => $fields['code']));
+
+				}				
+				$system->pagarme->atualizar(array('status' => 1, 'ultima_atualizacao' => $fields['ultima_atualizacao'], 'code' => $fields['code']));
 			}
 
 			$system->session->deleteItem('id_assinatura_pagarme');				
 			header('Location: ' . $system->getUrlSite() . 'carrinho/confirmacao');
 			exit();
-
 		}
 }

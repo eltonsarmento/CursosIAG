@@ -135,7 +135,6 @@ class configuracoesgerais {
 				$this->system->view->assign('msg_alert', $erro_msg['msg']);
 				$this->system->view->assign('pagarme', $this->system->input);
 			} else {
-				print_r($this->system->input);
 				$this->system->configuracoesgerais->atualizarPagamentos($this->system->input);
 				$this->system->view->assign('msg_alert', 'Pagarme atualizado com sucesso!');
 				$this->system->view->assign('pagarme', $this->system->input);

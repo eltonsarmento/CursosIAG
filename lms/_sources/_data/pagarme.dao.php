@@ -34,7 +34,7 @@ class PagarmeDAO {
 		$this->system->sql->update('pagarme_nasp', array(
 			'status'				=> intval($input['status']),
 			'ultima_atualizacao'	=> trim($input['ultima_atualizacao']),
-		), "code = '" . $input['venda_id'] . "'");
+		), "code = '" . $input['code'] . "'");
 	}
 	
 }
