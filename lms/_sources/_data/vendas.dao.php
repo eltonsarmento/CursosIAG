@@ -82,13 +82,13 @@ ON (t1.id = t2.venda_id)', "t1.excluido = 0 ".$data." AND t2.curso_id IN (SELECT
 		$sql_extra = '';
 		//Parceiro
 		if ($this->system->session->getItem('session_nivel') == 5) 
-            $sql_extra .= " and parceiro_id = '" . $this->system->session->getItem('session_cod_usuario') . "'";
+            $sql_extra .= " parceiro_id = '" . $this->system->session->getItem('session_cod_usuario') . "'";
 
 		//busca
         if ($palavra != '') {
         	if ($metodo == 'padrao') {
         		//venda
-        		$sql_extra .= " and (id = '" . intval($palavra) . "'";
+        		$sql_extra .= " (id = '" . intval($palavra) . "'";
         		//aluno
         		$query = $this->system->sql->select('id', 'usuarios', "excluido = 0 and nivel = 4 and (nome like '%" . $palavra . "%' OR email like '%" . $palavra . "%')");
         		$resultado = $this->system->sql->fetchrowset($query);
