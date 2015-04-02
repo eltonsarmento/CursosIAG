@@ -64,6 +64,9 @@
                                 {else}
                                     <span class="label label-important"><i class="iconfa-remove"></i>Cancelado</span>   
                                 {/if}
+                                {if $pedido.excluido == 1}
+                                    <br /><span class="label label-important"><i class="iconfa-remove"></i>Excluido</span>  
+                                {/if}
                             </td>
                             <td class="center">R$ {$pedido.valor_total|number_format:2}</td>
                             <td>

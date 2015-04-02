@@ -110,6 +110,12 @@
 
                                         {/if}
 
+                                        {if $botaoAtivar eq 1}
+                                
+                                        <a href="{$url_site}lms/{$categoria}/vendas/reativar/{$id}" class="btn btn-default">Reativar Compra</a>
+
+                                        {/if}
+
                                     </div><!-- span6 -->
                                 
                                 </div><!-- row-fuild -->

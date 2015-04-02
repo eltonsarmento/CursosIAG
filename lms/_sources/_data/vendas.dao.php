@@ -78,7 +78,7 @@ ON (t1.id = t2.venda_id)', "t1.excluido = 0 ".$data." AND t2.curso_id IN (SELECT
 		return $this->system->sql->fetchrowset($this->system->sql->select('*', 'vendas', "excluido = 0 " . $campos, $limit, 'data_cadastro desc'));
 	}
 	// ===============================================================
-	public function getVendasBusca($palavra = '', $metodo = 'padrao', $limit = '') {
+	public function getVendasBusca($palavra = '', $metodo = 'padrao', $limit = '', $ver_excluidos = 0) {
 		$sql_extra = '';
 		//Parceiro
 		if ($this->system->session->getItem('session_nivel') == 5) 
@@ -139,7 +139,7 @@ ON (t1.id = t2.venda_id)', "t1.excluido = 0 ".$data." AND t2.curso_id IN (SELECT
 				$sql_extra .= ')';
         	} 
         }
-		return $this->system->sql->fetchrowset($this->system->sql->select('*', 'vendas', "excluido = 0 " . $sql_extra, $limit, 'data_cadastro desc'));
+		return $this->system->sql->fetchrowset($this->system->sql->select('*', 'vendas', ($ver_excluidos ? '' : 'excluido = 0 ') . $sql_extra, $limit, 'data_cadastro desc'));
 	}
 	// ===============================================================
 	public function getVendasPorCurso($curso_id, $campos = '', $limit = '') {
@@ -222,7 +222,7 @@ vendas AS t2 ON (t1.venda_id=t2.id)', "t2.excluido = 0" . $campos . ' GROUP BY t
         	} 
         }
 
-		$query = $this->system->sql->select('COUNT(1)', 'vendas', "excluido = 0 " . $sql_extra);
+		$query = $this->system->sql->select('COUNT(1)', 'vendas', ($ver_excluidos ? '' : 'excluido = 0 ') . $sql_extra);
 		return $this->system->sql->querycountunit($query);
 	}
 	// ===============================================================

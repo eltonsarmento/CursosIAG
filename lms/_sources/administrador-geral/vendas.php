@@ -2,10 +2,8 @@
 require_once(dirname(__FILE__).'/../global/vendas.global.php');
 // ===================================================================
 class Vendas extends VendasGlobal {
-	
 	// ===============================================================
 	public function autoRun() {
-		
 		$this->system->view->assign('categoria', $this->system->admin->getCategoria());
 		switch($this->system->input['do']) {
 			case 'nova': 								$this->doEdicao(); break;
@@ -30,9 +28,9 @@ class Vendas extends VendasGlobal {
 			case 'baixarComprovante':					$this->doBaixarComprovante(); break;
 			case 'buscarPorAluno':						$this->doBuscarPorAluno(); break;
 			case 'cancelar':							$this->doCancelar(); break;
+			case 'reativar':							$this->doReativar(); break;
 			default: 									$this->pagina404(); break;
 		}
 	}
-	
 }
 // ===================================================================

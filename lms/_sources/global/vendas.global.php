@@ -48,6 +48,7 @@ class VendasGlobal {
 				case 'baixarComprovante':					$this->doBaixarComprovante(); break;
 				case 'buscarPorAluno':						$this->doBuscarPorAluno(); break;
 				case 'cancelar':							$this->doCancelar(); break;
+				case 'reativar':							$this->doReativar(); break;
 				default: 									$this->pagina404(); break;
 			}
 		} else {
@@ -611,6 +612,7 @@ class VendasGlobal {
 			'plano'					=> $this->system->vendas->getPlanoVenda($venda['id']),
 			'certificados' 			=> $this->system->vendas->getCertificadosVenda($venda['id']),
 			'botaoCancelar'			=> $botaoCancelar,
+            'botaoAtivar'			=> $venda['excluido'],
             'aluno'                 => $aluno,
             'pagseguro'             => $pagseguro
 		));
@@ -718,7 +720,7 @@ class VendasGlobal {
 		else
 			$paginacao['base_url'] = $this->system->func->baseurl('/vendas/todas');
 		$paginacao['per_page'] = $this->exibirPorPagina;
-		$paginacao['total_rows'] = $this->system->vendas->getTotal($palavra, $metodo_busca);
+		$paginacao['total_rows'] = $this->system->vendas->getTotal($palavra, $metodo_busca, 1);
 		$paginacao['cur_page'] = $pagina;
 		$this->system->pagination->initialize($paginacao);
 		$this->system->view->assign('paginacao', $this->system->pagination->create_links());
@@ -728,7 +730,7 @@ class VendasGlobal {
 		$final = $this->exibirPorPagina;
 		$limit = $inicial . ',' . $final;		
 
-		$todas_vendas = $this->system->vendas->getVendasBusca($palavra, $metodo_busca, $limit);
+		$todas_vendas = $this->system->vendas->getVendasBusca($palavra, $metodo_busca, $limit, 1);
 
 		foreach($todas_vendas as $key => $vendas) {
 			$todas_vendas[$key]['cliente'] = $this->system->alunos->getAluno($vendas['aluno_id']);
@@ -964,6 +966,14 @@ class VendasGlobal {
 			}
 		}
 
+		$this->system->func->redirecionar('/vendas/detalhes/' . $id);
+	}
+	// ===============================================================
+	public function doReativar() {
+		$id = $this->system->input['id'];
+		$venda = $this->system->vendas->getVenda($id);
+		if ($venda['id'])
+			$this->system->vendas->atualizar($id, array('excluido' => 0));
 		$this->system->func->redirecionar('/vendas/detalhes/' . $id);
 	}
 	// ===============================================================
