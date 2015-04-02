@@ -1,5 +1,7 @@
 <?php
 // ===================================================================
+header("access-control-allow-origin: https://sandbox.pagseguro.uol.com.br");
+
 require(dirname(__FILE__).'/../global.php');
 $system = new System(false);
 

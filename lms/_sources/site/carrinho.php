@@ -17,6 +17,7 @@ class Carrinho {
 	}
 	// ===============================================================
 	public function autoRun() {
+		//print_r($this->system->input); die;
 		switch($this->system->input['do']) {
 			case 'ver':					$this->doVer(); break;
 			case 'adicionarCurso':		$this->doAdicionarCurso(); break;

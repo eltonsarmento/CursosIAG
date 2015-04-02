@@ -1,24 +1,27 @@
 <?php
-
-/*
- * ***********************************************************************
- Copyright [2011] [PagSeguro Internet Ltda.]
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- * ***********************************************************************
+/**
+ * 2007-2014 [PagSeguro Internet Ltda.]
+ *
+ * NOTICE OF LICENSE
+ *
+ *Licensed under the Apache License, Version 2.0 (the "License");
+ *you may not use this file except in compliance with the License.
+ *You may obtain a copy of the License at
+ *
+ *http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *Unless required by applicable law or agreed to in writing, software
+ *distributed under the License is distributed on an "AS IS" BASIS,
+ *WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *See the License for the specific language governing permissions and
+ *limitations under the License.
+ *
+ *  @author    PagSeguro Internet Ltda.
+ *  @copyright 2007-2014 PagSeguro Internet Ltda.
+ *  @license   http://www.apache.org/licenses/LICENSE-2.0
  */
 
-/**
+/***
  * HTTP Connection Class - used in API calls (cURL library is required)
  */
 class PagSeguroHttpConnection
@@ -54,7 +57,7 @@ class PagSeguroHttpConnection
         $this->response = $response;
     }
 
-    public function post($url, array $data, $timeout = 20, $charset = 'ISO-8859-1')
+    public function post($url, array $data = array(), $timeout = 20, $charset = 'ISO-8859-1')
     {
         return $this->curlConnection('POST', $url, $timeout, $charset, $data);
     }
@@ -81,11 +84,13 @@ class PagSeguroHttpConnection
             );
         }
 
+
         $options = array(
             CURLOPT_HTTPHEADER => array(
                 "Content-Type: application/x-www-form-urlencoded; charset=" . $charset,
                 $contentLength,
-                'lib-description: php:' . PagSeguroLibrary::getVersion()
+                'lib-description: php:' . PagSeguroLibrary::getVersion(),
+                'language-engine-description: php:' . PagSeguroLibrary::getPHPVersion()
             ),
             CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
@@ -95,21 +100,14 @@ class PagSeguroHttpConnection
             //CURLOPT_TIMEOUT => $timeout
             );
 
-        // adding module version
         if (!is_null(PagSeguroLibrary::getModuleVersion())) {
             array_push($options[CURLOPT_HTTPHEADER], 'module-description: ' . PagSeguroLibrary::getModuleVersion());
         }
 
-        // adding CMS version
         if (!is_null(PagSeguroLibrary::getCMSVersion())) {
             array_push($options[CURLOPT_HTTPHEADER], 'cms-description: ' . PagSeguroLibrary::getCMSVersion());
         }
         
-        // adding PHP version
-        if (!is_null(PagSeguroLibrary::getPHPVersion())) {
-            array_push($options[CURLOPT_HTTPHEADER], 'language-engine-description: php:' . PagSeguroLibrary::getPHPVersion());
-        }
-
         $options = ($options + $methodOptions);
 
         $curl = curl_init();
@@ -119,8 +117,10 @@ class PagSeguroHttpConnection
         $error = curl_errno($curl);
         $errorMessage = curl_error($curl);
         curl_close($curl);
+
         $this->setStatus((int) $info['http_code']);
         $this->setResponse((String) $resp);
+
         if ($error) {
             throw new Exception("CURL can't connect: $errorMessage");
         } else {

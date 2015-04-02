@@ -150,7 +150,8 @@ class Pagamento_modelMODEL {
             $credentials = $this->obterCredenciaisPagSeguro();                           
             $url = $paymentRequest->register($credentials);
             return $url;
-        } catch (PagSeguroServiceException $e) {        	
+        } catch (PagSeguroServiceException $e) {
+        	print_r($e);
         	$erros = array();
         	foreach($e->getErrors() as $erro)
         		$erros[] = $erro->getMessage();

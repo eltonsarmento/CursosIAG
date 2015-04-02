@@ -144,7 +144,7 @@
                                             
                         
                            
-                            <a href="{$url_site}carrinho/cancelar/">Cancelar pedido e restaurar carrinho</button>
+                            <a href="{$url_site}carrinho/cancelar/">Cancelar pedido e restaurar carrinho</a>
                             
                             </section> 
                         

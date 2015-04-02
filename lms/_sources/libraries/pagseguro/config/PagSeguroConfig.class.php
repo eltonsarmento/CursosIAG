@@ -1,24 +1,27 @@
 <?php
-
-/*
- * ***********************************************************************
- Copyright [2011] [PagSeguro Internet Ltda.]
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- * ***********************************************************************
+/**
+ * 2007-2014 [PagSeguro Internet Ltda.]
+ *
+ * NOTICE OF LICENSE
+ *
+ *Licensed under the Apache License, Version 2.0 (the "License");
+ *you may not use this file except in compliance with the License.
+ *You may obtain a copy of the License at
+ *
+ *http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *Unless required by applicable law or agreed to in writing, software
+ *distributed under the License is distributed on an "AS IS" BASIS,
+ *WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *See the License for the specific language governing permissions and
+ *limitations under the License.
+ *
+ *  @author    PagSeguro Internet Ltda.
+ *  @copyright 2007-2014 PagSeguro Internet Ltda.
+ *  @license   http://www.apache.org/licenses/LICENSE-2.0
  */
 
-/*
+/***
  * Provides a means to retrieve configuration preferences.
  * These preferences can come from the default config file (PagSeguroLibrary/config/PagSeguroConfig.php).
  */
@@ -82,25 +85,57 @@ class PagSeguroConfig
         }
     }
 
+    public static function setEnvironment($value)
+    {
+        self::$data['environment'] = $value;
+    }
+
+    public static function getApplicationCredentials()
+    {
+        if (isset(self::$data['credentials']) &&
+            isset(self::$data['credentials']['appId'][self::$data['environment']]) &&
+            isset(self::$data['credentials']['appKey'][self::$data['environment']])
+        ) {
+            
+            return new PagSeguroApplicationCredentials(
+                self::$data['credentials']['appId'][self::$data['environment']],
+                self::$data['credentials']['appKey'][self::$data['environment']]
+            );
+        } else {
+            throw new Exception("Applications credentials not set.");
+        }
+    }
+
     public static function getAccountCredentials()
     {
         if (isset(self::$data['credentials']) &&
             isset(self::$data['credentials']['email']) &&
-            isset(self::$data['credentials']['token'])
+            isset(self::$data['credentials']['token'][self::$data['environment']])
         ) {
+            
             return new PagSeguroAccountCredentials(
                 self::$data['credentials']['email'],
-                self::$data['credentials']['token']
+                self::$data['credentials']['token'][self::$data['environment']]
             );
         } else {
             throw new Exception("Credentials not set.");
         }
     }
 
+    public static function getPaymentRedirectUrl()
+    {
+        return PagSeguroResources::getPaymentUrl(self::$data['environment']);
+    }
+
+    public static function getStaticUrl()
+    {
+        return PagSeguroResources::getStaticUrl(self::$data['environment']);
+    }
+
     public static function getEnvironment()
     {
-        if (isset(self::$data['environment']) && isset(self::$data['environment']['environment'])) {
-            return self::$data['environment']['environment'];
+        if (isset(self::$data['environment'])) {
+            return self::$data['environment'];
         } else {
             throw new Exception("Environment not set.");
         }
@@ -145,7 +180,7 @@ class PagSeguroConfig
         }
     }
 
-    /**
+    /***
      * Validate if the requirements are enable for use correct of the PagSeguro
      * @return array
      */
@@ -161,8 +196,8 @@ class PagSeguroConfig
 
         $version = str_replace('.', '', phpversion());
 
-        if ($version < 516) {
-            $requirements['version'] = 'PagSeguroLibrary: PHP version 5.1.6 or greater is required.';
+        if ($version < 533) {
+            $requirements['version'] = 'PagSeguroLibrary: PHP version 5.3.3 or greater is required.';
         }
 
         if (!function_exists('spl_autoload_register')) {

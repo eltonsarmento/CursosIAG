@@ -1,36 +1,30 @@
 <?php
-
-/*
- ************************************************************************
- Copyright [2011] [PagSeguro Internet Ltda.]
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- ************************************************************************
+/**
+ * 2007-2014 [PagSeguro Internet Ltda.]
+ *
+ * NOTICE OF LICENSE
+ *
+ *Licensed under the Apache License, Version 2.0 (the "License");
+ *you may not use this file except in compliance with the License.
+ *You may obtain a copy of the License at
+ *
+ *http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *Unless required by applicable law or agreed to in writing, software
+ *distributed under the License is distributed on an "AS IS" BASIS,
+ *WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *See the License for the specific language governing permissions and
+ *limitations under the License.
+ *
+ *  @author    PagSeguro Internet Ltda.
+ *  @copyright 2007-2014 PagSeguro Internet Ltda.
+ *  @license   http://www.apache.org/licenses/LICENSE-2.0
  */
-
-/*
- * PagSeguro Library Class
- * Version: 2.1.8
- * Date: 21/08/2013
- */
-define('PAGSEGURO_LIBRARY', true);
-
-require_once "loader" . DIRECTORY_SEPARATOR . "PagSeguroAutoLoader.class.php";
 
 class PagSeguroLibrary
 {
 
-    const VERSION = "2.1.8";
+    const VERSION = "2.4.0";
     public static $resources;
     public static $config;
     public static $log;
@@ -51,6 +45,7 @@ class PagSeguroLibrary
 
     public static function init()
     {
+        require_once "loader" . DIRECTORY_SEPARATOR . "PagSeguroAutoLoader.class.php";
         self::verifyDependencies();
         if (self::$library == null) {
             self::$library = new PagSeguroLibrary();
@@ -64,10 +59,6 @@ class PagSeguroLibrary
         $dependencies = true;
 
         try {
-            if (!function_exists('spl_autoload_register')) {
-                $dependencies = false;
-                throw new Exception("PagSeguroLibrary: Standard PHP Library (SPL) is required.");
-            }
 
             if (!function_exists('curl_init')) {
                 $dependencies = false;
@@ -78,6 +69,7 @@ class PagSeguroLibrary
                 $dependencies = false;
                 throw new Exception('PagSeguroLibrary: DOM XML extension is required.');
             }
+
         } catch (Exception $e) {
             return $dependencies;
         }
@@ -110,7 +102,7 @@ class PagSeguroLibrary
     {
         return self::$php_version = phpversion();
     }
-    
+
     final public static function setPHPVersion($version)
     {
         self::$php_version = $version;

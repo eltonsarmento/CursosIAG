@@ -1,46 +1,49 @@
 <?php
-
-/*
- ************************************************************************
- Copyright [2011] [PagSeguro Internet Ltda.]
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- ************************************************************************
+/**
+ * 2007-2014 [PagSeguro Internet Ltda.]
+ *
+ * NOTICE OF LICENSE
+ *
+ *Licensed under the Apache License, Version 2.0 (the "License");
+ *you may not use this file except in compliance with the License.
+ *You may obtain a copy of the License at
+ *
+ *http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *Unless required by applicable law or agreed to in writing, software
+ *distributed under the License is distributed on an "AS IS" BASIS,
+ *WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *See the License for the specific language governing permissions and
+ *limitations under the License.
+ *
+ *  @author    PagSeguro Internet Ltda.
+ *  @copyright 2007-2014 PagSeguro Internet Ltda.
+ *  @license   http://www.apache.org/licenses/LICENSE-2.0
  */
 
-/*
+/**
  * Represents a exception behavior
  * */
-/**
+/***
  * Class PagSeguroServiceException
  */
 class PagSeguroServiceException extends Exception
 {
 
-    /**
+    /***
      * @var PagSeguroHttpStatus
      */
     private $httpStatus;
-    /**
+    /***
      * @var
      */
     private $httpMessage;
-    /**
+    /***
      * @var array
      */
     private $errors = array();
 
-    /**
+    /***
      * @param PagSeguroHttpStatus $httpStatus
      * @param array $errors
      */
@@ -50,10 +53,11 @@ class PagSeguroServiceException extends Exception
         if ($errors) {
             $this->errors = $errors;
         }
-        $this->httpMessage = $this->getFormattedMessage();
+        //$this->httpMessage = $this->getFormattedMessage();
+        parent::__construct($this->getOneLineMessage());
     }
 
-    /**
+    /***
      * @return array
      */
     public function getErrors()
@@ -61,7 +65,7 @@ class PagSeguroServiceException extends Exception
         return $this->errors;
     }
 
-    /**
+    /***
      * @param array $errors
      */
     public function setErrors(array $errors)
@@ -69,7 +73,7 @@ class PagSeguroServiceException extends Exception
         $this->errors = $errors;
     }
 
-    /**
+    /***
      * @return PagSeguroHttpStatus
      */
     public function getHttpStatus()
@@ -77,7 +81,7 @@ class PagSeguroServiceException extends Exception
         return $this->httpStatus;
     }
 
-    /**
+    /***
      * @param PagSeguroHttpStatus $httpStatus
      */
     public function setHttpStatus(PagSeguroHttpStatus $httpStatus)
@@ -85,35 +89,21 @@ class PagSeguroServiceException extends Exception
         $this->httpStatus = $httpStatus;
     }
 
-    /**
+    /***
      * @return string
      */
     private function getHttpMessage()
     {
-        switch ($this->httpStatus->getType()) {
+
+        switch ($type = $this->httpStatus->getType()) {
 
             case 'BAD_REQUEST':
-                $message = "BAD_REQUEST";
-                break;
-
             case 'UNAUTHORIZED':
-                $message = "UNAUTHORIZED";
-                break;
-
             case 'FORBIDDEN':
-                $message = "FORBIDDEN";
-                break;
-
             case 'NOT_FOUND':
-                $message = "NOT_FOUND";
-                break;
-
             case 'INTERNAL_SERVER_ERROR':
-                $message = "INTERNAL_SERVER_ERROR";
-                break;
-
             case 'BAD_GATEWAY':
-                $message = "BAD_GATEWAY";
+                $message = $type;
                 break;
 
             default:
@@ -124,7 +114,7 @@ class PagSeguroServiceException extends Exception
         return $message;
     }
 
-    /**
+    /***
      * @return string
      */
     public function getFormattedMessage()
@@ -139,7 +129,7 @@ class PagSeguroServiceException extends Exception
         return $message;
     }
 
-    /**
+    /***
      * @return mixed
      */
     public function getOneLineMessage()
