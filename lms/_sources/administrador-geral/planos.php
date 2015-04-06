@@ -72,6 +72,7 @@ class Planos {
 				}
 
 				//Moip
+				/*
 				if ($this->producao) {
 					$moipPlano = array(
 						"code" => "plano".$id,
@@ -85,6 +86,7 @@ class Planos {
 	    				)
 	    			);
 				}
+
 				
 				if ($this->producao) {
 					try {
@@ -100,6 +102,7 @@ class Planos {
 						$this->system->view->assign('msg_alert', $e->getMessage());
 					}
 				}
+    			*/
     			
 				$this->doListar();
 				die;

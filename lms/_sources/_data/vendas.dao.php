@@ -79,16 +79,18 @@ ON (t1.id = t2.venda_id)', "t1.excluido = 0 ".$data." AND t2.curso_id IN (SELECT
 	}
 	// ===============================================================
 	public function getVendasBusca($palavra = '', $metodo = 'padrao', $limit = '', $ver_excluidos = 0) {
-		$sql_extra = '';
+		$sql_extra = '1=1';
+		if (!$ver_excluidos)
+			$sql_extra .= ' and excluido = 0';
 		//Parceiro
 		if ($this->system->session->getItem('session_nivel') == 5) 
-            $sql_extra .= " parceiro_id = '" . $this->system->session->getItem('session_cod_usuario') . "'";
+            $sql_extra .= " and parceiro_id = '" . $this->system->session->getItem('session_cod_usuario') . "'";
 
 		//busca
         if ($palavra != '') {
         	if ($metodo == 'padrao') {
         		//venda
-        		$sql_extra .= " (id = '" . intval($palavra) . "'";
+        		$sql_extra .= " and (id = '" . intval($palavra) . "'";
         		//aluno
         		$query = $this->system->sql->select('id', 'usuarios', "excluido = 0 and nivel = 4 and (nome like '%" . $palavra . "%' OR email like '%" . $palavra . "%')");
         		$resultado = $this->system->sql->fetchrowset($query);
@@ -139,7 +141,7 @@ ON (t1.id = t2.venda_id)', "t1.excluido = 0 ".$data." AND t2.curso_id IN (SELECT
 				$sql_extra .= ')';
         	} 
         }
-		return $this->system->sql->fetchrowset($this->system->sql->select('*', 'vendas', ($ver_excluidos ? '' : 'excluido = 0 ') . $sql_extra, $limit, 'data_cadastro desc'));
+		return $this->system->sql->fetchrowset($this->system->sql->select('*', 'vendas', $sql_extra, $limit, 'data_cadastro desc'));
 	}
 	// ===============================================================
 	public function getVendasPorCurso($curso_id, $campos = '', $limit = '') {

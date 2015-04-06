@@ -1,6 +1,6 @@
         <!-- BANNER --> 
         
-        <section class="banner-promocional">
+        <!-- <section class="banner-promocional">
            
             <section class="banner-content">
             
@@ -12,9 +12,9 @@
             
             </section>
             
-        </section>
+        </section> -->
         
-        <!--<section class="banner">
+        <section class="banner">
 
             <section class="banner-content">
 
@@ -48,7 +48,7 @@
 
             </section>
 
-        </section>--> 
+        </section>
         
         <section class="container">
             

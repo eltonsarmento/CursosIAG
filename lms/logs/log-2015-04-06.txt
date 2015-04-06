@@ -1,0 +1,3 @@
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-04-06 15:19:40","sessao":"nvpnhgf2codrssba1jfr1bkar2","host":"localiag.com","ip":"192.168.25.12"}
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-04-06 15:33:25","sessao":"ku4i4ts6n2mpgm88kktl7danc4","host":"localiag.com","ip":"192.168.25.23"}
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-04-06 15:43:23","sessao":"nvpnhgf2codrssba1jfr1bkar2","host":"localiag.com","ip":"192.168.25.12"}
