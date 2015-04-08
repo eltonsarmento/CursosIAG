@@ -1,0 +1,1 @@
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-04-07 14:30:12","sessao":"ppi7d0glcrgbu37fo7f5sqf4a2","host":"localiag.com","ip":"192.168.25.12"}

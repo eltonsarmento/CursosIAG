@@ -233,10 +233,12 @@ class Cursos {
 				$this->system->aulas->liberarAula($proximaAula, $relacionamentoId, $usuarioId);
 		}
 
+		/*
 		if (!$this->system->aulas->checarAulaLiberada($aulaId, $relacionamentoId)) {
 			$this->system->session->addItem('msg_alert', 'Essa aula ainda não está liberada. Para libera-la complete as aulas anteriores!');
 			$this->system->func->redirecionar('/cursos/verCurso/' . $relacionamentoId);
 		}
+		*/
 
 
 		$this->system->curso->atualizarCursoAluno(array('ultima_aula' => $aulaId), $relacionamentoId);
