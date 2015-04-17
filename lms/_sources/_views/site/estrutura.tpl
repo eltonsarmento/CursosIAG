@@ -254,7 +254,7 @@
                 <section class="menu-content-header">
                     <nav>
                         <ul>
-                            <li><a href="#seja-um-revendedor" rel="modal:open">Seja um Revendedor</a></li>
+                            <!-- <li><a href="#seja-um-revendedor" rel="modal:open">Seja um Revendedor</a></li> -->
                             <li><a href="{$url_site}pagina/termos">Termos e Condições</a></li>
                             <li><a href="{$url_site}contato/">Fale Conosco</a></li> 
                             <li><a href="#seja-um-professor" rel="modal:open">Seja um Professor</a></li>

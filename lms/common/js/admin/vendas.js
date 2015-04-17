@@ -44,19 +44,19 @@ function carregaDadosVendaPorMes(categoria, mes, ano, professor) {
 		);
 }
 
-function carregaDadosVendaPorProdutos(categoria, curso) {
+function carregaDadosVendaPorProdutos(categoria, curso, ano) {
 	jQuery.ajax({
 		type: "POST",
 		url: '/lms/' + categoria + '/vendas/carregaDadosVendaPorProdutos/',
-		data: { curso_id: curso }}).done(
+		data: { curso_id: curso, ano: ano }}).done(
 			function html(html) {
 				var data = jQuery.parseJSON(html);
 				var tabela = '';
 				jQuery('#tabela_vendas_por_produtos').html(tabela);
-				tabela += '<table class="table table-bordered"><thead><th class="center">M&ecirc;s</th><th class="center">Qtd de Vendas</th><th class="center">Valor Total</th></thead><tbody>';
+				tabela += '<table class="table table-bordered"><thead><th class="center">M&ecirc;s</th><th class="center">Qtd de Vendas</th><th class="center">Valor Total</th><th class="center">Alunos</th></thead><tbody>';
 				
 				jQuery.each(data, function(i, item) {
-					tabela += '<tr><td class="center">' + item.mes + '</td><td class="center">' + item.quantidade + '</td><td>R$ ' + item.total + '</td></tr>';
+					tabela += '<tr><td class="center">' + item.mes + '</td><td class="center">' + item.quantidade + '</td><td>R$ ' + item.total + '</td><td class="center"><a href="/lms/' + categoria + '/vendas/baixarListaAlunosCursoMes/?curso=' + curso + '&mes=' + item.mes + '&ano=' + ano + '">Baixar</a></td></tr>';
 				});
 				
 				tabela += '</tbody></table>';

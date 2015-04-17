@@ -411,11 +411,25 @@ jQuery(document).ready(function(){
 
                                           </span>
 
+                                          <span class="field">
+
+                                                    <select name="vendas_produto_por_mes_ano" id="vendas_produto_por_mes_ano" class="vendas_produto_por_mes_ano">
+
+                                                        <option selected>Selecione o Ano</option>
+                                                        {php}
+                                                        for($i = 2013; $i <= date('Y'); $i++) {
+                                                            echo '<option value="'.$i.'" '. ($i == date('Y') ? 'selected="selected"' : '') .'>'.$i.'</option>';
+                                                        }
+                                                        {/php}
+                                                    </select>
+
+                                                </span>
+
                                         </p>
                                       
                                       
                                         <p>
-                                            <input type="button" onclick="javascript:carregaDadosVendaPorProdutos('{$categoria}', jQuery('.vendas_por_produto_curso_id').val()); return false;" class="btn btn-primary" value="Mostrar">
+                                            <input type="button" onclick="javascript:carregaDadosVendaPorProdutos('{$categoria}', jQuery('.vendas_por_produto_curso_id').val(), jQuery('.vendas_produto_por_mes_ano').val()); return false;" class="btn btn-primary" value="Mostrar">
                                         </p>
 
                                       </form>

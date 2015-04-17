@@ -11,7 +11,7 @@
                         <ul>
                             <h1>Sobre Nós</h1>
                             <li><a href="{$url_site}pagina/historia">IAG, a história</a></li>
-                            <li><a href="#seja-um-revendedor" rel="modal:open">Seja um Revendedor</a> <span class="ballon-small">Novo</span></li>
+                            <!-- <li><a href="#seja-um-revendedor" rel="modal:open">Seja um Revendedor</a> <span class="ballon-small">Novo</span></li> -->
                         </ul>
                         
                         <ul>

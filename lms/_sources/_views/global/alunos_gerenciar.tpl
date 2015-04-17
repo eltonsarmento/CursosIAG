@@ -57,11 +57,14 @@
                             <td>{$aluno.cep}</td>
                             <td>{$aluno.cpf}</td>
                             <td>{$aluno.telefone}</td>
-                            <td width="130">
+                            <td width="180">
                                               
                               <ul class="tooltipsample">
                                 <li><a href="#myModal" onclick="setarValores({$k});" class="btn btn-primary" data-toggle="modal" data-placement="bottom" data-rel="tooltip" data-original-title="Cadastro Completo"><i class="iconfa-search"></i></a></li>
                                 <li><a href="/lms/{$categoria}/alunos/editar/{$aluno.id}" class="btn" data-placement="bottom" data-rel="tooltip" data-original-title="Editar Aluno"><i class="iconfa-pencil"></i></a></li>
+                                
+                                <li><a href="/lms/{$categoria}/historico/editar/{$aluno.id}" class="btn" data-placement="bottom" data-rel="tooltip" data-original-title="Editar Historico"><i class="iconfa-book"></i></a></li>
+                                
                                 {if empty($aluno.cursos)}
                                 <li><a class="btn btn-primary confirmbutton" onclick="javascript:deletar({$aluno.id})" data-placement="bottom" data-rel="tooltip" data-original-title="Remover Aluno"><i class="iconfa-remove"></i></a></li>
                                 {/if}

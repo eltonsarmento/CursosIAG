@@ -21,7 +21,6 @@ class VendasGlobal {
 	}
 	// ===============================================================
 	public function autoRun() {
-			
 		if (in_array($this->system->session->getItem('session_nivel'), $this->acessoPermitido)) {
     		$this->system->view->assign('categoria', $this->system->admin->getCategoria());
 			switch($this->system->input['do']) {
@@ -49,6 +48,7 @@ class VendasGlobal {
 				case 'buscarPorAluno':						$this->doBuscarPorAluno(); break;
 				case 'cancelar':							$this->doCancelar(); break;
 				case 'reativar':							$this->doReativar(); break;
+				case 'baixarListaAlunosCursoMes':			$this->dobaixarListaAlunosCursoMes(); break;
 				default: 									$this->pagina404(); break;
 			}
 		} else {
@@ -56,9 +56,52 @@ class VendasGlobal {
 		}
 	}
 	// ===============================================================
+	protected function dobaixarListaAlunosCursoMes() {
+		$curso_id = intval($this->system->input['curso']);
+		$mes = $this->system->input['mes'];
+		$ano = $this->system->input['ano'];
+
+		if ($curso_id && $mes && $ano) {
+
+			$vendas_produtos = $this->system->vendas->getVendasPorCurso($curso_id, " and data_cadastro like '".$ano."-".$mes."-%'", 0);
+
+			if (count($vendas_produtos)) {
+				$html  = '';  
+				$html .= '<table border="1">';  
+				$html .= '<tr>';  
+				$html .= '<td align="center"><b>NOME</b></td>';  
+				$html .= '<td align="center"><b>EMAIL</b></td>';  
+				$html .= '</tr>'; 
+
+				foreach($vendas_produtos as $item => $vendas) {
+					$venda = $this->system->vendas->getVenda($vendas['venda_id']);
+					$aluno = $this->system->alunos->getAluno($venda['usuario_id']);
+
+					$html .= '<tr>';  
+					$html .= '<td align="center">'.$aluno['nome'].'</td>';  
+					$html .= '<td align="center">'.$aluno['email'].'</td>';
+					$html .= '</tr>';
+				}
+
+				$arquivo = 'alunos_curso_'.$mes.'_'.$ano.'.xls';  
+				$html .= '</table>';  
+				  
+				header ("Expires: Mon, 26 Jul 1997 05:00:00 GMT");  
+				header ("Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT");  
+				header ("Cache-Control: no-cache, must-revalidate");  
+				header ("Pragma: no-cache");  
+				header ("Content-type: application/x-msexcel");  
+				header ("Content-Disposition: attachment; filename=\"{$arquivo}\"" );  
+				header ("Content-Description: PHP Generated Data" );  
+				  
+				echo $html;
+			}
+			die;
+		}
+	}
+	// ===============================================================
 	protected function doEdicao() {
 		$editar = intval($this->system->input['editar']);
-		
 		if ($editar) {
 			$erro_msg = $this->validarDados();
 			if ($erro_msg) {
@@ -290,10 +333,12 @@ class VendasGlobal {
 	// ===============================================================
 	protected function docarregaDadosVendaPorProdutos() {
 		$curso_id = (int)$this->system->input['curso_id'];
+		$ano = (int)$this->system->input['ano'];
+
 		if (!$curso_id) return;
 		
 		$lista_produtos = array();
-		$vendas_produtos = $this->system->vendas->getVendasPorCurso($curso_id, " and data_cadastro like '".date('Y')."-%'", 0);
+		$vendas_produtos = $this->system->vendas->getVendasPorCurso($curso_id, " and data_cadastro like '".$ano."-%'", 0);
 
 		foreach($vendas_produtos as $item => $vendas) {
 			$cursos = $this->system->vendas->getCursosByVenda($vendas['venda_id']);

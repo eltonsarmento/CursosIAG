@@ -29,6 +29,7 @@ class Vendas extends VendasGlobal {
 			case 'buscarPorAluno':						$this->doBuscarPorAluno(); break;
 			case 'cancelar':							$this->doCancelar(); break;
 			case 'reativar':							$this->doReativar(); break;
+			case 'baixarListaAlunosCursoMes':			$this->dobaixarListaAlunosCursoMes(); break;
 			default: 									$this->pagina404(); break;
 		}
 	}

@@ -286,9 +286,9 @@ class Cursos {
 				
 				list($horas, $minutos, $segundos) = explode(':', $aula['duracao']);
 				$bloqueio['tempo'] = 0;
-				$bloqueio['tempo'] += intval($segundos) * 1000;
+				/*$bloqueio['tempo'] += intval($segundos) * 1000;
 				$bloqueio['tempo'] += intval($minutos) * 60 * 1000;
-				$bloqueio['tempo'] += intval($horas) * 60 * 60 * 1000;
+				$bloqueio['tempo'] += intval($horas) * 60 * 60 * 1000;*/
 
 				$bloqueio['link'] = base64_encode(urldecode($this->system->getUrlSite() . 'lms/aluno/cursos/avancar/' . $aula['aula_id']));
 			}
@@ -413,10 +413,10 @@ class Cursos {
 		$relacionamentoId = $this->verificaAcessoCurso(0, $cursoId);
 		$usuarioId = $this->system->session->getItem('session_cod_usuario');
 
-		if (!$this->system->aulas->checarAulaLiberada($aulaId, $relacionamentoId)) {
+		/*if (!$this->system->aulas->checarAulaLiberada($aulaId, $relacionamentoId)) {
 			$this->system->session->addItem('msg_alert', 'Essa aula ainda não está liberada. Para libera-la complete as aulas anteriores!');
 			$this->system->func->redirecionar('/cursos/verCurso/' . $relacionamentoId);
-		}
+		}*/
 
 
 		$this->system->aulas->liberarAvancar($aulaId, $relacionamentoId);
@@ -450,10 +450,10 @@ class Cursos {
 		$relacionamentoId = $this->verificaAcessoCurso(0, $cursoId);
 		$usuarioId = $this->system->session->getItem('session_cod_usuario');
 
-		if (!$this->system->aulas->checarAulaLiberada($aulaId, $relacionamentoId)) {
-			$this->system->session->addItem('msg_alert', 'Essa aula ainda não está liberada. Para libera-la complete as aulas anteriores!');
-			$this->system->func->redirecionar('/cursos/verCurso/' . $relacionamentoId);
-		}
+		//if (!$this->system->aulas->checarAulaLiberada($aulaId, $relacionamentoId)) {
+		//	$this->system->session->addItem('msg_alert', 'Essa aula ainda não está liberada. Para libera-la complete as aulas anteriores!');
+		//	$this->system->func->redirecionar('/cursos/verCurso/' . $relacionamentoId);
+		//}
 
 		//verifica se existe quiz
 		$quiz = $this->system->quiz->getQuizCondicao("and aula_id = '" . $aulaId .  "'");
