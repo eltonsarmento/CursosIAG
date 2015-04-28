@@ -40,10 +40,10 @@
                                     {foreach item=duvidaLateral from=$duvidas}
                                     <li {if $duvidaLateral.id == $duvida_selecionada} class="selected" {elseif $duvidaLateral.mensagem.lido == 0 && $duvidaLateral.mensagem.remetente_id != $usuario_id} class="unread" {/if}> 
                                         <a href="/lms/professor/duvidas/listar/{$duvidaLateral.id}" style="text-decoration:none;">
-                                            <div class="thumb"><img src="/lms/uploads/avatar/{$duvidaLateral.aluno.avatar}" alt="" /></div>
+                                            <div class="thumb"><img src="/lms/uploads/avatar/{$duvidaLateral.avatar}" alt="" /></div>
                                             <div class="summary">
                                                 <span class="date pull-right"><small>{$duvidaLateral.mensagem.data|date_format:"%d/%m/%Y"}</small></span>
-                                                <h4>{$duvidaLateral.aluno.nome}</h4>
+                                                <h4>{$duvidaLateral.nome}</h4>
                                                 <p><strong>{$duvidaLateral.titulo}</strong> - {$duvidaLateral.mensagem.comentario|substr:0:20}...</p>
                                             </div>
                                         </a>

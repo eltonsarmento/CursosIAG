@@ -28,18 +28,20 @@ class Duvidas extends DuvidasGlobal {
 		if ($palavra) $this->system->session->deleteItem('palavra_busca');
 		if ($this->system->input['palavra']) $palavra = $this->system->input['palavra'];
 
-		$duvidas = $this->system->duvidas->getDuvidas("and D.professor_id = '" . $usuarioId . "' and D.excluido_professor = 0" . ($palavra? " and titulo like '%" . $palavra . "%'" : ''));
+		$duvidas = $this->system->duvidas->getDuvidasLateral("and D.professor_id = '" . $usuarioId . "' and D.excluido_professor = 0" . ($palavra? " and titulo like '%" . $palavra . "%'" : ''));
 		
 		//Abrir a primeira duvida se nenhuma foi selecionada.
-		if (!$duvidaId)
-			$duvidaId = $duvidas[0]['id'];
+		if (!$duvidaId) {
+			$duvida_inicial = $duvidas;
+			$duvida = array_shift($duvida_inicial);
+			$duvidaId = $duvida['id'];
+		}
 		
 		//duvida aberta
 		if ($duvidaId) {
 			$this->system->session->deleteItem('duvidas_topo');
 			
 			$duvida = $this->system->duvidas->getDuvida("professor_id = '" . $usuarioId . "' and id = '" . $duvidaId . "' and excluido_professor = 0" );
-
 			$this->system->duvidas->lerDuvida($duvidaId, $usuarioId);
 		}
 

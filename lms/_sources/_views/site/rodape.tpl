@@ -16,16 +16,15 @@
                         
                         <ul>
                             <h1>Nossos Produtos</h1>
-                            <li><a href="{$url_site}assinaturas">Assinaturas</a> <span class="ballon-small">Novo</span></li>
+                            <li><a href="{$url_site}assinaturas">Assinaturas</a></li>
                             <li><a href="{$url_site}pagina/cursos-onlines">Cursos Online</a></li>
                             <li><a href="{$url_site}pagina/suporte">Suporte</a></li>
                             <li><a href="{$url_site}pagina/certificados">Certificados</a></li>
-                            <li><a href="{$url_site}pagina/parcerias">Parcerias</a></li>
                         </ul>
                         
                         <ul>
                             <h1>Suporte IAG</h1>
-                             <li><a href="{$url_site}pagina/faq">FAQ</a> <span class="ballon-small">Novo</span></li> 
+                             <li><a href="{$url_site}pagina/faq">FAQ</a></li> 
                             <li><a href="{$url_site}contato/">Contato</a></li>
                             <li><a href="#seja-um-professor" rel="modal:open">Seja um Professor</a></li>
                         </ul>
@@ -85,7 +84,7 @@
 
                     <section class="video">
 
-                        <h1>Conheça o novo <strong>IAG</strong></h1>
+                        <h1>Institucional <strong>IAG</strong></h1>
 
                         <a href="#video-institucional" rel="modal:open">
 
@@ -99,7 +98,7 @@
 
                     <section class="facebook">
 
-                        <h1>Dá um LIKE aí!</h1>
+                        <h1>Que tal curtir o IAG no Facebook?</h1>
 
                         <div id="fb-root"></div>
                         <script>(function(d, s, id) {
@@ -153,8 +152,7 @@
                     <section class="container-footer-address">
                     
                         <p><strong>Cursos IAG</strong> - Todos os direitos reservados</p>
-                        <p>Rua Treze de Maio, 90, Poço, Maceió - AL</p>
-                        <p>CNPJ: 11.432.779/0001-30</p>
+                        <p>Rua Dr. Batista Acioly, 126, Sala 104, Jaraguá, Maceió - AL</p>
                         
                     </section><!--.container-footer-address-->
                     
@@ -168,9 +166,7 @@
                     <section class="container-footer-social">
                         
                         <a href="http://facebook.com/cursosiag" target="_blank" class="facebook"></a>
-                        
-                        <a href="http://twitter.com/cursosiag" target="_blank" class="twitter"></a>
-                        
+                                             
                         <a href="http://youtube.com/cursosiag" target="_blank" class="youtube"></a>
                                 
                     </section><!--.container-footer-social-->
@@ -351,6 +347,16 @@ function limparModalProfessor() {
     $('#modal-lembrar-email').val('');
 }
 </script>
+
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="//v2.zopim.com/?2y0xCEugMol7cKhi4DsMc3iQUsETV3Qn";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zopim Live Chat Script-->
 
 <script>
 

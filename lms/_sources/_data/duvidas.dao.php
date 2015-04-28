@@ -75,6 +75,27 @@ class DuvidasDAO {
 		return $duvidas;
 	}
 	// =================================================================
+	public function getDuvidasLateral($campos) {//usuario id e o campo professor
+		$query = $this->system->sql->select('D.*, U.nome, U.avatar', 'duvidas AS D LEFT JOIN usuarios AS U ON (D.aluno_id = U.id)', 'U.excluido = 0 ' . $campos, $limit, 'D.id DESC');
+		$duvidas_array = $this->system->sql->fetchrowset($query);
+
+		$array_duvidas_id = array();
+		foreach($duvidas_array as $key => $duvida) {
+			$duvidas[$duvida['id']] = $duvida;
+			$array_duvidas_id[] = $duvida['id'];
+		}
+		$query = $this->system->sql->select('duvida_id, data, comentario, lido, remetente_id', 'duvidas_comentarios', "duvida_id IN (" . implode(',', $array_duvidas_id) . ") GROUP BY duvida_id", '', 'data desc');
+		while ($row = $this->system->sql->fetchrow($query)) {
+			$duvidas[$row['duvida_id']]['mensagem'] = $row;
+		}
+		return $duvidas;
+	}
+	// =================================================================
+	public function obterDuvida($duvidaId, $usuarioId) {
+		$query = $this->system->sql->select('D.*', 'duvidas as D, duvidas_comentarios as C', 'D.id = C.duvida_id AND D.professor_id = ' . $usuarioId . ' and D.id = ' . $duvidaId . ' and D.excluido_professor = 0 GROUP BY D.id', $limit, 'C.data desc');
+		return $this->system->sql->fetchrowset($query);
+	}
+	// =================================================================
 	public function getDuvidas($campos, $limit = '') {//usuario id e o campo professor
 
 		$query = $this->system->sql->select('D.*', 'duvidas as D, duvidas_comentarios as C', 'D.id = C.duvida_id ' . $campos . ' GROUP BY D.id', $limit, 'C.data desc');
