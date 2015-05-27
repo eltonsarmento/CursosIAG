@@ -370,17 +370,18 @@ class VendasGlobal {
 		}
 		elseif ($mes < 10) $mes = '0'.$mes;
 		$sql = " and t1.data_cadastro like '".$ano."-".$mes."%'";
-		$ultimas_vendas = $this->system->vendas->getVendasPorCategorias($categoria_id, $sql);
+		$ultimas_vendas['vendas'] = $this->system->vendas->getVendasPorCategorias($categoria_id, $sql);
 		
-		foreach($ultimas_vendas as $key => $vendas) {
-			$ultimas_vendas[$key]['cliente'] = $this->system->alunos->getAluno($vendas['aluno_id']);
+		foreach($ultimas_vendas['vendas'] as $key => $vendas) {
+			$ultimas_vendas['vendas'][$key]['cliente'] = $this->system->alunos->getAluno($vendas['aluno_id']);
 			$cursos = array();
 			foreach($this->system->vendas->getCursosByVenda($vendas['id']) as $curso) {
 				$curso_dados = end($this->system->curso->getCurso($curso['curso_id'], false));
 				$cursos[] = $curso_dados['curso'];
 			}
-			$ultimas_vendas[$key]['cursos'] = implode('<br/>', $cursos);
+			$ultimas_vendas['vendas'][$key]['cursos'] = implode('<br/>', $cursos);
 		}
+		$ultimas_vendas['total'] = count($ultimas_vendas['vendas']);
 		echo json_encode($ultimas_vendas);
 	}
 	// ===============================================================

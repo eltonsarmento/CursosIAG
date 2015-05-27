@@ -8,6 +8,7 @@ $system = new System(false);
 $system->load->dao('pagseguro');
 $system->load->dao('vendas');
 $system->load->dao('curso');
+$system->load->dao('configuracoesgerais');
 $system->load->model('email_model');
 $system->load->model('pagamento_model');
 $system->load->model('pagseguro_model');
@@ -148,10 +149,13 @@ if ($_POST['notificationCode'] && $_POST['notificationType'] == 'transaction') {
 
 			$venda = $system->vendas->getVenda(intval($fields['venda_id']));
 			$system->vendas->alterarPagamento($venda['id'], 1);
-			
+
 			//Adicionar curso
 			$cursos = $system->vendas->getCursosVenda($venda['id']);
-			$dataExpiracao = date('Y-m-d H:i:s', mktime(23, 59, 59, date('m'), date('d'), (date('Y') + 2)));
+			//Periodo Acesso
+			$pediodoAcesso = $system->configuracoesgerais->getPeriodoAcesso();
+			$dataExpiracao = date('Y-m-d H:i:s', mktime(23, 59, 59, (date('m') + intval($pediodoAcesso['periodo_acesso']))));
+			//$dataExpiracao = date('Y-m-d H:i:s', mktime(23, 59, 59, date('m'), date('d'), (date('Y') + 2)));			
 			$system->curso->cadastrarCursosAluno($cursos, $venda['aluno_id'], $dataExpiracao);
 
 			$system->vendas->atualizar($venda['id'], array('data_expiracao' => $dataExpiracao));

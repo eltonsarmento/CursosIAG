@@ -658,7 +658,7 @@ jQuery(document).ready(function(){
                                         </form>
 
                                         <br />
-
+                                        <h3><strong>Total de Registros: </strong><span id="totalRegistroPorCategoria">0</span></h3>
                                         <table class="table table-bordered">
 
                                             <thead>

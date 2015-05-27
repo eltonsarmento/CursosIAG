@@ -1,0 +1,6 @@
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-05-27 15:57:06","sessao":"6k3rbndcehok5934fahdtke042","host":"localiag.com","ip":"192.168.25.12"}
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-05-27 16:00:38","sessao":"tqh74i1mtrrg32omb09kc6al23","host":"localiag.com","ip":"192.168.25.11"}
+{"link":"\/lms\/administrador-geral\/vendas\/relatorio","logado":"Nao","usuario":null,"data":"2015-05-27 16:04:52","sessao":"oaur6rd57j3u7c10079b26p6f0","host":"localiag.com","ip":"192.168.25.11"}
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-05-27 16:04:58","sessao":"oaur6rd57j3u7c10079b26p6f0","host":"localiag.com","ip":"192.168.25.11"}
+{"link":"\/lms\/administrador-geral\/vendas\/relatorio","logado":"Nao","usuario":null,"data":"2015-05-27 16:06:10","sessao":"90qnv19cna88mnuclt6qlpf9o4","host":"localiag.com","ip":"192.168.25.11"}
+{"logado":"Sim","usuario":"6","nivel":"1","data":"2015-05-27 16:06:12","sessao":"90qnv19cna88mnuclt6qlpf9o4","host":"localiag.com","ip":"192.168.25.11"}

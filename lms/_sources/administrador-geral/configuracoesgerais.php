@@ -21,6 +21,7 @@ class configuracoesgerais {
 			case 'termos':$this->doEdicaoTermos(); break;
 			case 'pagamentos':$this->doEdicaoPagamentos(); break;
 			case 'pagamentosMudarStatus':$this->doAlterarStatusPagamento(); break;
+			case 'periodoAcesso'			:$this->doEdicaoPeridoAcesso(); break;
 			case 'imagens':$this->doEdicaoImagens(); break;
 			case 'certificados':$this->doEdicaoCertificados(); break;
 			case 'servidores':$this->doEdicaoServidores(); break;
@@ -499,6 +500,20 @@ class configuracoesgerais {
         return $retorno;
 	}
 	// ===============================================================
+	private function validarPeriodoAcesso() {			
+        if ($this->system->input['periodoAcesso'] == '')
+        	$retorno['msg'][] = "O campo Meses não pode estar vazio";
+        elseif (strlen($this->system->input['periodoAcesso']) > 2) 
+        	$retorno['msg'][] = "O campo Meses não pode ser maior que 2 digitos.";
+        elseif ($this->system->input['periodoAcesso'] == 0) 
+        	$retorno['msg'][] = "Zero não é um numero de mês.";
+        
+
+		if (count($retorno) > 0)
+		   $retorno['msg'] = implode("<br/>",$retorno['msg']);
+        return $retorno;
+	}
+	// ===============================================================
 	private function doPdf() {
 		$this->system->func->htmlToPdf($this->getHtml());
 	}
@@ -519,6 +534,27 @@ class configuracoesgerais {
 		$this->system->admin->topo(0);
 		$this->system->view->display('global/pagina404.tpl');
 		$this->system->admin->rodape();
+	}
+	// ======================= Perido Acesso ==========================
+	protected function doEdicaoPeridoAcesso() {
+		$editar = intval($this->system->input['editar']);
+		if ($editar) {			
+			$erro_msg = $this->validarPeriodoAcesso();
+			
+			if ($erro_msg) {
+				$this->system->view->assign('msg_alert', $erro_msg['msg']);
+				$this->system->view->assign('periodo', $this->system->input);
+			}else{
+				$this->system->configuracoesgerais->atualizarPeriodoAcesso($this->system->input);
+				$this->system->view->assign('msg_alert', 'Período de Acesso atualizado com sucesso!');				
+				$this->system->view->assign('periodo', $this->system->input);
+			}
+		} 		
+		$this->system->view->assign('periodo',$this->system->configuracoesgerais->getPeriodoAcesso());
+		
+		$this->system->admin->topo(13);
+		$this->system->view->display('administrador-geral/configuracoes_perido_acesso.tpl');
+		$this->system->admin->rodape();		
 	}
 }
 // ===================================================================

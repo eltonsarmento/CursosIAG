@@ -11,9 +11,7 @@ $system->load->model('email_model');
 $system->load->dao('configuracoesgerais');	
 $system->load->model('pagarme_model');
 
-
 if ($_POST['fingerprint']) {
-
 
 	$pagarme = $system->configuracoesgerais->getPagarme();
 
@@ -57,8 +55,6 @@ if ($_POST['fingerprint']) {
 				$transacao = $system->pagarme->getTransacao($transaction['id']);
 			}
 		}
-
-
 		///////   Aprovado ///////
 		// Assinaturas //
 		if ($system->vendas->tipoVenda(intval($fields['venda_id'])) == 2) { //Planos
@@ -137,15 +133,19 @@ if ($_POST['fingerprint']) {
 			}
 		}
 		// Cursos //
-		elseif($system->vendas->tipoVenda(intval($fields['venda_id'])) == 1) { //Cursos
-			//if ($transaction->getStatus()->getValue() == 3 && $transacao['status'] != 3 ) {
+		elseif($system->vendas->tipoVenda(intval($fields['venda_id'])) == 1) { //Cursos			
 			if ($transaction['status'] == 'paid' && $transacao['status'] != 1 ) {
 				$venda = $system->vendas->getVenda(intval($fields['venda_id']));
 				$system->vendas->alterarPagamento($venda['id'], 1);
 				
 				//Adicionar curso
 				$cursos = $system->vendas->getCursosVenda($venda['id']);
-				$dataExpiracao = date('Y-m-d H:i:s', mktime(23, 59, 59, date('m'), date('d'), (date('Y') + 2)));
+				//Periodo Acesso
+				$pediodoAcesso = $system->configuracoesgerais->getPeriodoAcesso();
+				if (empty($pediodoAcesso['periodo_acesso']))
+					$pediodoAcesso['periodo_acesso'] = 24;
+				$dataExpiracao = date('Y-m-d H:i:s', mktime(23, 59, 59, (date('m') + intval($pediodoAcesso['periodo_acesso']))));
+				//$dataExpiracao = date('Y-m-d H:i:s', mktime(23, 59, 59, date('m'), date('d'), (date('Y') + 2)));
 				$system->curso->cadastrarCursosAluno($cursos, $venda['aluno_id'], $dataExpiracao,0);
 
 				$system->vendas->atualizar($venda['id'], array('data_expiracao' => $dataExpiracao));				
@@ -193,7 +193,7 @@ if ($_POST['fingerprint']) {
 			$transacao = $system->pagarme->getTransacao($transaction['id']);
 			
 			//Cadastra no banco
-			if ($transacao['venda_id']) 
+			if ($transacao['venda_id'])
 			 	$system->pagarme->atualizar($fields);
 			else {
 			 	$system->pagarme->cadastrar($fields);
@@ -216,7 +216,6 @@ if ($_POST['fingerprint']) {
 			$dataFinal = substr($fields['data'], 0, 10) . ' 23:59';
 					
 			$system->vendas->atualizar(intval($fields['venda_id']), array('codePagarme' => $fields['code']));
-
 
 			//Aprovado
 			//if ($transaction->getStatus()->getValue() == 3) {
@@ -279,9 +278,9 @@ if ($_POST['fingerprint']) {
 				 }
 				 $system->pagarme->atualizar(array('status' => 1, 'ultima_atualizacao' => date('Y-m-d H:i:s'), 'code' => $fields['code']));
 			}
-
-			$system->session->deleteItem('id_assinatura_pagarme');				
-			header('Location: ' . $system->getUrlSite() . 'carrinho/confirmacao');
+			$system->session->deleteItem('id_assinatura_pagarme');
+			//header('Location: ' . $system->getUrlSite() . 'carrinho/confirmacao');
+			echo "<script type='text/javascript'>window.location.href='" . $system->getUrlSite(). "carrinho/confirmacao'</script>";
 			exit();
 
 		}

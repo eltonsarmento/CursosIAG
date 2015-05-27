@@ -22,10 +22,23 @@ class ConfiguracoesgeraisDAO {
 	public function getProdutosSuporte() {
 		$query = $this->system->sql->select('produtos_suporte_tipo, produtos_suporte_valor', 'configuracoes_gerais');	
 		return end($this->system->sql->fetchrowset($query));
-	}
+	}	
 	// ===============================================================
 	public function getProdutosCertificados() {
 		$query = $this->system->sql->select('produtos_certificado_tipo, produtos_certificado_valor', 'configuracoes_gerais');	
+		return end($this->system->sql->fetchrowset($query));
+	}
+	// Periodo Acesso
+	// ===============================================================
+	public function atualizarPeriodoAcesso($input) {
+		$fields = array();
+		if (isset($input['periodoAcesso'])) $fields['periodo_acesso'] = $input['periodoAcesso'];
+		
+		$this->system->sql->update('configuracoes_gerais', $fields);
+	}
+	// ===============================================================
+	public function getPeriodoAcesso() {
+		$query = $this->system->sql->select('periodo_acesso', 'configuracoes_gerais');	
 		return end($this->system->sql->fetchrowset($query));
 	}
 	// Termos e Condições

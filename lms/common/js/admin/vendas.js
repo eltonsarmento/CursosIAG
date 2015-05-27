@@ -102,13 +102,16 @@ function carregaDadosVendaPorCategorias(categoria, mes, ano, categoria_curso) {
 		type: "POST",
 		url: '/lms/' + categoria + '/vendas/carregaDadosVendaPorCategorias/',
 		data: { mes: mes, ano: ano, categoria: categoria_curso }}).done(
-			function html(html) {
-				var data = jQuery.parseJSON(html);
+			function html(html) {				
+				var data = jQuery.parseJSON(html);		
+
 				var tabela = '';
-				jQuery.each(data, function(i, item) {
+				jQuery.each(data.vendas, function(i, item) {				
 					tabela += '<tr><td>' + item.numero + '</td><td class="center">' + item.cliente.nome + '</td><td class="center">' + item.cursos + '</td><td class="center">R$ ' + item.valor_total + '</td></tr>';
 				});
+
 				jQuery('#tabela_vendas_por_categorias').html(tabela);
+				jQuery('#totalRegistroPorCategoria').html(data.total);
 			}
 		);
 }

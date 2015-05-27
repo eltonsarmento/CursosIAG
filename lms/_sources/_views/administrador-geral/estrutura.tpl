@@ -267,6 +267,7 @@
                         <li><a href="{$url_site}/lms/administrador-geral/configuracoesgerais/certificados">Configurações do Certificado</a></li>
                         <li><a href="{$url_site}/lms/administrador-geral/configuracoesgerais/servidores">Servidor</a></li>
                         <li><a href="{$url_site}/lms/administrador-geral/configuracoesgerais/graficas">Gráfica</a></li>
+                        <li><a href="{$url_site}/lms/administrador-geral/configuracoesgerais/periodoAcesso">Período de Acesso</a></li>
                     </ul>
                 </li>
                 
