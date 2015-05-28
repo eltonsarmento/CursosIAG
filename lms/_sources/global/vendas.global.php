@@ -373,6 +373,7 @@ class VendasGlobal {
 		$ultimas_vendas['vendas'] = $this->system->vendas->getVendasPorCategorias($categoria_id, $sql);
 		
 		foreach($ultimas_vendas['vendas'] as $key => $vendas) {
+			$valorTotalVendas += $vendas['valor_liquido'];
 			$ultimas_vendas['vendas'][$key]['cliente'] = $this->system->alunos->getAluno($vendas['aluno_id']);
 			$cursos = array();
 			foreach($this->system->vendas->getCursosByVenda($vendas['id']) as $curso) {
@@ -381,7 +382,8 @@ class VendasGlobal {
 			}
 			$ultimas_vendas['vendas'][$key]['cursos'] = implode('<br/>', $cursos);
 		}
-		$ultimas_vendas['total'] = count($ultimas_vendas['vendas']);
+		$ultimas_vendas['total']    = count($ultimas_vendas['vendas']);
+		$ultimas_vendas['montante'] = "R$ ".number_format($valorTotalVendas,2,",",".");		
 		echo json_encode($ultimas_vendas);
 	}
 	// ===============================================================

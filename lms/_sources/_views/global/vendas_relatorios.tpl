@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/lms/common/js/admin/vendas.js"></script>
+Re<script type="text/javascript" src="/lms/common/js/admin/vendas.js"></script>
 <script type="text/javascript">
 {literal}
 jQuery(document).ready(function(){
@@ -658,7 +658,10 @@ jQuery(document).ready(function(){
                                         </form>
 
                                         <br />
-                                        <h3><strong>Total de Registros: </strong><span id="totalRegistroPorCategoria">0</span></h3>
+                                        <h3>
+                                            <strong>Total de Registros: </strong><span id="totalRegistroPorCategoria">0</span> | 
+                                            <strong> Valor total das Vendas: </strong><span id="montantePorCategoria">0</span>
+                                        </h3>
                                         <table class="table table-bordered">
 
                                             <thead>

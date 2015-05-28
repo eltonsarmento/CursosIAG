@@ -112,6 +112,7 @@ function carregaDadosVendaPorCategorias(categoria, mes, ano, categoria_curso) {
 
 				jQuery('#tabela_vendas_por_categorias').html(tabela);
 				jQuery('#totalRegistroPorCategoria').html(data.total);
+				jQuery('#montantePorCategoria').html(data.montante);
 			}
 		);
 }
