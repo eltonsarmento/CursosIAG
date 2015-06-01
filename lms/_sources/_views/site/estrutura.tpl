@@ -17,7 +17,7 @@
     <meta property="og:title" content="Cursos IAG - Formação a Distância"/>
     <meta property="og:url" content="http://cursosiag.com.br/"/>
     <meta property="og:site_name" content="Cursos IAG "/>
-    <meta name="google-site-verification" content="ckY3xDgNeu_jUEPou2ikztX5utwmFsw-t_DHlLDOFj4" />
+    <meta name="google-site-verification" content="3-4Y50nuhT_WVCSotN5FykDeykw5T_6eOjwMAdlEGKk" />
         
     <!-- TITLE -->
     <title>{if $tituloPagina} {$tituloPagina} - Cursos IAG {/if}</title>
@@ -278,6 +278,10 @@
                             <li><a href="#seja-um-professor" rel="modal:open">Seja um Professor</a></li>
                             <li><a href="http://cursosiag.com.br/blog" target="_blank">Blog</a></li>
                         </ul>
+						
+						<figure class="logo-parceiro-hostnet-topo">
+							<a href="http://www.hostnet.com.br" target="_blank"><img src="http://www.cursosiag.com.br/lms/common/site/images/logo-topo-hostnet.png"></a>
+						</figure>
                     </nav>
                 </section>
                 
@@ -289,7 +293,7 @@
                 <section class="menu-content">
                     <nav>
                         <ul>
-                        <li><a href="{$url_site}assinaturas/">Assinaturas</a></li>
+                        <!-- <li><a href="{$url_site}assinaturas/">Assinaturas</a></li> -->
 
                             {foreach item=categoriaTopo from=$categoriasTopo}
                             {if $categoriaTopo.id != 9}

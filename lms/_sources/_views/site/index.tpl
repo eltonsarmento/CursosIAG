@@ -1,20 +1,20 @@
         <!-- BANNER --> 
         
-        <!-- <section class="banner-promocional">
+        <section class="banner-promocional">
            
             <section class="banner-content">
             
-                <a href="http://cursosiag.com.br/landings/dreamweaver-cc/" target="_blank" title="Lançamento: Curso de Dreamweaver CC 2014">
+                <a href="http://cursosiag.com.br/" target="_blank" title="Super Promoção IAG">
                     
-                    <img src="{$url_site}lms/common/site/images/banners/banner-dreamweavercc.jpg" alt="Lançamento: Curso de Dreamweaver CC 2014">
+                    <img src="{$url_site}lms/common/site/images/banners/bannerpromoferias.jpg" alt="Super Promoção IAG">
 
                 </a>
             
             </section>
             
-        </section> -->
+        </section>
         
-        <section class="banner">
+        <!-- <section class="banner">
 
             <section class="banner-content">
 
@@ -48,7 +48,7 @@
 
             </section>
 
-        </section>
+        </section> -->
         
         <section class="container">
             
