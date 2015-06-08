@@ -94,7 +94,7 @@
     width:449px;
     height:20px;
     padding:6px 10px;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#999;
     border-radius:4px;
@@ -116,7 +116,7 @@
 
     width:449px;
     padding:10px;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#999;
     border-radius:4px;
@@ -137,7 +137,7 @@
 
 .modal .modal-content form button {
 
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     float:left;
     
 }
@@ -174,4 +174,172 @@
   -o-border-radius: 8px;
   -ms-border-radius: 8px;
   border-radius: 8px;
+}
+
+.modal-campanha {
+
+  display:none;
+  width:800px;
+  background: #fff;
+  padding:0;
+  border-radius:4px;
+  z-index:4 !important;
+  border-bottom:5px solid #e25143;
+  border-radius:4px;
+  overflow:hidden;
+}
+
+.modal-campanha-content { 
+
+ background:url(http://cursosiag.com.br/lms/common/site/images/banner-modal-campanha.jpg) no-repeat center;
+ width:730px;
+ height:160px;
+ padding:40px 20px 20px 20px;
+    
+}
+
+.modal-campanha-content h2 {
+    
+  width:350px;
+  font-family:'Source Sans Pro';
+  font-weight:600;
+  font-size:17px;
+  text-align:justify !important;
+  color: #fff;  
+}
+
+.modal-btn-campanha {
+    
+    width:260px;
+    height:35px;
+    padding-top:10px;
+    margin:0 auto;
+    
+}
+
+.modal-btn-campanha a {
+
+    width:220px;
+    text-align: center;
+    float:left;
+ 
+}
+
+.modal-ebook {
+
+  display:none;
+  background: #fff;
+  padding:0;
+  border-radius:4px;
+  z-index:4 !important;
+  border-bottom:none;
+  overflow:hidden;
+
+}
+
+.modal-ebook .modal-content {
+
+  padding: 30px !important;
+
+}
+
+.modal-ebook .modal-content .title {
+
+  width: 223px;
+  float: left; 
+
+}
+
+.modal-ebook .modal-content .title h1 {
+
+  font-size: 30px;
+  color: #222;
+  margin: 0;
+  padding: 0;
+
+}
+
+.modal-ebook .modal-content .title h1 strong {
+
+  font-family:'Source Sans Pro';
+  font-weight:600;
+}
+
+.modal-ebook .modal-content .title p {
+
+  font-family:'Source Sans Pro';
+  color: #e25143;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  font-weight:600;
+}
+
+.modal-ebook .modal-content .title small {
+
+  float: left;
+  font-size: 14px;
+  margin: 10px 0 0 0; 
+
+}
+
+.modal-ebook .modal-content img {
+
+  width: 207px;
+  float: right;
+
+}
+
+.modal-curso {
+
+  display:none;
+  background: #fff;
+  padding:0;
+  border-radius:4px;
+  z-index:4 !important;
+  border-bottom:none;
+  overflow:hidden;
+
+}
+
+.modal-curso .modal-content {
+    background: #411f4f;
+    padding: 0 !important;
+    content: "" !important;
+
+}
+
+.modal-footer {
+
+  background: #f0f0f0;
+  padding: 30px;
+
+}
+
+.modal-footer form input {
+
+  width: 288px;
+  background: #fff;
+  border: 2px solid #ccc;
+  float: left;
+  padding: 15px;
+  border-radius: 4px;
+  margin-right: 10px;
+  color: #999;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+
+}
+
+.modal-footer form input:focus {
+  outline: 0;
+}
+
+.modal-footer form button {
+
+  background: #17b570;
+  float: left;
+  padding: 15px 30px;
+  border-radius: 4px;
+
 }

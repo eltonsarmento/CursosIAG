@@ -1,19 +1,17 @@
 @import url('reset.css');
-@import url('fonts/font.css');
 @import url('tables.css');
 @import url('verified.css');
 @import url('payment.css');
-@import url('single.css');
-@import url('accordion.css');
 @import url('jquery.modal.css');
+@import url('accordion.css');
+@import url('single.css');
 
 body {
 
     background:#fff;
-    font-family:'bariol_regularregular';
-    font-weight:300;
+    font-family:'Source Sans Pro';
     font-size:14px;
-    color:#999;
+    color:#393737;
     
 }
 
@@ -43,7 +41,7 @@ body {
     height:70px;
     padding:0;
     border-bottom:3px solid #c9473a;
-    z-index:2;
+    z-index:900;
     display:none;
     
     
@@ -92,12 +90,12 @@ body {
 
 .bar-scroll .bar-scroll-content nav ul li a {
     
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size:18px;
     color:#fff;
     text-transform:uppercase;
     float:left;
-    
+    font-weight:600;
 }
 
 .bar-scroll .bar-scroll-content nav ul li:hover .category {
@@ -158,7 +156,7 @@ body {
 
     width:186px;
     float:left;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:16px;
     color:#fff;
     text-transform:none;
@@ -220,7 +218,7 @@ body {
     width:250px;
     height:20px;
     padding:10px;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#999;
     border:1px solid #ccc;
@@ -291,7 +289,7 @@ body {
 
 .bar-scroll .bar-scroll-content .bar-scroll-cart p {
     
-    font-size:13px;
+    font-size:12px;
     color:#fff;
     margin:6px 0 0 0;
     padding:0;
@@ -334,7 +332,7 @@ header .login-header-content form input {
     width:180px;
     height:20px;
     padding:6px 10px;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#999;
     border-radius:4px;
@@ -367,12 +365,13 @@ header .login-header-content .links-login-header {
 
 header .login-header-content .links-login-header a {
 
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#999;
     margin:0 10px;
     float:left;
     transition:all 0.2s linear;
+	font-weight:600;
     
 }
 
@@ -384,8 +383,9 @@ header .login-header-content .links-login-header a:hover {
 
 header .login-header-content .links-login-header a.cadastro {
     
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     color:#e25143 !important;
+	font-weight:600;
     
 }
 
@@ -444,7 +444,7 @@ header .content-header .logo-content-header {
 
 header .content-header .menu-content-header {
     
-    width:589px;
+    width:610px;
     margin:64.5px 0;
     float:right;
     
@@ -456,6 +456,12 @@ header .content-header .menu-content-header nav {
     padding:0;
     float:left;
     
+}
+
+.logo-parceiro-hostnet-topo {
+  float: right;
+  padding-left:80px;
+  height:0;	
 }
 
 header .content-header .menu-content-header nav ul {
@@ -482,11 +488,12 @@ header .content-header .menu-content-header nav ul li:last-child {
 
 header .content-header .menu-content-header nav ul li a {
     
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size:16px;
     color:#999;
     float:left;
     transition:all 0.1s linear;
+	font-weight:600;
     
 }
 
@@ -566,14 +573,15 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .menu .menu-content nav ul li a {
     
-    font-size:17px;
+    font-size:15px;
     line-height:66px;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     color:#fff;
     padding:0 6px;
     float:left;
     transition:all 0.1s linear;
-    
+    font-weight:400;
+	text-transform:uppercase;
 }
 
 .menu .menu-content nav ul li a:hover {
@@ -735,11 +743,12 @@ header .content-header .menu-content-header nav ul li a:hover {
     
     background:none;
     width:167px;
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     line-height:normal;
     padding:8px 10px;
     font-size:16px;
     color:#999;
+	font-weight:300;
     
 }
 
@@ -817,7 +826,7 @@ header .content-header .menu-content-header nav ul li a:hover {
 .content-tabs article a h1 { 
 
     width:165px; 
-    font-family:'bariol_regularregular'; 
+    font-family:'Source Sans Pro'; 
     font-size:13px; 
     color:#999; 
     float:left; 
@@ -825,7 +834,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     padding:0; 
     transition:all 0.1s linear;
     line-height:normal;
-
+	font-weight:300;
 }
 
 
@@ -880,7 +889,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     width:250px;
     height:22px;
     padding:6px 10px;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#999;
     border:1px solid #ccc;
@@ -960,7 +969,7 @@ header .content-header .menu-content-header nav ul li a:hover {
 .bar-search-cart  .bar-search-cart-content .search form .search-live article a h1 { 
 
     width:280px; 
-    font-family:'bariol_boldbold'; 
+    font-family:'Source Sans Pro'; 
     font-size:16px;
     color:#999; 
     float:left; 
@@ -969,6 +978,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     text-transform:uppercase;
     transition:all 0.1s linear;
     line-height:normal;
+	font-weight:600;
 
 }
 
@@ -981,9 +991,10 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .bar-search-cart  .bar-search-cart-content .cart {
     
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     margin:8px 0 0 0;
     float:right;
+	font-weight:600;
 
 }
 
@@ -1020,11 +1031,35 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .banner {
     
-    background:url('../images/bg-banner.jpg') repeat #000;
+/*    background:url('../images/bg-banner.jpg') repeat #000;*/
+    background-color: #000;
     width:100%;
     height:275px;
     
 }
+
+/*Banner Modificado*/
+@media screen and (max-width: 750px) {
+    .banner {
+       display: none;
+    }
+}
+
+.banner img{
+    margin: 0 auto;
+}
+
+.banner-text-cupom {
+    text-align:center;
+    position:relative;
+    top:-110px;
+    font-weight:bold;
+    font-size:28px;
+    color:#fff;
+}
+
+
+/*Banner Modificado*/
 
 .banner .banner-content {
     
@@ -1088,7 +1123,7 @@ header .content-header .menu-content-header nav ul li a:hover {
 .banner .banner-content ul li h1 {
     
     width:403px;
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size:40px;
     color:#fff;
     line-height:40px;
@@ -1099,7 +1134,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     float:left;
     text-shadow:3px 1px 1px #222;
     text-align: left;
-    
+    font-weight:600;
 }
 
 .banner .banner-content ul li figure {
@@ -1111,18 +1146,18 @@ header .content-header .menu-content-header nav ul li a:hover {
 /**/
 .banner .banner-content p {
     
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size: 16px;
     color: #333;
     padding-top: 5px;
     margin: 0;
-    
+    font-weight:600;
 }
 /**/
 
 .banner-promocional {
     
-    background: #050505;
+    background:#232323;
     width:100%;
     height:275px;
     
@@ -1159,9 +1194,10 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .banner-promocional .banner-content .cupom p span {
 	font-size: 26px;
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
 	color: #fff;
-    vertical-align: middle
+    vertical-align: middle;
+	font-weight:600;
 }
 
 /* BANNER INSTITUCIONAL */
@@ -1182,7 +1218,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     margin:0 auto;
     overflow:hidden;
     color:#fff;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     
 }
 
@@ -1197,7 +1233,7 @@ header .content-header .menu-content-header nav ul li a:hover {
 .banner-institucional-content .banner-text a {
 
     color: #ffffff;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
 
 }
 
@@ -1235,7 +1271,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     float:left;
     margin:9px 0 0 0;
     padding: 0;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
 
 }
 
@@ -1280,8 +1316,8 @@ header .content-header .menu-content-header nav ul li a:hover {
 }
 
 .banner-lancamento-content h2 strong {
-    font-family:'bariol_boldbold';
-    font-weight: 100;
+    font-family:'Source Sans Pro';
+    font-weight: 600;
 }
 
 .banner-lancamento-content a {
@@ -1334,7 +1370,6 @@ header .content-header .menu-content-header nav ul li a:hover {
     font-size: 15px;
     float: left;
     color: #fff;
-    font-weight: 100;
     border: 2px solid #ffffff;
     text-align: center;
     line-height: 40px;
@@ -1380,18 +1415,17 @@ header .content-header .menu-content-header nav ul li a:hover {
     
     width: 420px;
     text-align: center;
-    font-weight: 100;
     font-size:28px;
     margin: 30px auto;
     padding: 0;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     
 }
 
 .banner-campanha-content h1 strong {
 
-    font-weight: 100;
-    font-family:'bariol_boldbold';
+    font-weight: 600;
+    font-family:'Source Sans Pro';
     
 }
 
@@ -1423,13 +1457,12 @@ header .content-header .menu-content-header nav ul li a:hover {
 .banner-copa-content h1 {
     
     width: 470px;
-    font-weight: 100;
     text-align: left;
     font-size:28px;
     margin: 0px auto;
     padding: 35px 0;
-    font-weight: 100;
-    font-family:'bariol_boldbold';
+    font-weight: 600;
+    font-family:'Source Sans Pro';
     float: left;
     
 }
@@ -1475,11 +1508,12 @@ header .content-header .menu-content-header nav ul li a:hover {
 	border-radius: 10px;
 	display: block;
 	font-size: 26px;
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
 	color: #fff;
 	text-align: center;
 	padding: 12px;
 	border: 3px dotted #bc1919;
+	font-weight:600;
 }
 
 .container {
@@ -1499,13 +1533,74 @@ header .content-header .menu-content-header nav ul li a:hover {
     
 }
 
+.container .title-vagas {
+    background: url(../images/title-vagas.jpg) repeat-x #f0f0f0;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.container .title-vagas h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.container .title-vagas p {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.vagas {
+    padding-top: 0 !important;
+}
+
+.container .vagas-content {
+    width: 948px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.container .vagas-content .box {
+    background-color: #5f5f5f;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    padding: 30px 25px 10px;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.container .vagas-content .box h3 {
+    font-size: 23px;
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+.container .vagas-content .box p {
+    font-size: 16px;
+    margin: 10px 5px 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #777;
+    text-align: justify;
+}
+
+.container .vagas-content .box strong {
+    font-size: 18px;
+}
+
+.container .vagas-content .box p:last-child {
+    border-bottom: none;
+}
+
 .container .page .page-title {
 
-    background:#f0f0f0;
+    background:#454343;
     width:906px;
     height:auto;
     padding:15px 20px;
-    border:1px solid #ccc;
+    border:1px solid #454343;
     border-top-left-radius:4px;
     border-top-right-radius:4px;
 }
@@ -1514,16 +1609,18 @@ header .content-header .menu-content-header nav ul li a:hover {
 
     margin:0;
     padding:0;
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size:30px;
     line-height:30px;
+	font-weight:600;
+	color:#E3DDDD;
 }
 
 .container .page .page-title p {
 
     margin:0;
     padding:0;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
 }
 
@@ -1542,9 +1639,10 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .container .page .page-content a {
 
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     color:#e25143;
     transition:all 0.1s linear;
+	font-weight:600;
 
 }
 
@@ -1569,9 +1667,9 @@ header .content-header .menu-content-header nav ul li a:hover {
 
     margin:0;
     padding:0;
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size:20px;
-
+	font-weight:600;
 }
 
 .container .page .page-content .balloon-registre ul { 
@@ -1612,10 +1710,10 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .container .page .page-content .info-confirm span a {
 
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     color:#222;
     transition:all 0.1s linear;
-
+	font-weight:600;
 }
 
 .container .page .page-content .info-confirm span a:hover {
@@ -1649,11 +1747,11 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .container .page .page-sitemap ul h1 {
 
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size:18px;
     color:#999;
     margin:0 0 5px 0;
-
+	font-weight:600;
 }
 
 .button-disable {
@@ -1661,30 +1759,30 @@ header .content-header .menu-content-header nav ul li a:hover {
     background:#f27467;
     width:250px;
     padding:8px 25px;
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     font-size:14px;
     color:#fff;
     text-align:center;
     border-radius:4px;
     float:right !important;
     display:none;
-
+	font-weight:600;
 }
 
 .title-error {
 
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     font-size:60px;
     color:#999;
     margin:0;
     padding:0;
     text-align:center;
-
+	font-weight:600;
 }
 
 .text-error {
 
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     font-size:18px;
     color:#999;
     margin:10px 0 0 0;
@@ -1695,9 +1793,9 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .text-error strong {
 
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     color:#e25143;
-
+	font-weight:600;
 }
 
 .marginbottom {
@@ -1719,7 +1817,7 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .form-page label {
 
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:16px;
     margin: 0 0 5px 0;
     float:left;
@@ -1731,7 +1829,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     width:518px;
     height:20px;
     padding:10px;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#999;
     border-radius:4px;
@@ -1754,7 +1852,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     width:518px;
     height:auto;
     padding:10px;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#999;
     border-radius:4px;
@@ -1890,7 +1988,7 @@ header .content-header .menu-content-header nav ul li a:hover {
 .container .cursos-content article h2 {
     
     background:#222;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:16px;
     color:#fff;
     padding:6px 10px;
@@ -1916,8 +2014,8 @@ header .content-header .menu-content-header nav ul li a:hover {
     
     width:182px;
     height:90px;
-    font-family:'bariol_boldbold';
-    font-weight:300;
+    font-family:'Source Sans Pro';
+    font-weight:600;
     font-size:16px;
     color:#222;
     text-transform:uppercase;
@@ -1977,10 +2075,10 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .container .cursos-content article .box-cursos-content .price span {
     
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size:12px;
     color:#999;
-    
+    font-weight:600;
 }
 
 .container .cursos-content article .box-cursos-content .price span strong {
@@ -2010,20 +2108,19 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .container .search-content .search-form h1 {
 
-    font-family: 'bariol_regularregular';
-    font-size: 30px;
+    font-family: 'Source Sans Pro';
+    font-size: 28px;
     color: #666;
     margin: 0;
     padding: 0;
-    font-weight: 100;
     float: left;
 
 }
 
 .container .search-content .search-form h1 strong {
 
-    font-family:'bariol_boldbold';
-
+    font-family:'Source Sans Pro';
+	font-weight:600;
 }
 
 .container .search-content .search-form form {
@@ -2074,7 +2171,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     padding:0;
     margin:16px 0;
     float:left;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     font-size:30px;
     color:#fff;
 
@@ -2097,7 +2194,7 @@ header .content-header .menu-content-header nav ul li a:hover {
 .container .category-info .count-registre p {
 
     font-size:14px;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     color:#999;
     padding:0;
     margin:11px 0;
@@ -2107,41 +2204,34 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .container .category-info .count-registre p strong {
 
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     color:#e25143;
-
+	font-weight:600;
 }
 
 .container .category-info .order-view {
-
     float:right;
-
 }
 
 .container .category-info .order-view form {
-
     margin:0 10px 0 0;
     float:left;
-
 }
 
 .container .category-info .order-view form label {
-
     font-size:14px;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     color:#999;
     padding:0;
     margin:8px 10px 0 0;
     float:left;
-
 }
 
 .container .category-info .order-view form select {
-
     width:200px;
     height:37px;
     padding:8px 10px;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#222;
     border-radius:4px;
@@ -2149,7 +2239,6 @@ header .content-header .menu-content-header nav ul li a:hover {
     margin:0;
     float:left;
     transition:all 0.1s linear;
-
 }
 
 .container .category-info .order-view form select:focus {
@@ -2251,13 +2340,13 @@ header .content-header .menu-content-header nav ul li a:hover {
 .container .category-content article h2 {
     
     background:#222;
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size:16px;
     color:#fff;
     padding:6px 10px;
     margin:81px 0 0 -222px;
     float:left;
-    
+    font-weight:600;
 }
 
 .container .category-content article .box-cursos-content {
@@ -2276,16 +2365,15 @@ header .content-header .menu-content-header nav ul li a:hover {
     
     width:200px;
     height:65px;
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-size:15px;
-    font-weight:300;
     color:#222;
     text-transform:uppercase;
     float:left;
     margin:15px 0 0 20px;
     transition:all 0.1s linear;
     text-align:left;
-    
+    font-weight:600;
 }
 
 .container .category-content article .info-curso {
@@ -2327,12 +2415,12 @@ header .content-header .menu-content-header nav ul li a:hover {
 
     background:#f27467;
     padding:10px 50px;
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     font-size:14px;
     color:#fff;
     border-radius:4px;
     display:none;
-
+	font-weight:600;
 }
 
 /* END CATEGORY */
@@ -2361,7 +2449,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     padding:0;
     margin:16px 0;
     float:left;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     font-size:30px;
     color:#fff;
 
@@ -2389,7 +2477,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     padding:0;
     margin:10px 0 0 0;
     float:left;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     font-size:30px;
     color:#222;
 
@@ -2525,7 +2613,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     padding:0;
     margin:16px 0;
     float:left;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     font-size:30px;
     color:#fff;
 
@@ -2626,7 +2714,7 @@ header .content-header .menu-content-header nav ul li a:hover {
     height:auto;
     padding:10px 0;
     margin:0;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     font-size:20px;
     text-align:center;
     color:#fff;
@@ -2678,7 +2766,7 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .container .assinature-content article .plan-time span {
 
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     font-size:16px;
     color:#222;
     
@@ -2686,8 +2774,8 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .container .assinature-content article .plan-time span strong {
 
-    font-family: 'bariol_boldbold';
-    
+    font-family: 'Source Sans Pro';
+    font-weight:600;
 }
 
 .container .assinature-content article .plan-price-total {
@@ -2710,9 +2798,9 @@ header .content-header .menu-content-header nav ul li a:hover {
 
 .container .assinature-content article .plan-price-total strong {
     
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     color:#e25143;
-    
+    font-weight:600;
 }
 
 .container .assinature-content article .plan-button {
@@ -2777,79 +2865,61 @@ footer .content-footer-menu .container-footer nav ul {
 
 footer .content-footer-menu .container-footer nav ul h1 {
     
-    font-family:'bariol_boldbold';
-    font-weight:300;
+    font-family:'Source Sans Pro';
     font-size:18px;
     color:#fff;
     margin:0 0 5px 0;
-    
+    font-weight:600;
 }
 
 footer .content-footer-menu .container-footer nav ul li a {
-    
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#fff;
     transition:all 0.1s linear;
-    
 }
 
 footer .content-footer-menu .container-footer nav ul li a:hover {
-    
     color:#222;
-    
 }
 
 
 footer .content-footer-newsletter {
-
     background:#222;
     width: 100%;
     border-bottom:1px solid #ccc;
     padding:30px 0;
     text-align: center; 
     color: #fff; 
-
 }
 
 footer .content-footer-newsletter .container-footer {
-
     width:948px;
     height:auto;
     margin:0 auto;
-
 }
 
 footer .content-footer-newsletter .container-footer h1 {
-
     margin:0;
     padding:0;
-    font-family:'bariol_regularregular';
-    font-weight: 100;
+    font-family:'Source Sans Pro';
     font-size: 28px;
-    
-
 }
 
 footer .content-footer-newsletter .container-footer h1 strong {
-
-    font-family:'bariol_boldbold';
-
+    font-family:'Source Sans Pro';
+	font-weight:600;
 }
 
 footer .content-footer-newsletter .container-footer p {
-    
     padding:0 0 10px 0;
-
 }
 
 footer .content-footer-newsletter .container-footer form input {
-
     width: 360px;
     height: 35px;
     padding: 0 10px;
     border-radius: 4px;
-
 }
 
 footer .content-footer-news-facebook {
@@ -2881,8 +2951,8 @@ footer .content-footer-news-facebook .container-footer .video {
 
 footer .content-footer-news-facebook .container-footer .video h1 {
 
-    font-family:'bariol_boldbold';
-    font-weight:300;
+    font-family:'Source Sans Pro';
+    font-weight:600;
     font-size:18px;
     color:#999;
     margin:0 0 10px 0;
@@ -2916,7 +2986,6 @@ footer .content-footer-news-facebook .container-footer .video a span {
     font-size: 15px;
     float: left;
     color: #fff;
-    font-weight: 100;
     border: 2px solid #fff;
     text-align: center;
     line-height: 40px;
@@ -2942,16 +3011,16 @@ footer .content-footer-news-facebook .container-footer .video a:hover span {
 
 footer .content-footer-news-facebook .container-footer .facebook {
 
-    width:474px;
-    height:233px;
-    float:right;
+    width:948px;
+    height:315px;
+    float:left;
 
 }
 
 .content-footer-news-facebook .container-footer .facebook h1 {
 
-    font-family:'bariol_boldbold';
-    font-weight:300;
+    font-family:'Source Sans Pro';
+    font-weight:600;
     font-size:18px;
     color:#999;
     margin:0 0 10px 0;
@@ -2987,8 +3056,8 @@ footer .content-footer-info .container-footer .formas-pg {
 
 footer .content-footer-info .container-footer .formas-pg h1 {
     
-    font-family:'bariol_boldbold';
-    font-weight:300;
+    font-family:'Source Sans Pro';
+    font-weight:600;
     font-size:18px;
     color:#999;
     margin:0 0 15px 0;
@@ -3017,8 +3086,8 @@ footer .content-footer-info .container-footer .plataformas {
 
 footer .content-footer-info .container-footer .plataformas h1 {
     
-    font-family:'bariol_boldbold';
-    font-weight:300;
+    font-family:'Source Sans Pro';
+    font-weight:600;
     font-size:18px;
     color:#999;
     margin:0 0 15px 0;
@@ -3054,7 +3123,7 @@ footer .content-footer-copyright {
     width:100%;
     height:auto;
     padding:30px 0;
-    
+    color:#ccc !important;
 }
 
 footer .content-footer-copyright .container-footer {
@@ -3206,4 +3275,110 @@ footer .content-footer-copyright .container-footer .container-footer-social .ins
 #popUp input[type="button"] {
     width: 200px;
     height: 50px;
+}
+
+/*Slideshow - Plugin cycle*/
+
+/* set border-box so that percents can be used for width, padding, etc (personal preference) */
+.cycle-slideshow, .cycle-slideshow * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.cycle-slideshow { 
+      
+    padding: 0; 
+    position: relative;
+    background: url(http://malsup.github.com/images/spinner.gif) 50% 50% no-repeat;
+
+ }
+
+/* slideshow images (for most of the demos, these are the actual "slides") */
+.cycle-slideshow img { 
+    /* 
+    some of these styles will be set by the plugin (by default) but setting them here
+    helps avoid flash-of-unstyled-content
+    */
+    position: absolute; top: 0; left: 0;
+    width: 100%; padding: 0; display: block;
+}
+
+/* in case script does not load */
+.cycle-slideshow img:first-child {
+    position: static;
+}
+
+/* pager */
+.cycle-pager { 
+    text-align: center; width: 100%; z-index: 500; position: absolute; top: 10px; overflow: hidden;
+}
+.cycle-pager span { 
+    font-family: arial; font-size: 50px; width: 16px; height: 16px; 
+    display: inline-block; color: #ddd; cursor: pointer; 
+}
+.cycle-pager span.cycle-pager-active { color: #D69746;}
+.cycle-pager > * { cursor: pointer;}
+
+
+/* caption */
+.cycle-caption { position: absolute; color: white; bottom: 15px; right: 15px; z-index: 700; }
+
+
+/* overlay */
+.cycle-overlay { 
+    font-family: tahoma, arial;
+    position: absolute; bottom: 0; width: 100%; z-index: 600;
+    background: black; color: white; padding: 15px; opacity: .5;
+}
+
+
+/* prev / next links */
+.cycle-prev, .cycle-next { position: absolute; top: 0; width: 30%; opacity: 0; filter: alpha(opacity=0); z-index: 800; height: 100%; cursor: pointer; }
+.cycle-prev { left: 0;  background: url(http://malsup.github.com/images/left.png) 50% 50% no-repeat;}
+.cycle-next { right: 0; background: url(http://malsup.github.com/images/right.png) 50% 50% no-repeat;}
+.cycle-prev:hover, .cycle-next:hover { opacity: .7; filter: alpha(opacity=70) }
+
+.disabled { opacity: .5; filter:alpha(opacity=50); }
+
+
+/* display paused text on top of paused slideshow */
+.cycle-paused:after {
+    content: 'Paused'; color: white; background: black; padding: 10px;
+    z-index: 500; position: absolute; top: 10px; right: 10px;
+    border-radius: 10px;
+    opacity: .5; filter: alpha(opacity=50);
+}
+
+/* 
+    media queries 
+    some style overrides to make things more pleasant on mobile devices
+*/
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    .cycle-slideshow { width: 200px;}
+    .cycle-overlay { padding: 4px }
+    .cycle-caption { bottom: 4px; right: 4px }
+}
+
+._4s7c {
+  border: 3px solid #e25143 !important;
+  border-top-color: #e25143 !important;
+}
+
+.btn-newsletter {
+	width:250px;
+	height:50px;
+	line-height:50px;
+	background:#3BB33D;
+	margin:0 auto;
+	border-radius:5px;
+}
+
+.btn-newsletter h2 {
+	color:#FFFFFF;
+	font-size:28px;
+	text-decoration:none;	
+}
+
+.btn-newsletter-a {
+	color:#FFFFFF;
+	font-size:25px;
+	text-decoration:none;	
 }

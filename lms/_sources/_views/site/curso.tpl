@@ -4,26 +4,14 @@
                 	{if $curso.id == 78}
                 	<h1><a href="https://secure.runrun.it/pt-BR/trusted_partners/cursos-iag" target="_blank"><img src="/lms/common/site/images/rr_partners_seal_119x40.png"></a>{$curso.curso}</h1>
                 	{else}
-                    <h1>{$curso.curso}</h1>
+                    <h1 itemprop="name" itemscope itemtype="http://data-vocabulary.org/Product"><a href="{$url_site}curso/{$curso.url}" itemprop="offerURL">{$curso.curso}</a></h1>
                     {/if}
-                </section><!--.single-title-->
-
-                <section class="single-menu">
-                    <nav>
-                        <ul>
-                            <li><a href="#course-sidebar">Informações do curso</a></li>
-                            <li><a href="#lessons">Conteúdo</a></li>
-                            <li><a href="#single-teacher">Sobre o professor</a></li>
-                            <li><a href="#single-testimonials">Depoimentos</a></li>
-                            <li  class="assinature-featured"><a href="#assinature">Assinatura</a></li>
-                        </ul>
-                    </nav>
-                </section><!--.single-menu-->
+                </section><!--.single-title -->
 
                 <section class="single-course-info">
 
                     <!-- AULA GRATUITA -->
-                    <section class="single-course-info-video">
+                    <section class="single-course-info-video" itemprop="video">
                     {if $aulaGratuita}
                         <div id="aulaGratuita"></div>
                     {/if}
@@ -35,25 +23,26 @@
 
                         <section class="price">
                             {if $curso.gratuito == 0}
-                            <span><strong class="preco_curso">R$ {$curso.valor}</strong> <small class="6_vezes">ou até 6x de R$ {$curso.valor_6}</small></span>
+                            <span><strong class="preco_curso">6x de R$ {$curso.valor_6}</strong>
+                            <small class="6_vezes">sem juros ou R$ {$curso.valor} </small></span>
                             {else}
-                            <span><strong class="preco_curso">Gratuito</strong></span>
+                            <span><strong class="preco_curso">Curso Gratuito, estude agora mesmo!</strong></span>
                             {/if}
 
                             <button class="btn-green" onclick="$('#formCarrinho').submit();">
                                 {if $curso.gratuito == 1}
-                                    ESTUDE AGORA
+                                    ESTUDE GRÁTIS
                                 {else}
-                                    COMPRAR AGORA
+                                    COMECE A ESTUDAR AGORA
                                 {/if}
 
                             </button>
 
                             <span class="button-disable-single" onclick="javascript:;">
                                 {if $curso.gratuito == 1}
-                                    ESTUDE AGORA
+                                    ESTUDE GRÁTIS
                                 {else}
-                                    COMPRAR AGORA
+                                    COMECE A ESTUDAR AGORA
                                 {/if}
                                 <p>Selecione as opções</p>
                             </span>
@@ -108,7 +97,7 @@
                         <figure><img src="{$url_site}lms/common/site/images/course-info-certi.png"></figure>
 
                         <h1>Certificado</h1>
-                        <p>Impresso ou Digital</p>
+                        <p>Reconhecido em todo Brasil.</p>
 
                     </section><!--.info-->
 
@@ -134,8 +123,8 @@
                         <a href="{$url_site}assinaturas">
                         <figure><img src="{$url_site}lms/common/site/images/course-info-assi.png"></figure>
 
-                        <h1>Assinatura</h1>
-                        <p>Escolha o melhor plano para você!</p>
+                        <h1>Acesso</h1>
+                        <p>12 meses de acesso para você estudar!</p>
                         </a>
                     </section><!--.info-->
 
@@ -153,7 +142,7 @@
 
                             <section class="content-course-sidebar-info">
 
-                                <p>{$curso.descricao}</p>
+                                <p itemprop="description">{$curso.descricao}</p>
 
                             </section><!--.content-course-sidebar-info-->
 
@@ -161,7 +150,7 @@
 
                         <section class="course-sidebar-info">
 
-                            <h1>Público Alvo</h1>
+                            <h1 >Público Alvo</h1>
 
                             <section class="content-course-sidebar-info">
 
@@ -213,8 +202,8 @@
 
                         <section class="lessons-title">
 
-                            <h1>Aulas</h1>
-                            <p>Cronograma do curso</p>
+                            <h1>Confira todas as aulas do curso</h1>
+                            <p>Há várias gratuitas para você assistir antes de comprar.</p>
 
                             <span class="expand"></span>
 
@@ -342,38 +331,28 @@
             <section class="single-footer">
                 <section class="single-footer-price">
                     {if $curso.gratuito == 0}
-                    <span><strong class="preco_curso">R$ {$curso.valor}</strong></span>
-                    <span><small class="6_vezes">ou até 6x de R$ {$curso.valor_6}</small></span>
+                    <span><strong class="preco_curso">6x de R$ {$curso.valor_6}<br></strong></span>
+                    <span><small class="6_vezes">sem juros ou R$ {$curso.valor}</small></span>                  
                     {else}
-                    <span><strong class="preco_curso">Gratuito</strong></span>
+                    <span><strong class="preco_curso">Curso Gratuito, estude agora mesmo!</strong></span>
                     {/if}
                     <button class="btn-green" onclick="jQuery('#formCarrinho').submit();">
                         {if $curso.gratuito == 1}
-                            ESTUDE AGORA
+                            ESTUDE GRÁTIS
                         {else}
-                            COMPRAR AGORA
+                            COMECE A ESTUDAR AGORA
                         {/if}
                     </button>
                     <span class="button-disable-single" onclick="jQuery('#formCarrinho').submit();">
                         {if $curso.gratuito == 1}
-                            ESTUDE AGORA
+                            ESTUDE GRÁTIS
                         {else}
-                            COMPRAR AGORA
+                            COMECE A ESTUDAR AGORA
                         {/if}
-                        <p>Selecione as opções</p>
-                    </span>
+                        </span>
                 </section>
             </section>
         
-            <!-- ASSINATURA -->
-            <section class="assinature" id="assinature">
-                <section class="assinature-content">
-                    <a href="{$url_site}assinaturas/"><h1>Conheça nossos <br/>planos de <strong>assinatura!</strong></h1>
-                    <p>Planos a partir de <strong>R$ 59,90</strong> com acesso a <strong>todos os cursos!</strong></p></a>
-                </section><!--.assinature-content-->
-            </section><!--.assinature-->
-            <!-- FIM ASSINATURA -->
-
             {if !empty($cursosRelacionados)}
             <!-- CURSOS RELACIONADOS -->
             <section class="cursos-content related-cursos">
@@ -382,11 +361,6 @@
                 <article>
                     <figure><a href="{$url_site}curso/{$cursoRelacionado.url}"><img src="{$url_site}lms/uploads/imagens/{$cursoRelacionado.destaque_arquivo}" alt=""></a></figure>
                     
-                    <!-- <h2>
-                    	{foreach item=categoria from=$cursoRelacionado.categorias}
-                    	{$categoria.categoria}
-                    	{/foreach}
-                    </h2> -->
                     <section class="box-cursos-content">
                         <a href="{$url_site}curso/{$cursoRelacionado.url}"><h1>{$cursoRelacionado.curso}</h1></a>
                         <section class="info-curso">
@@ -416,92 +390,96 @@
             </section><!--.modal-content-->
         </section><!--.modal-->
 
-<script type="text/javascript" src="{$url_site}lms/common/site/js/jwplayer/jwplayer.js" ></script>
-<script type="text/javascript" src="{$url_site}lms/common/site/js/jwplayer/jwplayer.html5.js"></script>
-<script type="text/javascript">jwplayer.key="iutRDqcT78F7yRwhJrXKoCvFzYyfVxWm4kAJuA==";</script>
-<script type="text/javascript" src="{$url_site}lms/common/site/js/expand.js" ></script>
-<div id="retorno_preco"></div>
-{literal}
-<script type="text/javascript">
-
-jQuery('.selectCompra').on('change', function() {
-    atualizarPreco();
-});
-
-function atualizarPreco() {
-    {/literal}
-    jQuery.post('{$url_site}curso/preco', {ldelim}     
-        preco: '{$curso.valor}',
-        suporte_p: '{$precoSuporte}',
-        certificado_p: '{$precoCertificado}',
-        suporte: jQuery('.option-1').val(),
-        certificado: jQuery('.option-2').val()
-    {rdelim}, function html(html){ldelim} jQuery('#retorno_preco').html(html) {rdelim});
-    {literal}
-}
-
-
-function abrirVideo(video) {
-    jwplayer("videoModal").setup({
-        logo: {
-            {/literal}
-            file: "{$url_site}lms/common/site/js/jwplayer/imagens/logo-cursosiag.png",
-            link: "{$url_site}"
-            {literal}
-        },
-		{/literal}
-		{if $curso.url == 'carreira-web-design' || $curso.url == 'carreira-youtuber'}
-        file: video,
-		{else}
-		file: buscarVideo(video),
-		{/if}
-		{literal}
-        width: 770,
-        height: 400
+        <link rel="stylesheet" type="text/css" href="{$url_site}lms/common/site/css/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="{$url_site}lms/common/site/css/owl-carousel/owl.theme.css">
+        <script type="text/javascript" src="{$url_site}lms/common/site/js/owl-carousel/owl.carousel.min.js" ></script>
+            
+        <script type="text/javascript" src="{$url_site}lms/common/site/js/jwplayer/jwplayer.js" ></script>
+        <script type="text/javascript" src="{$url_site}lms/common/site/js/jwplayer/jwplayer.html5.js"></script>
+        <script type="text/javascript">jwplayer.key="iutRDqcT78F7yRwhJrXKoCvFzYyfVxWm4kAJuA==";</script>
+        <script type="text/javascript" src="{$url_site}lms/common/site/js/expand.js" ></script>
+        <div id="retorno_preco"></div>
+        {literal}
+        <script type="text/javascript">
         
-    });
-}
-
-{/literal}
-{if $aulaGratuita}
-jwplayer("aulaGratuita").setup({ldelim}
-    logo: {ldelim}
-        file: "{$url_site}lms/common/site/js/jwplayer/imagens/logo-cursosiag.png",
-        link: "{$url_site}"
-      {rdelim},
-    file: buscarVideo('{$aulaGratuita}'),
-    width: 464,
-    height: 261,
-    autostart: true
-{rdelim});
-{/if}
-{literal}
-
-$(document).ready(function($){
-
-    $(".lessons").expandAll({
-        trigger: ".chapters .collapse", 
-        ref: ".lessons-title span.expand", 
-        showMethod: "slideDown", 
-        hideMethod: "slideUp", 
-        oneSwitch : false
-    });
-
-    $(".chapters").expandAll({trigger: "span.expand", ref: "span.expand", oneSwitch: false});
-
-    atualizarPreco();
-    //$( ".btn-green" ).hide();
-    //$( ".button-disable-single" ).show();
-    $( ".button-disable-single" ).hide();
-    // $("#option").change(function(){
-    //     if( $(this).val() == '' ){
-    //         $( ".btn-green" ).hide();
-    //         $( ".button-disable-single" ).show();
-    //     }else{
-    //         $( ".button-disable-single" ).hide();
-    //         $( ".btn-green" ).show();
-    //     }
-    // });
-});
-</script>
-{/literal}
+        jQuery('.selectCompra').on('change', function() {
+            atualizarPreco();
+        });
+        
+        function atualizarPreco() {
+            {/literal}
+            jQuery.post('{$url_site}curso/preco', {ldelim}     
+                preco: '{$curso.valor}',
+                suporte_p: '{$precoSuporte}',
+                certificado_p: '{$precoCertificado}',
+                suporte: jQuery('.option-1').val(),
+                certificado: jQuery('.option-2').val()
+            {rdelim}, function html(html){ldelim} jQuery('#retorno_preco').html(html) {rdelim});
+            {literal}
+        }
+        
+        
+        function abrirVideo(video) {
+            jwplayer("videoModal").setup({
+                logo: {
+                    {/literal}
+                    file: "{$url_site}lms/common/site/js/jwplayer/imagens/logo-cursosiag.png",
+                    link: "{$url_site}"
+                    {literal}
+                },
+                {/literal}
+                {if $curso.url == 'carreira-web-design' || $curso.url == 'carreira-youtuber'}
+                file: video,
+                {else}
+                file: buscarVideo(video),
+                {/if}
+                {literal}
+                width: 770,
+                height: 400
+                
+            });
+        }
+        
+        {/literal}
+        {if $aulaGratuita}
+        jwplayer("aulaGratuita").setup({ldelim}
+            logo: {ldelim}
+                file: "{$url_site}lms/common/site/js/jwplayer/imagens/logo-cursosiag.png",
+                link: "{$url_site}"
+              {rdelim},
+            file: buscarVideo('{$aulaGratuita}'),
+            width: 464,
+            height: 261,
+            autostart: true
+        {rdelim});
+        {/if}
+        {literal}
+        
+        $(document).ready(function($){
+        
+            $(".lessons").expandAll({
+                trigger: ".chapters .collapse", 
+                ref: ".lessons-title span.expand", 
+                showMethod: "slideDown", 
+                hideMethod: "slideUp", 
+                oneSwitch : false
+            });
+        
+            $(".chapters").expandAll({trigger: "span.expand", ref: "span.expand", oneSwitch: false});
+        
+            atualizarPreco();
+            //$( ".btn-green" ).hide();
+            //$( ".button-disable-single" ).show();
+            $( ".button-disable-single" ).hide();
+            // $("#option").change(function(){
+            //     if( $(this).val() == '' ){
+            //         $( ".btn-green" ).hide();
+            //         $( ".button-disable-single" ).show();
+            //     }else{
+            //         $( ".button-disable-single" ).hide();
+            //         $( ".btn-green" ).show();
+            //     }
+            // });
+        });
+        </script>
+        {/literal}

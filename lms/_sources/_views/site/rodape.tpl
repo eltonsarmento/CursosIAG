@@ -16,7 +16,7 @@
                         
                         <ul>
                             <h1>Nossos Produtos</h1>
-                            <li><a href="{$url_site}assinaturas">Assinaturas</a></li>
+                            <!-- <li><a href="{$url_site}assinaturas">Assinaturas</a></li> -->
                             <li><a href="{$url_site}pagina/cursos-onlines">Cursos Online</a></li>
                             <li><a href="{$url_site}pagina/suporte">Suporte</a></li>
                             <li><a href="{$url_site}pagina/certificados">Certificados</a></li>
@@ -41,64 +41,29 @@
             
             </section><!--.content-content-->
 
-            <!--<section class="content-footer-newsletter">
+            <section class="content-footer-newsletter">
 
                 <section class="container-footer">
 
                     <section class="newsletter">
 
-                        <h1>RECEBA CONTEÚDO <strong>EXCLUSIVO</strong> EM SEU E-MAIL</h1>
+                        <h1>QUER RECEBER CONTEÚDO <strong>EXCLUSIVO</strong> EM SEU E-MAIL?</h1>
 
-                        <p>NUNCA enviaremos SPAM para você!</p>
+                        <p>Clique no botão e preencha seus dados. Você receberá dicas, materiais gratuitos e muito mais.</p>
 
-                         <form action="http://adrianogianini.us2.list-manage.com/subscribe/post?u=3a5144edd8eab2a9a997d8f4f&amp;id=f120e1268e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-
-                            <input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="Seu e-mail" required>
-
-                            <button class="btn-orange">Enviar</button>
-
-                        </form>
-
-                        <form action="https://www.rdstation.com.br/api/1.2/conversions/" method="post">
-
-                            <input type="hidden" name="token_rdstation" value="c6afdcfc58eded9c1077be69a6f68c2d">
-
-                            <input type="hidden" name="identificador" value="{$newsletter.conteudo}">
-                            <input type="hidden" name="redirect_to" value="http://cursosiag.com.br/" />
-
-                            <input type="email" name="email" placeholder="Seu e-mail" required>
-
-                            <button class="btn-orange" type="submit">Enviar</button>
-
-                        </form>
+                         <h2 class="btn-newsletter"><a class="btn-newsletter-a" href="http://landing.cursosiag.com.br/assine-nossa-lista" target="_blank" title="Newsletter IAG">ASSINAR LISTA VIP</a></h1>
                     
                     </section>
 
                 </section>
 
-            </section>-->
+            </section>
 
             <section class="content-footer-news-facebook">
-
                 <section class="container-footer">
 
-                    <section class="video">
-
-                        <h1>Institucional <strong>IAG</strong></h1>
-
-                        <a href="#video-institucional" rel="modal:open">
-
-                            <span><i class="fa fa-play"></i></span>
-
-                            <figure class="img"></figure>
-
-                        </a>
-                    
-                    </section><!--.video-->
-
                     <section class="facebook">
-
-                        <h1>Que tal curtir o IAG no Facebook?</h1>
+                        <h1>Curta o IAG no Facebook e fique por dentro das novidades!</h1>
 
                         <div id="fb-root"></div>
                         <script>(function(d, s, id) {
@@ -109,86 +74,54 @@
                           fjs.parentNode.insertBefore(js, fjs);
                         }(document, 'script', 'facebook-jssdk'));</script>
 
-                        <div class="fb-like-box" data-href="http://www.facebook.com/cursosiag" data-width="474" data-height="200" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"></div>
+                        <div class="fb-like-box" data-href="http://www.facebook.com/cursosiag" data-width="948" data-height="295" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"></div>
                     
                     </section><!--.facebook -->
-
                 </section><!--.container-->
-
             </section><!--.content-footer-news-facebook-->
             
             <section class="content-footer-info">
-                
                 <section class="container-footer">
-            
                     <section class="formas-pg">
-                        
                         <h1>Formas de Pagamento</h1>
-
                         <span></span>
-                        
                     </section><!--.formas-pg-->
                     
                     <section class="plataformas">
-                        
                         <h1>Plataformas</h1>
-
                          <a href="http://hostnet.com.br/" target="_blank" class="hostnet"></a>
-
                         <span class="img-pl"></span>
-                    
                     </section><!--.plataformas-->
-                    
                 </section><!--.container-->
-            
             </section><!--.content-content-->
             
             <section class="content-footer-copyright">
-                
                 <section class="container-footer">
-                    
                     <section class="container-footer-logo"></section><!--.container-footer-logo-->
-                    
                     <section class="container-footer-address">
-                    
                         <p><strong>Cursos IAG</strong> - Todos os direitos reservados</p>
                         <p>Rua Dr. Batista Acioly, 126, Sala 104, Jaraguá, Maceió - AL</p>
-                        
                     </section><!--.container-footer-address-->
                     
                     <section class="container-footer-call">
-                        
                         <h1>(82) <strong>3034-5153</strong></h1>
                         <p>atendimento@cursosiag.com.br</p>
-                    
                     </section><!--.container-footer-call-->
                     
                     <section class="container-footer-social">
-                        
                         <a href="http://facebook.com/cursosiag" target="_blank" class="facebook"></a>
-                                             
                         <a href="http://youtube.com/cursosiag" target="_blank" class="youtube"></a>
-                                
                     </section><!--.container-footer-social-->
-                    
                     <a href="https://plus.google.com/112331731879438654612" rel="publisher"></a> 
-                    
                 </section><!--.container-footer-->
-            
             </section><!--.content-content-->
-        
         </footer><!--footer-->
         
         <a href="#" class="btn-top"><i class="fa fa-angle-up"></i></a>
-
         <section class="modal modal-video" id="video-institucional">
-
             <section class="modal-content">
-
                 <div id="videoModal">Carregando</div>
-
             </section><!--.modal-content-->
-
         </section><!--.modal-->
 
         <!-- ESQUECEU SENHA -->
@@ -202,7 +135,6 @@
             </section><!--.modal-header-->
 
             <section class="modal-content">
-                
                 <form id="modalEsqueceuSenha" action="" onsubmit="">
                     <div id="retornoModalEsqueceuSenha"></div>
                     <input type="hidden" name="enviar" value="1"/>
@@ -210,9 +142,7 @@
                     <input type="text" name="email">
                     <button class="btn-orange" onclick="enviarModalLembrarSenha(); return false;">Redefinir</button>
                 </form>
-
             </section><!--.modal-content-->
-
         </section><!--.modal-->
 
         <!-- MODAL SEJA PROFESSOR -->
@@ -324,20 +254,6 @@ function limparModalProfessor() {
     $('#modal-professor-aula').val('');
 }
 
-//Revendedor
-function enviarModalRevendedor() {
-    $.post('/revendedor/contato/', $('#modalRevendedor').serialize(), function html(html) { $('#retornoModalRevendedor').html(html) });
-}
-
-function limparModalRevendedor() {
-    $('#modal-revendedor-nome').val('');
-    $('#modal-revendedor-email').val('');
-    $('#modal-revendedor-site').val('');
-    $('#modal-revendedor-atuacao').val('');
-    $('#modal-revendedor-telefone').val('');
-    $('#modal-revendedor-mensagem').val('');
-}
-
 //Esqueceu senha
 function enviarModalLembrarSenha() {
     $.post('/conta/lembrarSenha/', $('#modalEsqueceuSenha').serialize(), function html(html) { $('#retornoModalEsqueceuSenha').html(html)});
@@ -357,54 +273,27 @@ $.src="//v2.zopim.com/?1JXbe0EHBaLE7lD3ldxObY6Z1ixxfAho";z.t=+new Date;$.
 type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 </script>
 <!--End of Zopim Live Chat Script-->
-
 <script>
 
 $(function() {
-
     $( "#accordion" ).accordion();
-
 });
 </script>
 
 <script type="text/javascript">
-
     jwplayer("videoModal").setup({
-        
         file: 'http://cursosiag.com.br/lms/common/site/media/VideoInstitucionalCursosIAG.mp4',
         width: 770,
         height: 400
-        
     });
-
 </script>
 
 <script type="text/javascript">
-
     setTimeout(function(){var a=document.createElement("script");
     var b=document.getElementsByTagName("script")[0];
     a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0022/3431.js?"+Math.floor(new Date().getTime()/3600000);
     a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-
 </script>
-<!--REMARKETING-->
-<script>(function() {
-  var _fbq = window._fbq || (window._fbq = []);
-  if (!_fbq.loaded) {
-    var fbds = document.createElement('script');
-    fbds.async = true;
-    fbds.src = '//connect.facebook.net/en_US/fbds.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(fbds, s);
-    _fbq.loaded = true;
-  }
-  _fbq.push(['addPixelId', '789227724473500']);
-})();
-window._fbq = window._fbq || [];
-window._fbq.push(['track', 'PixelInitialized', {}]);
-</script>
-<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=789227724473500&amp;ev=PixelInitialized" /></noscript>
-<!--REMARKETING-->
 
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TZXNFH"
@@ -415,6 +304,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TZXNFH');</script>
 <!-- End Google Tag Manager -->
+
+<!-- CÓDIGO MONITORAMENTO DE LEADS DO RD STATION -->
+<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/lead-tracking/0.1.0/lead-tracking.min.js"></script>
+<script type="text/javascript">
+  LeadTracking.init({ token: 'c6afdcfc58eded9c1077be69a6f68c2d' });
+</script>
+<!-- FIM DO CÓDIGO DE MONITORAMENTO DE LEADS DO RD STATION -->
+
 {/literal}
 
 </body>

@@ -30,10 +30,15 @@
     padding:0;
     margin:0;
     text-align:center;
-    font-family: 'bariol_regularregular';
-    font-size:30px;
+    font-family: 'Source Sans Pro';
+    font-size:35px;
     color:#fff;
+}
 
+.container .single-header .single-title h1 a {
+    color:#fff;
+	text-decoration:none;
+	text-transform:uppercase;
 }
 
 .container .single-header .single-menu {
@@ -80,7 +85,7 @@
 .container .single-header .single-menu nav ul li a {
 
     font-size:16px;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     color:#fff;
     margin:0 5px;
     float:left;
@@ -122,7 +127,7 @@
 
 .container .single-header .single-course-info .single-course-info-price span {
 
-    width:232px;
+    width:277px;
     color:#fff;
     float:left;
     margin:0;
@@ -131,15 +136,15 @@
 
 .container .single-header .single-course-info .single-course-info-price span strong {
 
-    font-family: 'bariol_boldbold';
-    font-size:45px;
+    font-family: 'Source Sans Pro';
+    font-size:41px;
     margin:0;
 
 }
 
 .container .single-header .single-course-info .single-course-info-price span small {
 
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     font-size:18px;
     float:left;
 
@@ -147,7 +152,7 @@
 
 .container .single-header .single-course-info .single-course-info-price button {
 
-    width:232px;
+    width:175px;
     height:80px;
     font-size:18px;
     margin:0;
@@ -161,7 +166,7 @@
     width:232px;
     height:50px;
     padding:16px 0;
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     font-size:18px;
     color:#fff;
     border-radius:4px;
@@ -174,7 +179,7 @@
 
    margin:0;
    padding:0;
-   font-family: 'bariol_regularregular';
+   font-family: 'Source Sans Pro';
 
 }
 
@@ -187,7 +192,7 @@
 
 .container .single-header .single-course-info .single-course-info-price .option h1 {
 
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     color:#fff;
     font-size:20px;
     font-weight:300;
@@ -208,7 +213,7 @@
 .container .single-header .single-course-info .single-course-info-price .option label {
 
     width:80px;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     font-size:18px;
     color:#fff;
     float:left;
@@ -318,7 +323,7 @@
 
     margin:0;
     padding:0;
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-weight:300;
     font-size:30px;
     line-height:30px;
@@ -328,7 +333,7 @@
 
     margin:0;
     padding:0;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
 }
 
@@ -382,7 +387,7 @@
     
     padding:0;
     margin:0 0 10px 0;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:20px;
     color:#999;
     
@@ -420,7 +425,7 @@
 
 .container .single-content .course-lesson .lessons .lessons-content article ul li {
     
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#222;
     margin:0 0 8px 14px;
@@ -450,7 +455,7 @@
 
 .container .single-content .course-lesson .lessons .lessons-content article ul li a {
     
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:14px;
     color:#e25143;
     
@@ -473,9 +478,9 @@
     
     margin:0 0 20px 0;
     padding:0;
-    font-family:'bariol_boldbold';
-    font-weight:300;
-    font-size:30px;
+    font-family:'Source Sans Pro';
+    font-weight:400;
+    font-size:27px;
     color:#999;
     
 }
@@ -493,7 +498,7 @@
 .container .single-content .course-lesson .course-sidebar .course-sidebar-info h1 {
     
     background: #e25143;
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-weight:300;
     font-size:18px;
     color:#ffffff;
@@ -562,7 +567,7 @@
     
     margin:0 0 20px 0;
     padding:0;
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-weight:300;
     font-size:30px;
     color:#fff;
@@ -598,7 +603,7 @@
 .container .single-teacher .single-teacher-content .teacher-info p {
     
     width:828px;
-    font-family:'bariol_regularregular';
+    font-family:'Source Sans Pro';
     font-size:16px;
     color:#fff;
     float:right;
@@ -626,8 +631,8 @@
     
     margin:0 0 20px 0;
     padding:0;
-    font-family:'bariol_boldbold';
-    font-weight:300;
+    font-family:'Source Sans Pro';
+    font-weight:400;
     font-size:30px;
     color:#999;
     
@@ -641,64 +646,40 @@
     
 }
 
-.container .single-testimonials .single-testimonials-content .testimonials article {
+.container .single-testimonials .single-testimonials-content .owl-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.container .single-testimonials .single-testimonials-content .owl-item h3 {
     
-    width:464px;
-    height:160px;
-    margin:0 0 20px 0;
-    float:left;
+    font-family:'Source Sans Pro';
+    font-size:14px;
+    color:#999;
+    margin: 15px 0 0 5px;
+    float: left;
     
 }
 
-.container .single-testimonials .single-testimonials-content .testimonials article:nth-child(2n) {
-    
-    float:right;
-    
-}
-
-.container .single-testimonials .single-testimonials-content .testimonials article figure {
-    
-    width:100px;
-    height:100px;
+.container .single-testimonials .single-testimonials-content .owl-item img {
+    width:50px;
+    height:50px;
     border-radius:100%;
-    position:relative;
-    float:left;
-    overflow:hidden;
-    
+    float: left;
 }
 
-.container .single-testimonials .single-testimonials-content .testimonials article figure img {
-    
-    position:relative;
-    float:left;
-    
+.container .single-testimonials .single-testimonials-content .info-testimonials {
+    height: 50px;
+    margin-bottom: 20px;
 }
 
-.container .single-testimonials .single-testimonials-content .testimonials article h1 {
-    
-    font-family: 'bariol_boldbold';
-    font-size:20px;
-    color:#222;
-    position:relative;
-    top:0;
-    left:20px;
-    margin:0;
-    padding:0;
-    float:left;
-    transition:all 0.1s linear;
-    text-transform:capitalize;
-    
+.container .single-testimonials .single-testimonials-content .description-testimonials {
+    background: #f0f0f0;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 10px;
+    color: #666;
 }
-
-.container .single-testimonials .single-testimonials-content .testimonials article p {
-    
-    width:344px;
-    font-family:'bariol_regularregular';
-    font-size:16px;
-    color:#666;
-    float:right;
-
- }
 
  .alert-testimonials {
     background: #f0f0f0;
@@ -709,6 +690,7 @@
     border:1px solid #cccccc;
     color: #666;
     border-radius: 4px; 
+    margin-top: 10px;
  }
 
 .container .single-footer {
@@ -740,14 +722,14 @@
 
 .container .single-footer .single-footer-price span strong {
 
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     font-size:45px;
 
 }
 
 .container .single-footer .single-footer-price span small {
 
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     font-size:18px;
     margin:30px 0 0 10px;
     float:left;
@@ -772,7 +754,7 @@
     font-size:18px;
     margin:0;
     float:right;
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     font-size:18px;
     color:#fff;
     border-radius:4px;
@@ -784,7 +766,7 @@
 
    margin:0;
    padding:0;
-   font-family: 'bariol_regularregular';
+   font-family: 'Source Sans Pro';
 
 }
 
@@ -809,7 +791,7 @@
 .container .assinature .assinature-content h1 {
 
     width:454px;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     color:#fff;
     font-size:45px;
     margin:0;
@@ -822,7 +804,7 @@
 
 .container .assinature .assinature-content h1 strong {
 
-    font-family: 'bariol_boldbold';
+    font-family: 'Source Sans Pro';
     font-size:55px;
     font-weight:300;
 
@@ -831,7 +813,7 @@
 .container .assinature .assinature-content p {
 
     width:473px;
-    font-family: 'bariol_regularregular';
+    font-family: 'Source Sans Pro';
     color:#fff;
     font-size:19px;
     margin:69.5px 0;
@@ -848,7 +830,7 @@
 
 .container .related-cursos h1 {
 
-    font-family:'bariol_boldbold';
+    font-family:'Source Sans Pro';
     font-weight:300;
     font-size:35px;
     color:#999;

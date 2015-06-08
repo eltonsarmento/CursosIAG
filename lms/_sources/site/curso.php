@@ -232,12 +232,12 @@ class Curso {
 
 		echo "<script type='text/javascript'>";
 		if ($preco > 0)
-			echo "jQuery('.preco_curso').html('R$ " . number_format($preco, 2, ',', '.') . "');";
+			echo "jQuery('.preco_curso').html('6x de R$ " . number_format($preco/6, 2, ',', '.') . "');";
 		else 
 			echo "jQuery('.preco_curso').html('Gratuito');";
 
 
-		echo "jQuery('.6_vezes').html('ou até 6x de R$ " . number_format($preco/6, 2, ',', '.') . "');";
+		echo "jQuery('.6_vezes').html('sem juros ou R$ " . number_format($preco, 2, ',', '.') . "');";
 		echo "</script>";
 	}
 	// ===============================================================

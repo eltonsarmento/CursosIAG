@@ -40,18 +40,8 @@
 							<li><a href="/curso/curso-de-como-criar-um-site-com-wordpress" target="_blank">CURSO COMO CRIAR UM SITE COM WORDPRESS</a></li>
 						</ol>
 
-						<p><h1>DESEJO ME TORNAR UM ESPECIALISTA EM DESIGN GRÁFICO</h1></p>
-						<p>Para se tornar um especialista em design gráfico, trabalhar com criação de marcas, material publicitário, editar/tratar imagens e diagramar revistas, você precisa dos cursos abaixo:</p>
-						<ol>
-							<li>CURSO CORELDRAW</li>
-							<li>CURSO ILLUSTRATOR</li>
-							<li>CURSO PHOTOSHOP</li>
-							<li>CURSO INDESIGN</li>
-						</ol>
-						<p><a href="/curso/formacao-design-grafico" target="_blank">CLIQUE E CONHEÇA O CURSO</a></p>
-						<p>&nbsp;</p>
-						<p><h1>DESEJO ME TORNAR UM ESPECIALISTA EM EDIÇÃO DE VÍDEO</h1></p>
-						<p>Para se tornar um especialista em edição de vídeo, produção e pós-produção de vídeos, você precisa dos cursos abaixo:</p>
+					  <p><h1>DESEJO ME TORNAR UM ESPECIALISTA EM EDIÇÃO DE VÍDEO</h1></p>
+					  <p>Para se tornar um especialista em edição de vídeo, produção e pós-produção de vídeos, você precisa dos cursos abaixo:</p>
 						<ol>
 							<li>CURSO PREMIERE PRO</li>
 							<li>CURSO AFTER EFFECTS</li>
@@ -71,8 +61,8 @@
 							<li><a href="/curso/curso-de-photoshop-cs51-completo" target="_blank">CURSO PHOTOSHOP</a></li>
 							<li><a href="/curso/curso-de-photoshop-para-fotografos" target="_blank">CURSO PHOTOSHOP PARA FOTÓGRAFOS</a></li>
 							<li><a href="/curso/curso-de-lightroom-4-do-basico-ao-avancado" target="_blank">CURSO LIGHTROOM 4 COMPLETO</a></li>
+							<li><a href="/curso/curso-de-edicao-de-imagens-com-photoshop-cs6-cc" target="_blank">CLIQUE E CONHEÇA O CURSO</a></li>
 						</ol>
-						<p><a href="/curso/curso-de-edicao-de-imagens-com-photoshop-cs6-cc" target="_blank">CLIQUE E CONHEÇA O CURSO</a></p>
 						<p>&nbsp;</p>
 						<p><h1>DESEJO ME TORNAR UM ESPECIALISTA EM FLASH</h1></p>
 						<p>Para se tornar um especialista em Flash, criar animações e cds interativos, games e componentes para sistemas em Flash, você precisa dos cursos abaixo:</p>
@@ -81,17 +71,9 @@
 							<li>CURSO ACTIONSCRIPT 3.0</li>
 							<li>CURSO ACTIONSCRIPT 3.0 AVANÇADO</li>
 						</ol>
-						<p><a href="/curso/formacao-flash" target="_blank">CLIQUE E CONHEÇA O CURSO</a></p>
-						<p>&nbsp;</p>
-						<p><h1>DESEJO ME TORNAR UM ESPECIALISTA EM PROGRAMAÇÃO</h1></p>
-						<p>Para se tornar um especialista em programação e criar sistemas para web via CÓDIGO, você precisa dos cursos abaixo:</p>
-						<ol>
-							<li><a href="/curso/visualizar/35" target="_blank">CURSO LÓGICA DE PROGRAMAÇÃO</a></li>
-							<li><a href="/curso/visualizar/57" target="_blank">CURSO PROGRAMAÇÃO PHP5</a></li>
-							<li><a href="/curso/visualizar/52" target="_blank">CURSO PROGRAMAÇÃO PHP5 ORIENTADO A OBJETOS</a></li>
-							<li><a href="/curso/visualizar/64" target="_blank">CURSO DE LOCADORA VIRTUAL</a></li>
-						</ol>
-	                </section><!--.page-content-->
+						<p><a href="/curso/formacao-flash" target="_blank">CLIQUE E CONHEÇA O CURSO</a>	                </p>
+	                </section>
+	                <!--.page-content-->
 
             </section><!--.page-->
         

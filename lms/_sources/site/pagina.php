@@ -33,6 +33,7 @@ class Pagina {
 			case 'atendimento-online':	$this->doPagina('atendimento_online', 'Atendimento Online'); break;
 			case 'mapa-site':			$this->doPagina('mapa', 'Mapa'); break;
             case 'vagas':				$this->doPagina('vagas', 'Vagas'); break;
+            case 'cursosaovivo':		$this->doPagina('cursosaovivo', 'Cursos ao Vivo'); break;
 			case 'promocao':			$this->doPromocao(); break;
 			default: 					$this->pagina404(); break;
 		}	

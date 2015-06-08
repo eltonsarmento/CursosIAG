@@ -5,12 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-  
     <meta name="description" content="{$descricaoPagina}">
-   
-    <meta name="keywords" content="cursos iag, iag, cursos, ead, formações, adobe, gratuitos, video aulas, videos, aulas, photoshop, dreamweaver, css, html, cursos a distancia">
+    <meta name="keywords" content="cursos iag, cursos online, web design, design gráfico, edição de vídeo, marketing digital, carreiras completas, cursos gratuitos, video aulas, cursos a distancia, cursos ead">
     <meta name="robots" content="index,follow">
-    <meta name="author" content="Cursos IAG - Formação a Distância">
+    <meta name="author" content="Cursos IAG - Cursos de Web Design Online">
     <meta name="reply-to" content="atendimento@cursosiag.com.br">
     <meta property="og:locale" content="pt_BR"/>
     <meta property="og:type" content="website"/>
@@ -27,23 +25,14 @@
     <link rel="shortcut icon" href="{$url_site}lms/common/site/favicon.ico"/>
     
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{$url_site}lms/common/site/css/fonts/font.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{$url_site}lms/common/site/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{$url_site}lms/common/site/css/style.css">
-       
-    <link rel="stylesheet" type="text/css" href="{$url_site}lms/common/site/css/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="{$url_site}lms/common/site/css/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" type="text/css" href="{$url_site}lms/common/site/css/style.css">    
         
     <!-- JS -->
-
     <!-- JS CDN -->
-        
     <script type="text/javascript" src="{$url_site}lms/common/site/js/jquery-1.10.2.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script type="text/javascript" src="{$url_site}lms/common/site/js/jwplayer/jwplayer.js" ></script>
-    <script type="text/javascript" src="{$url_site}lms/common/site/js/jwplayer/jwplayer.html5.js"></script>
-    <script type="text/javascript">jwplayer.key="iutRDqcT78F7yRwhJrXKoCvFzYyfVxWm4kAJuA==";</script>
-
     <!-- JS CDN -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -52,16 +41,13 @@
       <script src="{$url_site}lms/common/site/js/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" src="{$url_site}lms/common/site/js/banner-destaque-0.0.1.js" ></script>
+    <script type="text/javascript" src="{$url_site}lms/common/site/js/banner-destaque-0.0.1.js"></script>
     <script type="text/javascript" src="{$url_site}lms/common/site/js/jquery.modal.js" ></script>
     <script type="text/javascript" src="{$url_site}lms/common/site/js/functions.js"></script>  
     <script type="text/javascript" src="{$url_site}lms/common/js/jquery.base64.js"></script>  
     <script type="text/javascript" src="{$url_site}lms/common/js/kmf.jquery.js"></script>  
     <script type="text/javascript" src="{$url_site}lms/common/site/js/jquery.smooth-scroll.min.js"></script>
     <script type="text/javascript" src="{$url_site}lms/common/site/js/jquery.cookie.js" ></script>
-    <script id="navegg" type="text/javascript" src="//tag.navdmp.com/tm32367.js"></script>
-    
-    <script type="text/javascript" src="{$url_site}lms/common/site/js/owl-carousel/owl.carousel.min.js" ></script>
         
     <script type="text/javascript">
     {literal}
@@ -75,10 +61,8 @@
                     $(this).fadeOut(200);
                  
                 } else {
-
                     $(this).fadeIn(200);
                     count++;
-
                 }
 
             });
@@ -90,29 +74,10 @@
             }
 
             var numberItems = count;
-
             $("#filter-count").text(count);
             
         });
-
-        $('#free').on($.modal.CLOSE, function(event, modal) {
-            
-            jwplayer("videoModal").stop();
-
-        });
-
-        $('#video-institucional').on($.modal.CLOSE, function(event, modal) {
-            
-            jwplayer("videoModal").stop();
-
-        });
-
-        $('#video-institucional').on($.modal.OPEN, function(event, modal) {
-            
-            jwplayer("videoModal").play();
-
-        });
-        
+       
     });
         
     {/literal}
@@ -296,7 +261,6 @@
                         <!-- <li><a href="{$url_site}assinaturas/">Assinaturas</a></li> -->
 
                             {foreach item=categoriaTopo from=$categoriasTopo}
-                            {if $categoriaTopo.id != 9}
                             <li><a href="{$url_site}categoria/{$categoriaTopo.url}">{$categoriaTopo.categoria}</a>
                                 <ul class="tabs left-submenu">
                                     <section class="tabs-menu">
@@ -336,7 +300,6 @@
                                     </section>
                                 </ul>
                             </li>
-                            {/if}
                             {/foreach}
                         </ul>
                     

@@ -3,7 +3,6 @@
                 
                 <section class="page-title">
                     <h1>Fale Conosco</h1>
-                    <p>Dúvidas?</p>
                 </section><!--.page-title-->
 
                 <section class="page-content">
@@ -31,7 +30,7 @@
                         <input type="email" name="email" value="{$email}" required="">
 
                         <label>Mensagem</label>
-                        <textarea cols="30" rows="5" name="mensagem" required="">{$mensagem}</textarea>
+                        <textarea cols="30" rows="5" name="mensagem" required>{$mensagem}</textarea>
 
                         <section class="info-confirm">
                             <span>Utilize um e-mail válido para que possamos responder sua dúvida.</span>
