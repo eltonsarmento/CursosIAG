@@ -40,8 +40,8 @@ class Conta {
 				$id = $this->system->alunos->cadastrar($campos);
 				$this->system->view->assign('msgSucesso', 'Cadastro realizado com sucesso!');
                 
-                $form_data_array = array('email' => $this->system->input['email'], 'nome' => $this->system->input['nome']);
-                $this->system->api->rdStation_lead('Novo Aluno', $form_data_array);
+                //$form_data_array = array('email' => $this->system->input['email'], 'nome' => $this->system->input['nome']);
+                //$this->system->api->rdStation_lead('Novo Aluno', $form_data_array);
 				
 				//Email
 				$this->system->email_model->cadastroAluno($this->system->input['email'], $this->system->input['nome'], $this->system->input['senha']);
